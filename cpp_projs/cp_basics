@@ -1,0 +1,47 @@
+Competitive Programmming Basics
+--------------------------------
+
+Input and Output using 'scanf' and 'printf' - 
+-----------------------------------------------
+NOTE: in Hackerrank, input/Output can still be done using cout/cin but in case a million inputs.outputs,
+scanf/printf are much faster.
+
+    Int ("%d"): 32 Bit integer
+    Long ("%ld"): 64 bit integer
+    Char ("%c"): Character type
+    Float ("%f"): 32 bit real value
+    Double ("%lf"): 64 bit real value
+
+Reading data:
+    Format:     scanf("`format_specifier`", &val)
+    Example:    char ch;
+                double d;
+                scanf("%c %lf", &ch, &d);   // read a character followed by a double
+
+Printing data:
+    Format:     printf("`format_specifier`", val)
+    Example:    char ch = 'd';
+                double d = 234.432;
+                printf("%c %lf", ch, d);    // print a character followed by a double
+
+Setting precision values for float and double - 
+------------------------------------------------
+
+    #include<bits/stdc++.h>
+    using namespace std;
+    int main()
+    {
+        int a; long b; char c; float d; double e;
+        cin>>a>>b>>c>>d>>e;
+        cout<<a<<"\n"<<b<<"\n"<<c<<"\n";
+        cout<<fixed<<setprecision(3)<<d<<"\n";
+        cout<<fixed<<setprecision(9)<<e<<"\n";
+        return 0;
+    }
+
+Important Points -
+-------------------
+maximum number that we can store in an unsigned 32 bit integer is 2 ^ 32 – 1 and 
+in an unsigned 64 bit integer is 2 ^ 64 – 1 
+
+

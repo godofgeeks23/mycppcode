@@ -88,6 +88,64 @@
 
 // sorting a large array - quickly
 //---------------------------------
-// 
-
-
+// #include <iostream>
+// using namespace std;  
+// void swap(long* a, long* b)  
+// {  
+//     long t = *a;  
+//     *a = *b;  
+//     *b = t;  
+// }  
+// int partition (long arr[], long low, long high)  
+// {  
+//     long pivot = arr[high]; // pivot  
+//     long i = (low - 1); // Index of smaller element  
+  
+//     for (long j = low; j <= high - 1; j++)  
+//     {  
+//         // If current element is smaller than the pivot  
+//         if (arr[j] < pivot)  
+//         {  
+//             i++; // increment index of smaller element  
+//             swap(&arr[i], &arr[j]);  
+//         }  
+//     }  
+//     swap(&arr[i + 1], &arr[high]);  
+//     return (i + 1);  
+// }  
+// void quickSort(long arr[], long low, long high)  
+// {  
+//     if (low < high)  
+//     {  
+//         /* pi is partitioning index, arr[p] is now  
+//         at right place */
+//         long pi = partition(arr, low, high);  
+  
+//         // Separately sort elements before  
+//         // partition and after partition  
+//         quickSort(arr, low, pi - 1);  
+//         quickSort(arr, pi + 1, high);  
+//     }  
+// }  
+// void printArray(long arr[], long size)  
+// {  
+//     long i;  
+//     for (i = 0; i < size; i++)  
+//         cout << arr[i] << endl;
+// }  
+  
+// // Driver Code 
+// int main()  
+// {  
+//     long arr[1000000] = {0};  
+//     long size;
+//     cin>>size;
+//     for(long i=0;i<size;i++)
+//     {
+//         cin>>arr[i];
+//     }  
+//     quickSort(arr, 0, size - 1);  
+//     cout << "Sorted array: \n";  
+//     printArray(arr, size);  
+//     return 0;  
+// }  

@@ -34,7 +34,7 @@ Setting precision values for float and double -
         int a; long b; char c; float d; double e;
         cin>>a>>b>>c>>d>>e;
         cout<<a<<"\n"<<b<<"\n"<<c<<"\n";
-        cout<<fixed<<setprecision(3)<<d<<"\n";
+        cout<<fixed<<setprecision(3)<<d<<"\n"; // 'fixed' is used to display the decimal('.')
         cout<<fixed<<setprecision(9)<<e<<"\n";
         return 0;
     }
@@ -43,5 +43,8 @@ Important Points -
 -------------------
 maximum number that we can store in an unsigned 32 bit integer is 2 ^ 32 – 1 and 
 in an unsigned 64 bit integer is 2 ^ 64 – 1 
+
+Rounding of a number - round(<var>)
+(round() belongs to the cmath header file)
 
 

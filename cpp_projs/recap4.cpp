@@ -15,11 +15,21 @@ using namespace std;
 
 int main(){
     string name;
-    cout<<"Enter name: ";
+    cout<<"Enter full name: ";
     cin>>name;
-    cout<<endl<<"The name "<<name<<" is "<<name.length()<<" characters long."<<endl;
+    cout<<"The name "<<name<<" is "<<name.length()<<" characters long."<<endl;
     // in c++, string is considered without spaces only. So if value of 'name' is entered as 'aviral srivastava', it will store only 'aviral' and the length of the string will be 6 characters.
-    cout<<name.at(2)<<endl;
     
+    // to overcome this problem, use getline() as -
+    cin.ignore();
+    string name2; 
+    cout<<"Now enter your full name: ";
+    getline(cin, name2);
+    cout<<"Hi "<<name2<<endl;
+    
+    cout<<name2.at(2)<<endl;
+    
+    
+
     return 0;
 }

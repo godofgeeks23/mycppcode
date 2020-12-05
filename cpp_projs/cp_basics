@@ -47,4 +47,6 @@ in an unsigned 64 bit integer is 2 ^ 64 – 1
 Rounding of a number - round(<var>)
 (round() belongs to the cmath header file)
 
+Modulus (a%b) does not work on 'double' data type
+
 

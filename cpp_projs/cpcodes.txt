@@ -130,4 +130,110 @@ int main()
     }
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+codechef - TLG
+/\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int rounds;
+    int p1, p2, p1_c, p2_c = 0;
+    int leader = 0, lead = 0;
+    cin>>rounds;
+    while(rounds--)
+    {
+        cin>>p1>>p2;
+        p1_c+=p1;
+        p2_c+=p2;
+        int tmp_p1 = p1_c-p2_c; // p1 lead
+        int tmp_p2 = p2_c-p1_c; // p2 lead
+        if(tmp_p1 > lead)
+        {
+            leader = 1;
+            lead = tmp_p1; 
+        }
+        if(tmp_p2 > lead)
+        {
+            leader = 2;
+            lead = tmp_p2;
+        }
+    }
+    cout<<leader<<" "<<lead<<endl;
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+codechef - MUFFINS3
+/\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t, n, max_rem, a;
+    max_rem = 0;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        if((n%2)==0)
+        {
+            cout<<(n/2)+1<<endl;
+        }
+        else
+        {
+            cout<<(n+1)/2<<endl;
+        }
+    }
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+codechef - FLOW017
+/\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t, a[3], temp;
+    cin>>t;
+    while(t--)
+    {
+        cin>>a[0]>>a[1]>>a[2];
+        for(int i = 0; i<3; i++) 
+        {
+            for(int j = i+1; j<3; j++)
+            {
+                if(a[j] < a[i]) 
+                {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        cout<<a[1]<<endl;
+    }
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+codechef - REMISS
+/\/\/\/\/\/\/\/\/\/\
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t,a,b;
+    cin>>t;
+    while(t--)
+    {
+        cin>>a>>b;
+        if(a<b)
+        {
+            cout<<b<<" "<<(a+b);
+        }
+        else
+        {
+            cout<<a<<" "<<(a+b)<<endl;
+        }
+    }
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 

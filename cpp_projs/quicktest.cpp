@@ -10,22 +10,5 @@ using namespace std;
 //     return 0;
 // }
 
-int main()
-{
-    int n, lucky, unlucky = 0;
-    int arr[100] = {0};
-    cin>>n;
-    for(int i=0;i<n;i++)
-    {
-        cin>>arr[i];
-        if(arr[i]%2==0)
-            lucky++;
-        if(arr[i]%2==1)
-            unlucky++;
-    }
-    if(lucky>unlucky)
-        cout<<"READY FOR BATTLE";
-    else
-        cout<<"NOT READY";
-    cout<<endl;
-}
+
+

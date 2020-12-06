@@ -12,8 +12,6 @@ The topics covered in this file are -
     static data members and member functions
     array of objects
     objects as function arguments
-    friend functions
-
 */
 
 #include<iostream>
@@ -72,8 +70,6 @@ int main()
     promoteSalary(e[2]);    // FRIEND FUNCTION IS NOT A MEMBER FUNCTION OF CLASS. So it will not be called via the object of the class
                             // It's not in the scope of the class.
     e[2].showDetails();
-
-    
 
     return 0;
 }

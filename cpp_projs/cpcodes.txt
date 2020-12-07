@@ -260,4 +260,150 @@ int main()
         cout<<"NOT READY";
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+codechef - FLOW005
+/\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t, n, d, res;
+    t = n = d = res = 0;
+    int arr[6] = {100, 50, 10, 5, 2, 1};
+    cin>>t;
+    while(t--)
+    {
+        n = d = res = 0;
+        cin>>n;
+        while(n)
+        {
+            if((n%arr[d])==n)
+            {
+                d++;
+            }
+            else
+            {
+                res = res + (n/arr[d]);
+                n = n%arr[d];
+                d++;
+            }
+            
+        }
+        cout<<res<<endl;
+    }
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+codechef - DECINC
+/\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    if(n%4==0)
+        n++;
+    else
+        n--;
+    cout<<n<<endl;
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+codechef - PALL01
+/\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,rev;
+    n = 0;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        int temp = n;
+        rev = 0;
+        while(temp)
+        {
+            rev = rev*10 + (temp%10);
+            temp = temp/10;
+        }
+        if(rev==n)
+            cout<<"wins"<<endl;
+        else
+            cout<<"loses"<<endl;
+    }
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+codechef - PRB01
+/\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,p;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        p = 0;
+        for(int i=1;i<=n;i++)
+        {
+            if(n%i==0)
+                p++;
+        }
+        if(p!=2)
+        {
+            cout<<"no"<<endl;
+        }
+        else
+        {
+            cout<<"yes"<<endl;
+        } 
+    }
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+FLOW010
+/\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t;
+    char i;
+    cin>>t;
+    while(t--)
+    {
+        cin>>i;
+        if(i=='b' || i=='B')
+            cout<<"BattleShip"<<endl;
+        if(i=='c' || i=='C')
+            cout<<"Cruiser"<<endl;
+        if(i=='d' || i=='D')
+            cout<<"Destroyer"<<endl;
+        if(i=='f' || i=='F')
+            cout<<"Frigate"<<endl;
+    }
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+DIFFSUM
+/\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a,b,c;
+    cin>>a>>b;
+    c = a-b;
+    if(c>0)
+        cout<<c<<endl;
+    else
+        cout<<(a+b)<<endl;
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
 

@@ -8,7 +8,8 @@ Have a quick glance at this file periodically or once in a while!
 
 /*
 The topics covered in this file are - 
-    constructors and distructors
+    constructors and destructors
+    initialisation list
 */
 
 #include<iostream>
@@ -58,6 +59,21 @@ point::point(int a, int b = 10)  // cosntructor defined outside of class
     y = b;
     cout<<"parametrized constructor invoked..."<<endl;
 }
+class test      // for understanding initialisation lists
+{
+    int a;
+    int b;
+    public:
+        test(int i, int j): a(i), b(j)  // for quick initialisation through constructors
+                                        // can also use as - 
+                                        // test(int i, int j): a(i), b(i+j)
+                                        // test(int i, int j): a(i), b(a+j)
+                                        //
+                                        // BUT test(int i, int j): b(i), a(j) won't work as the order in which int a; int b; are declared in the class definition also matters! 
+        {
+            cout<<"Values have been assigned!"<<endl;
+        }
+};
 int main()
 {
     point p1;    // defualt constructor
@@ -81,5 +97,8 @@ int main()
     {
         point p9;   // p9 created using defualt cosntrcutor
     }   // p9 destroyed - as its scope is over
+
+    test obj(12, 67);
+
     return 0;
 }   // p1,p2,.... also destroyed...

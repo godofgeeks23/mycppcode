@@ -28,8 +28,7 @@ int main(){
     cout<<"Hi "<<name2<<endl;
     
     cout<<name2.at(2)<<endl;
-    
-    
+    cout<<name[2]<<endl;
 
     return 0;
 }

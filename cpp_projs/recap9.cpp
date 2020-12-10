@@ -60,7 +60,17 @@ int main()
     (set+1)->setdata(89, 5612);
     (set+1)->showdata();
     
-    
-
+    //traversing through an array of dynamic objects
+    point *polygon = new point[5];
+    for(int i=0;i<5;i++)
+    {
+        polygon[i].setdata(i*10, i+45);     // enter the data
+    }
+    point *temp = polygon;
+    for(int i=0;i<5;i++)
+    {
+        temp->showdata();                   // show values using the pointers
+        temp++;
+    }
     return 0;
 }

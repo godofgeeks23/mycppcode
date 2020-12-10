@@ -60,4 +60,12 @@ VS Code Multi Cursor Functionality - use alt+click
 a important mathematical result - 
     product of 2 numbers = product of their lcm and gcd
 
+string to_string(string input)
+        {
+            string tmp = input + std::to_string(a) + "," + fname + "," + lname + "," + std::to_string(std);
+            return tmp;
+        }
+
+to convert integer to string, do: string s = to_string(<int>)
+in above function, there is a local function named same, so we specified by std:: ....
 

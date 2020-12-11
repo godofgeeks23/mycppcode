@@ -69,3 +69,11 @@ string to_string(string input)
 to convert integer to string, do: string s = to_string(<int>)
 in above function, there is a local function named same, so we specified by std:: ....
 
+built in function for gcd in c++ - 
+     int result = __gcd(6, 20);
+
+STL Sort arrays:
+    int a[50];
+    // lets say the arrays has values...
+    sort(arr, arr+ <no_of_elements> );
+

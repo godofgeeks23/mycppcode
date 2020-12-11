@@ -606,21 +606,131 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+RECIPE
 /\/\/\/\/\/\/\/\/\/\
-
+int gcd(int a, int b)
+{
+    int g;
+    int smaller = a>b?b:a;
+    for(int i=smaller;i>=1;i--)
+    {
+        if(a%i==0 && b%i==0)
+        {
+            g = i;
+            break;
+        }
+    }
+    return g;
+}
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,size,k;
+    int arr[50];
+    cin>>t;
+    while(t--)
+    {
+        k = 1;
+        cin>>size;
+        cin>>arr[0];
+        for(int i=1;i<size;i++)
+        {
+            cin>>arr[i];
+            k = gcd(arr[i], arr[i-1]);
+        }
+        for(int i=0;i<size;i++)
+        {
+            cout<<arr[i]/k<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+SMPAIR
 /\/\/\/\/\/\/\/\/\/\
-
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t, size;
+    int arr[100000] = {-1};
+    cin>>t;
+    while(t--)
+    {
+        cin>>size;
+        for(int i=0;i<size;i++)
+        {
+            cin>>arr[i];
+        }
+        sort(arr, arr+size);
+        cout<<arr[0]+arr[1]<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+FLOW011
 /\/\/\/\/\/\/\/\/\/\
-
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t, basic;
+    float net;
+    cin>>t;
+    while(t--)
+    {
+        net = 0;
+        cin>>basic;
+        if(basic<1500)
+        {
+            net = float(basic) + (0.1*basic) + (0.9*basic);
+        }
+        else
+        {
+            net = float(basic) + (0.98*basic) + 500.0;
+        }
+        cout<<fixed<<setpreciosion(2)<<net<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HEADBOB
 /\/\/\/\/\/\/\/\/\/\
-
+#include<bits/stdc++.h>
+using namespace std;
+int contains(string s, char c)
+{
+    int flag = 0;
+    for(int i=0;i<s.length();i++)
+    {
+        if(s[i]==c)
+        {
+            flag = 1;
+            break;
+        }
+    }
+    return flag;
+}
+int main()
+{
+    int t,size;
+    string s;
+    cin>>t;
+    while(t--)
+    {
+        cin>>size;
+        cin>>s;
+        if(contains(s, 'I'))
+            cout<<"INDIAN"<<endl;
+        else if(contains(s, 'Y'))
+            cout<<"NOT INDIAN"<<endl;
+        else
+            cout<<"NOT SURE"<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

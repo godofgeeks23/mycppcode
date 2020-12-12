@@ -77,3 +77,14 @@ STL Sort arrays:
     // lets say the arrays has values...
     sort(arr, arr+ <no_of_elements> );
 
+difference of 2 values: z = abs(x-y);
+
+taking string input using getline fter int iputs - 
+    int a; string s;
+    cin>>a;
+    cin>>ws;        // white space
+    getline(cin, s);
+
+convert string to int - 
+    int i = stoi("231");
+

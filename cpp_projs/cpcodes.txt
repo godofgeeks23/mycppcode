@@ -732,29 +732,245 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+GDOG
 /\/\/\/\/\/\/\/\/\/\
-
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,k,max;
+    cin>>t;
+    while(t--)
+    {
+        max = -1;
+        cin>>n>>k;
+        for(int i=2;i<=k;i++)
+        {
+            if((n%i)>max)
+            {
+                max = n%i;
+            }
+        }
+        cout<<max<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+COMM3
 /\/\/\/\/\/\/\/\/\/\
-
+#include<bits/stdc++.h>
+using namespace std;
+float dist(int x1, int y1, int x2, int y2)
+{
+    float temp = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2) * 1.0);
+    return temp;
+}
+int main()
+{
+    int t,r,ax,ay,bx,by,cx,cy;
+    float d1,d2,d3;
+    cin>>t;
+    while(t--)
+    {
+        cin>>r>>ax>>ay>>bx>>by>>cx>>cy;
+        d1 = dist(ax,ay,bx,by);
+        d2 = dist(bx,by,cx,cy);
+        d3 = dist(ax,ay,cx,cy);
+        if((d1<=r) || (d2+d3)<=(2*r))
+        {
+            if((d2<=r) || (d1+d3)<=(2*r))
+            {
+                if((d3<=r) || (d1+d2)<=(2*r))
+                {
+                    cout<<"YES"<<endl;
+                }
+                else
+                {
+                    cout<<"NO"<<endl;
+                }
+            }
+            else
+            {
+                cout<<"NO"<<endl;
+            }
+            
+        }
+        else
+        {
+            cout<<"NO"<<endl;
+        }
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+CHEFSTLT
 /\/\/\/\/\/\/\/\/\/\
-
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s1,s2;
+    int t,mind,maxd;
+    cin>>t;
+    while(t--)
+    {
+        cin>>s1>>s2;
+        mind = maxd = 0;
+        for(int i=0;i<s1.length();i++)
+        {
+            if((s1[i]=='?' && s2[i]!='?') || (s2[i]=='?' && s1[i]!='?'))
+                maxd++;
+            else if(s1[i]==s2[i] && s1[i]=='?')
+                maxd++;
+            else if(s1[i]!=s2[i])
+            {
+                mind++;
+                maxd++;
+            }
+        }
+        cout<<mind<<" "<<maxd<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+FRUITS
 /\/\/\/\/\/\/\/\/\/\
-
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,n,m,k;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>m>>k;
+        int& smaller = n>m?m:n;
+        int& larger = n>m?n:m;
+        if(abs(n-m)>=k)
+        {
+            while(k)
+            {
+                k--;
+                smaller++;
+            }
+        }
+        else
+        {
+            while(abs(n-m))
+            {
+                k--;
+                smaller++;
+            }
+        }
+        cout<<abs(n-m)<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+POTATOES
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int prime(int p)
+{
+    int tmp = 0;
+    for(int i=1;i<=p;i++)
+    {
+        if(p%i==0)
+        {
+            tmp++;
+        }
+    }
+    if(tmp==2)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    int t,x,y,z;
+    cin>>t;
+    while(t--)
+    {
+        cin>>x>>y;
+        z = 1;
+        while(!prime(x+y+z))
+        {
+            z++;
+        }
+        cout<<z<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+TWTCLOSE
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int extractno(string s)
+{
+    int t = 0;
+    string num;
+    for(int i=0;i<s.length();i++)
+    {
+        if(s[i]==' ')
+        {
+            for(int j=i+1;j<s.length();j++)
+            {
+                num = num+s[j];
+            }
+        }
+    }
+    t = stoi(num);
+    return t;
+}
+
+int main()
+{
+    int n,k;
+    int arr[10001] = {0};
+    int count = 0;
+    cin>>n>>k;
+    while(k--)
+    {
+        string s;
+        cin>>ws;
+        getline(cin, s);
+        if(s=="CLOSEALL")
+        {
+            count = 0;
+            for(int i=0;i<10001;i++)
+            {
+                arr[i] = 0;
+            }
+        }
+        else
+        {
+            int tmp = extractno(s);
+            if(arr[tmp]==0)
+            {
+                arr[tmp] = 1;
+                count++;
+            }
+            else
+            {
+                arr[tmp] = 0;
+                count--;
+            }
+        }
+        cout<<count<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

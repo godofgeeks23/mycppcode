@@ -91,6 +91,37 @@ double funcavg(wish w1, wish w2)        // template functions
     return temp;
 }
 
+// defining functions outside a template class
+template <class tempo>
+class aviral
+{
+    public:
+    tempo data;
+    aviral(tempo a)
+    {
+        data = a;
+    }
+    void display();     // we just gave the declaration here...
+};
+// void aviral::display()  // this wont work as template class required arguments
+template <class tempo>
+void aviral<tempo>::display()
+{
+    cout<<"value of data is "<<data<<endl;
+}
+
+// function overloading with template functions - 
+// exact match takes the highest priority
+void experiment(int a)
+{
+    cout<<"this is the function with int data type"<<endl;
+}
+template <class exp>
+void experiment(exp e)
+{
+    cout<<"this is the template function..."<<endl;
+}
+
 int main()
 {
     sample1<int> obj1;      // specify which data type is 't'
@@ -114,7 +145,11 @@ int main()
     cout<<funcavg(2,4)<<endl;
     cout<<funcavg(2.6, 346.2)<<endl;
 
+    aviral<char> obj7('x');
+    obj7.display();
     
+    experiment(2);          // exact match will execute
+    experiment('b');        // template will run, as exact match is not present
 
     return 0;
 }

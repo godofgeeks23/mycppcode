@@ -972,21 +972,139 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+TWOVSTEN
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int t,n,count;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        count = 0;
+        if(n%5!=0)
+        {
+            count = -1;
+        }
+        else
+        {
+            while(n%10!=0)
+            {
+                n = n*2;
+                count++;
+            }
+            
+        }
+        cout<<count<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+RECTANGL
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int t;
+    int arr[4];
+    cin>>t;
+    while(t--)
+    {
+        cin>>arr[0]>>arr[1]>>arr[2]>>arr[3];
+        sort(arr, arr+4);
+        if(arr[0]==arr[1] && arr[2]==arr[3])
+        {
+            cout<<"YES"<<endl;
+        }
+        else
+        {
+            cout<<"NO"<<endl;
+        }
+        
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+COPS
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int t,m,x,y,temp;
+    cin>>t;
+    while(t--)
+    {
+        int houses[101];;
+        for(int l=1;l<=100;l++)
+        {
+            houses[l] = 1;
+        }
+        cin>>m>>x>>y;
+        for(int i=1;i<=m;i++)
+        {
+            cin>>temp;
+            int range_start = temp - (x*y);
+            int range_end = temp + (x*y);
+            if(range_start<=0)
+                range_start = 1;
+            if(range_end>100)
+                range_end = 100;
+            for(int j=range_start;j<=range_end;j++)
+                houses[j] = 0;
+        }
+        int count = 0;
+        for(int k=1;k<=100;k++)
+        {
+            if(houses[k]==1)
+                count++;
+        }
+        cout<<count<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+TWOSTR
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int t;
+    string s1, s2;
+    cin>>t;
+    while(t--)
+    {
+        int count = 0;
+        cin>>s1>>s2;
+        for(int i=0;i<s1.length();i++)
+        {
+            if(s1[i]!=s2[i] && s1[i]!='?' && s2[i]!='?')
+            {
+                cout<<"No"<<endl;
+                break;
+            }
+            else
+            {
+                count++;
+            }
+        }
+        if(count==s1.length())
+            cout<<"Yes"<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

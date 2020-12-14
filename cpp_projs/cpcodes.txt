@@ -1106,13 +1106,64 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+TRICOIN
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+int height(int total)
+{
+    int h = 0;
+    h = (-1 + sqrt(1+(8*total)))/2;
+    return h;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        cout<<height(n)<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+CHN09
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+int freq(string s, char c)
+{
+    int t = 0;
+    for(int i=0;i<s.length();i++)
+    {
+        if(s[i]==c)
+            t++;
+    }
+    return t;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        cin>>s;
+        if(freq(s, 'a')==s.length() || freq(s, 'b')==s.length())
+            cout<<0<<endl;
+        else
+        {
+            int min = freq(s, 'a')>=freq(s, 'b')?freq(s, 'b'):freq(s, 'a');
+            cout<<min<<endl;
+        }
+        
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

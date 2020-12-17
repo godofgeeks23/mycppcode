@@ -1427,21 +1427,138 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+CHN15A
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int t, n, k, count, a;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        count = 0;
+        while(n--)
+        {
+            cin>>a;
+            if((a+k)%7==0)
+                count++;
+        }
+        cout<<count<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+RECTSQ
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int t, m, n, a;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>m;
+        a = m>n?n:m;
+        int cont = 1; 
+        while(cont==1)
+        {
+            if((m%a)==0)
+            {
+                if((n%a)==0)
+                {
+                    cont = 0;
+                }
+            }
+            a--;
+        }
+        a++;
+        cout<<(m*n)/(a*a)<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+ATM2
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int t,n;
+    double k, arr[101];
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>k;
+        for(int i=0;i<n;i++)
+        {
+            cin>>arr[i];
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]<=k)
+            {
+                k = k - arr[i];
+                arr[i] = 1;
+            }
+            else
+            {
+                arr[i] = 0;
+            }
+        }
+        for(int i=0;i<n;i++)
+            cout<<arr[i];
+        cout<<endl;    
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+ALPHABET
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int count(string s, char c)
+{
+    int tmp = 0;
+    for(int i=0;i<s.length();i++)
+    {
+        if(s[i]==c)
+            tmp++;
+    }
+    return tmp;
+}
+
+int main()
+{
+    string known, word;
+    int n, sum;
+    cin>>known;
+    cin>>n;
+    while(n--)
+    {
+        cin>>word;
+        sum = 0;
+        for(int i=0;i<known.length();i++)
+        {
+            sum = sum + count(word, known[i]);
+        }
+        if(sum==word.length())
+            cout<<"Yes"<<endl;
+        else
+            cout<<"No"<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

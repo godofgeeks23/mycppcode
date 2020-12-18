@@ -100,6 +100,8 @@ int main(){
     cout<<"After swap_by_pointer, x = "<<x<<" , y = "<<y<<endl;
     swap_by_reference(x, y);
     cout<<"After swap_by_reference, x = "<<x<<" , y = "<<y<<endl;
+
+    // note that arrays are automatically always passes by reference
     
     cout<<"Product of 45x4 by inline function gives: "<<product(45, 4)<<endl;        // these are fast becuase at runtime, the code of the defined function is directly replaced here     
     

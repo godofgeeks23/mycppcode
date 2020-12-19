@@ -3,7 +3,7 @@ Competitive Programmming Basics
 
 Input and Output using 'scanf' and 'printf' - 
 -----------------------------------------------
-NOTE: in Hackerrank, input/Output can still be done using cout/cin but in case a million inputs.outputs,
+NOTE: input/Output can still be done using cout/cin but in case a million inputs.outputs,
 scanf/printf are much faster.
 
     Int ("%d"): 32 Bit integer

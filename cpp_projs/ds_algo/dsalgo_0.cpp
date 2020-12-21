@@ -22,7 +22,9 @@ operations on arrays -
 
 // searching in arrays
 // 1.   linear search: time complexity is o(n)
-// 2.   binary search: time complexity is o(log n)
+// 2.   binary search: time complexity is o(log n) (but it requires a sorted array)
+
+// sorting will be covered later in detail...
 
 #include<bits/stdc++.h>
 
@@ -73,7 +75,21 @@ void linearSearch(int arr[], int size, int element)
 
 void binarySearch(int arr[], int size, int element)
 {
-    int low
+    int low = 0;
+    int high = size-1;
+    while(low<=high)
+    {
+        int mid = (low+high)/2;
+        if(arr[mid]==element)
+        {
+            cout<<"Element found at index "<<mid<<endl;
+            break;
+        }
+        else if(arr[mid]>element)
+            high = mid-1;
+        else
+            low = mid+1;
+    }
 }
 
 void showArr(int arr[], int used_size)
@@ -99,7 +115,9 @@ int main()
 
     linearSearch(arr, size, 999);
 
-
+    sort(arr, arr+size);
+    showArr(arr, size);
+    binarySearch(arr, size, 12);
 
     return 0;
 }

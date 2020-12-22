@@ -35,7 +35,7 @@ Setting precision values for float and double -
         cin>>a>>b>>c>>d>>e;
         cout<<a<<"\n"<<b<<"\n"<<c<<"\n";
         cout<<fixed<<setprecision(3)<<d<<"\n"; // 'fixed' is used to display the decimal('.')
-        cout<<fixed<<setprecision(9)<<e<<"\n";
+        cout<<fixed<<setprecision(9)<<e<<"\n"; // 'precision' is used to set the number of digits after the decimal point
         return 0;
     }
 
@@ -88,3 +88,31 @@ taking string input using getline fter int iputs -
 convert string to int - 
     int i = stoi("231");
 
+calculation in c++ always happens in the higher data type.
+order of precdence - double > float > long long int > int > char
+so, cout<<(7/2);                                output: 3
+cout<<7.0/2; or cout<<7/2.0;                    output: 3.5
+cout<<'c'+1;                                    output: 100
+double a = 3/2; cout<<a;                        output: 1
+
+rough ranges of data types - 
+    int: -10^9 to 10^9
+    long int: -10^12 to 10^12
+    long long int: -10^18 to 10^18
+
+overflow - exceeding range of data types
+example:    int a = 100000;
+            int b = 100000;
+            int c = a*b;
+            cout<<c;        // error, overflow
+            long int d = a*b;
+            cout<<d;        // wrong result, as int*int is int, which can't store it, so holds a garbage value, which gets assigned to the 'long int'
+            long int e = a*b*1LL;   // by this, we took the whole calculation into long int
+            cout<<e;                // correct result
+            long long int f = 1e15; // this is valid took
+            double g = 1e24;        // range of double is very high, but not accurate for large numbers. similar also applies to float data type
+            
+
+INT_MAX is the max value that int can store. Similarly INT_MIN is the min value that int can store.
+cout<<INT_MIN<<INT_MAX;
+cout<<(INT_MAX+1);          // overflow, so it will cycle back into its range (going to negative range)

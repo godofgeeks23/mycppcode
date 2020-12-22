@@ -1,5 +1,5 @@
-// linked lists
-// ---------------
+// linked lists (singly linked)
+// ----------------------------
 /*
 arrays vs linked lists:
 
@@ -15,6 +15,7 @@ whereas, in linked lists, traversal needs to done to distinct memory locations..
 
 using namespace std;
 
+// here we are discussing about singly linked lists
 struct node                             // basic structure of a node in a linked list
 {
     int data;
@@ -108,6 +109,18 @@ void delete_last(node* head)
     delete q;
 }
 
+int get_length(node *head)
+{
+    int size = 0;
+    node* p = head;
+    while(p!=NULL)
+    {
+        size++;
+        p = p->next;
+    }
+    return size;
+}
+
 int main()
 {
     node* head = new node;      // a pointer to store the address of the head of list
@@ -145,7 +158,8 @@ int main()
     delete_last(head);
     show_the_list(head);
 
-    
+    cout<<get_length(head)<<endl;
+
     
     return 0;
 }

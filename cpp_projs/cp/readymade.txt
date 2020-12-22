@@ -1,11 +1,39 @@
 display an array - 
 --------------------
-void show(int arr[], int size)
+void show(int arr[], int from, int to)
+// display the elements of an array
 {
     int i = 0;
-    for(i=0;i<(size-1);i++)
+    for(i=from;i<=to;i++)
         cout<<arr[i]<<", ";
     cout<<arr[i]<<endl;
 }
 --------------------------------------------------------
 --------------------------------------------------------
+int count_distinct(int arr[], int size)
+// count the number of distinct elements in an array
+{
+    int count = 1;
+    sort(arr, arr+size);
+    int curr = arr[0];
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]!=curr)
+        {
+            curr = arr[i];
+            count++;
+        }
+    }
+    return count;
+}
+--------------------------------------------------------
+--------------------------------------------------------
+
+
+
+
+
+
+
+
+

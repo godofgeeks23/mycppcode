@@ -1560,21 +1560,156 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+VCS
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+void setall(int arr[], int size, int data)
+{
+    for(int i=0;i<=size;i++)
+        arr[i] = data;
+}
+
+int main()
+{
+    int t, n, m, k, ignored[101], tracked[101];
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>m>>k;
+        setall(ignored, n, -1);
+        setall(tracked, n, -1);
+        while(m--)
+        {
+            int temp;
+            cin>>temp;
+            ignored[temp] = 1;
+        }
+        while(k--)
+        {
+            int temp;
+            cin>>temp;
+            tracked[temp] = 1;
+        }
+        int tracked_ignored = 0;
+        int untracked_unignored = 0;
+        for(int i=1;i<=n;i++)
+        {
+            if(tracked[i]==1 && ignored[i]==1)
+                tracked_ignored++;
+            else if(tracked[i]==-1 && ignored[i]==-1)
+                untracked_unignored++;
+        }
+        cout<<tracked_ignored<<" "<<untracked_unignored<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+CFRTEST
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int count_distinct(int arr[], int size)
+{
+    int count = 1;
+    sort(arr, arr+size);
+    int curr = arr[0];
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]!=curr)
+        {
+            curr = arr[i];
+            count++;
+        }
+    }
+    return count;
+}
+
+int main()
+{
+    int arr[101];
+    int t, n;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n;
+        for(int i=0;i<n;i++)
+            cin>>arr[i];
+        cout<<count_distinct(arr, n)<<endl;
+    }
+
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+CANDY123
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int t, a, b, candies, turn, limak_sum, bob_sum;
+    cin>>t;
+    while(t--)
+    {
+        cin>>a>>b;
+        candies = 1;
+        turn = 1;
+        limak_sum = 0;
+        bob_sum = 0;
+        while(limak_sum<=a && bob_sum<=b)
+        {
+            if(turn==1)
+            {
+                limak_sum+=candies;
+                turn = 2;
+            }
+            else if(turn==2)
+            {
+                bob_sum+=candies;
+                turn = 1;
+            }
+            candies++;
+        }
+        if(limak_sum>a)
+            cout<<"Bob"<<endl;
+        else if(bob_sum>b)
+            cout<<"Limak"<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+MATCHES
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int matches[10][2]  = {{0,6},{1,2},{2,5},{3,5},{4,4},{5,5},{6,6},{7,3},{8,7},{9,6}};
+    int t, a, b, sum, count;
+    cin>>t;
+    while(t--)
+    {
+        cin>>a>>b;
+        sum = a+b;
+        count = 0;
+        while(sum)
+        {
+            int digit = sum%10;
+            count+=matches[digit][1];
+            sum = sum/10;
+        }
+        cout<<count<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

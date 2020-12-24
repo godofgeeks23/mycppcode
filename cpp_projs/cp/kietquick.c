@@ -1,7 +1,7 @@
 #include<stdio.h>
 void main()
 {
-	
+    
 }
 
 //hackerrank test 1 - problem 1
@@ -76,6 +76,7 @@ void main()
 // }
 
 // hackerrank test 1 - problem 3
+// -------------------------------
 // void chk_perfect(int n)
 // {
 //     int sum = 0;

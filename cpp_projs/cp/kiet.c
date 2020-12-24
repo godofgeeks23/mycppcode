@@ -12,6 +12,7 @@ void main()
 	avg = (a+b)/2.0;
 	printf("Avg is: %d ... Hope you like it!", avg);
 	//compiler reads printf from right to left
+	
 }
 
 //hackerrank test 1 - problem 1

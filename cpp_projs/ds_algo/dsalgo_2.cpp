@@ -77,38 +77,41 @@ void delete_in_between(node* head, int index)       // exactly same
     delete q;
 }
 
-// void insert_at_last(node* head, int data)       // to analyze
-// {
-//     node* ptr = new node;
-//     ptr->data = data;
-
-//     node* temp = head;
-//     while(temp->next!=NULL)
-//         temp = temp->next;
-//     temp->next = ptr;
-//     ptr->next = NULL;
-// }
-
-void delete_first(node* &head)          // not working for now...
+void insert_at_last(node* head, int data)       // very little changes
 {
+    node* ptr = new node;
+    ptr->data = data;
+
     node* temp = head;
-    head = head->next;
-    delete temp;
+    while(temp->next!=head)
+        temp = temp->next;
+    temp->next = ptr;
+    ptr->next = head;
 }
 
-// void delete_last(node* head)         // to analyze
-// {
-//     node* p = head;
-//     node* q = head->next;
+void delete_first(node* &head)          // pay attention to this - learn to manage the links
+{
+    node* temp = head;
+    while(temp->next!=head)
+        temp = temp->next;
+    temp->next = head->next;
+    delete head;                       // this does not delete the head pointer, just frees the memory occupied by it
+    head = temp->next;
+}
 
-//     while(q->next!=NULL)
-//     {
-//         p = p->next;
-//         q = q->next;
-//     }
-//     p->next = NULL;
-//     delete q;
-// }
+void delete_last(node* head)         // very little changes
+{
+    node* p = head;
+    node* q = head->next;
+
+    while(q->next!=head)
+    {
+        p = p->next;
+        q = q->next;
+    }
+    p->next = head;
+    delete q;
+}
 
 int main()
 {
@@ -149,7 +152,11 @@ int main()
     delete_first(head);
     show_the_list(head);
 
-    
+    insert_at_last(head, 2307);
+    show_the_list(head);
+
+    delete_last(head);
+    show_the_list(head);
 
     return 0;
 }

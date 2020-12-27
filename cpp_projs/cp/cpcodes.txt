@@ -1711,9 +1711,35 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+SEDARR
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int t,n,k,sum;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>k;
+        sum = 0;
+        while(n--)
+        {
+            int temp;
+            cin>>temp;
+            sum+=temp;
+        }
+        if((sum%k)==0)
+            cout<<"0"<<endl;
+        else
+        {
+            cout<<"1"<<endl;
+        }
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

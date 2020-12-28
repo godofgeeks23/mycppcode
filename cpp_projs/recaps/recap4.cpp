@@ -15,9 +15,9 @@ using namespace std;
 
 int main(){
     string name;
-    cout<<"Enter full name: ";
+    cout<<"Enter first name: ";
     cin>>name;
-    cout<<"The name "<<name<<" is "<<name.length()<<" characters long."<<endl;
+    cout<<"The name "<<name<<" is "<<name.length()<<", "<<name.size()<<" characters long."<<endl;
     // in c++, string is considered without spaces only. So if value of 'name' is entered as 'aviral srivastava', it will store only 'aviral' and the length of the string will be 6 characters.
     
     // to overcome this problem, use getline() as -
@@ -29,6 +29,11 @@ int main(){
     
     cout<<name2.at(2)<<endl;
     cout<<name[2]<<endl;
+
+    string fname = "Aviral";
+    string lname = "Srivastava";
+    string fullname = fname + " " + lname;
+
 
     return 0;
 }

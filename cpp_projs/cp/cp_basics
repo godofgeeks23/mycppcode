@@ -116,3 +116,26 @@ example:    int a = 100000;
 INT_MAX is the max value that int can store. Similarly INT_MIN is the min value that int can store.
 cout<<INT_MIN<<INT_MAX;
 cout<<(INT_MAX+1);          // overflow, so it will cycle back into its range (going to negative range)
+
+Adding a char in a string is not a good idea because of 2 reasons - 
+    due to time complexity
+    two dissimilar data types are being added
+example - to reverse a string, don't do it as:
+    string src = "sample";
+    string dest;
+    for(int i=(src.size()-1);i>=0;i++)
+        dest = dest + src[i];
+    cout<<dest;
+instead, do it as - 
+string src = "sample";
+    string dest;
+    for(int i=(src.size()-1);i>=0;i++)
+        dest.push_back(src[i]);
+    cout<<dest;
+
+to handle extremely big numbers (of order > 10^18), use strings
+example: 
+    string large = "12342328739023479832749832503254324908325498732549873254698723546325";
+    int last_digit = large[large.size()-1] - '0';
+
+ 

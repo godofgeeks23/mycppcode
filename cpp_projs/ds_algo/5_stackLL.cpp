@@ -42,7 +42,7 @@ void showthestack(node* top)                // complexity: o(1)
 {
     node* tmp = top;
     cout<<"TOP --> ";
-    while(tmp->next!=NULL)
+    while(tmp!=NULL)
     {
         cout<<tmp->data<<" --> ";
         tmp = tmp->next;
@@ -85,7 +85,7 @@ int stacktop(node* top)                     // complexity: o(1)
 int stackbottom(node* top)                  // complexity: o(n)
 {
     node* tmp = top;
-    while(tmp->next->next!=NULL)
+    while(tmp->next!=NULL)
     {
         tmp = tmp->next;
     }
@@ -95,14 +95,13 @@ int stackbottom(node* top)                  // complexity: o(n)
 int main()
 {
     node* top = new node;                   // created a new empty stack
-    top->next = NULL;
+    top = NULL;
 
     push(top, 1);
     push(top, 12);
     push(top, 123);
     push(top, 1234);
     push(top, 12345);
-    
     showthestack(top);
 
     pop(top);
@@ -114,6 +113,14 @@ int main()
 
     cout<<stacktop(top)<<endl;
     cout<<stackbottom(top)<<endl;
+
+    pop(top);
+    pop(top);
+    pop(top);
+    pop(top);
+    pop(top);
+    cout<<isempty(top)<<endl;
+    showthestack(top);
 
     return 0;
 }

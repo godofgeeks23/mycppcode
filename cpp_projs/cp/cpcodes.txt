@@ -1741,9 +1741,32 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+ZCO14003
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    long long int n;
+    long long int budgets[500000001];
+    long long int max = 0;
+    cin>>n;
+    for(long long int i=0;i<n;i++)
+    {
+        scanf("%d", &budgets[i]);
+    }
+    sort(budgets, budgets+n);
+    for(long long int i=0;i<n;i++)
+    {
+        long long int tmp = budgets[i]*(n-i);
+        if(tmp>max)
+            max = tmp;
+    }
+    cout<<max<<endl;
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

@@ -142,7 +142,7 @@ multidimensional arrays are also possible -
     int arr[2][3];
     int brr[3][7][12];
 
-maximum allowed local array size: 10^5
+maximum allowed local array size: 10^5 order
 example -   int main()
             {
                 int n = 1e7;
@@ -150,11 +150,11 @@ example -   int main()
                 a[n-1] = 77;            
                 cout<<a[n-1];
             }
-maximum allowed global arrays size: 10^7
-example -   const int size = 1e10;
+maximum allowed global arrays size: 10^7 order
+example -   const int size = 1e10;          // NOTE - if array size is being declared globally, it has to be a const variable
+            int arr[size];
             int main()
             {
-                int arr[size];
                 arr[size-1] = 2;
                 cout<<arr[size-1];          // will work
             }    

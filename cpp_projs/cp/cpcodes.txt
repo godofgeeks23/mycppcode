@@ -1828,25 +1828,198 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+JAN21C - DIVTHREE
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    long int t, n, k, d, a, sum, maxd;
+    cin>>t;
+    while(t--)
+    {
+        scanf("%ld%ld%ld", &n ,&k, &d);
+        sum = 0;
+        while(n--)
+        {
+            scanf("%ld", &a);
+            sum+=a;
+        }
+        maxd = sum/k;
+        if(maxd>d)
+            maxd = d;
+        printf("%ld\n", maxd);
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+JAN21C - DECODEIT
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int t, n;
+    string s;
+    string data[16] = {"0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100", "1101", "1110", "1111"};
+    string chars[16] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"};
+    cin>>t;
+    while(t--)
+    {
+        string result;
+        cin>>n>>s;
+        for(int i=0;i<n;i=i+4)
+        {
+            string temp;
+            for(int j=i;j<i+4;j++)
+                temp = temp+s[j];
+            for(int i=0;i<16;i++)
+            {
+                if(temp==data[i])
+                    result = result+chars[i];
+            }
+        }
+        cout<<result<<endl;
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+JAN21C - FAIRELCT
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    int t, n, m, swaps, jack_tot, john_tot;
+    cin>>t;
+    while(t--)
+    {
+        swaps = 0;
+        cin>>n>>m;
+        int john[n], jack[m];
+        jack_tot = john_tot = 0;
+        for(int i=0;i<n;i++)
+        {
+            cin>>john[i];
+            john_tot+=john[i];
+        }
+        for(int i=0;i<m;i++)
+        {    
+            cin>>jack[i];
+            jack_tot+=jack[i];
+        }
+        if(john_tot<=jack_tot)
+        {
+            sort(john, john+n);
+            sort(jack, jack+m);
+            int jack_pointer = m-1;
+            int john_pointer = 0;
+            while(john_tot<=jack_tot)
+            {
+                if(jack_pointer>=0 && john_pointer<n)
+                {
+                    john_tot = john_tot - john[john_pointer] + jack[jack_pointer];
+                    jack_tot = jack_tot - jack[jack_pointer] + john[john_pointer];
+                    swaps++;
+                    jack_pointer--;
+                    john_pointer++;
+                }
+                else
+                {
+                    swaps = -1;
+                    break;
+                }
+            }
+        }
+        printf("%d\n", swaps);
+    }    
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+JAN21C - BILLRD (APPROACH 1) - GOOD
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    long int n, k, xi, yi, currx, curry, velx, vely, hits;
+    int t;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%ld%ld%ld%ld", &n, &k, &xi, &yi);
+        long int collide_x[4], collide_y[4];
+        currx = xi;
+        curry = yi;
+        long int temp = abs(n-currx)>=abs(n-curry)?abs(n-curry):abs(n-currx);
+        collide_x[0] = currx+temp;
+        collide_y[0] = curry+temp;
+        collide_x[1] = collide_y[0];
+        collide_y[1] = collide_x[0];
+        temp = abs(0-collide_x[1])>abs(0-collide_y[1])?abs(0-collide_y[1]):abs(0-collide_x[1]);
+        collide_x[2] = collide_x[1]-temp;
+        collide_y[2] = collide_y[1]-temp;
+        collide_x[3] = collide_y[2];
+        collide_y[3] = collide_x[2];
+
+        hits = 0;
+        int pos = -1;
+        if(xi==yi)
+            pos = 0;
+        else
+            pos = (k-1)%4;
+        printf("%ld %ld\n", collide_x[pos], collide_y[pos]);
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+JAN21C - BILLRD (APPROACH 2) - TLE
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
 
+using namespace std;
+
+int main()
+{
+    long int n, k, xi, yi, currx, curry, velx, vely, hits;
+    int t;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%ld%ld%ld%ld", &n, &k, &xi, &yi);
+        hits = 0;
+        velx = vely = 1;
+        currx = xi - velx;
+        curry = yi - vely;
+        while(hits<k)
+        {
+            currx = currx + velx;
+            curry = curry + vely;
+            if((currx==0 || currx==n) && (curry==0 || curry==n))
+                break;
+            if(currx>=n || currx<=0)
+            {
+                hits++;
+                velx*=-1;
+            }
+            if(curry>=n || curry<=0)
+            {
+                hits++;
+                vely*=-1;
+            }
+        }
+        printf("%ld %ld\n", currx, curry);
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

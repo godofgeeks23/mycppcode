@@ -4,7 +4,42 @@ using namespace std;
 
 int main()
 {
-    
+    int t, n, k, tow1, tow2;
+    cin>>t;
+    while(t--)
+    {
+        scanf("%d%d", &n, &k);
+        int h[n];
+        for(int i=0;i<n;i++)
+            scanf("%d", &h[i]);
+        sort(h, h+n);
+        tow1 = tow2 = 0;
+        int pos = n-1;
+        int count = 0;
+        int cont = 1;
+        while(cont)
+        {
+            if(pos<0)
+            {
+                count = -1;
+                break;
+            }
+            if(tow1<k || tow2<k)
+            {
+                tow1+=h[pos];
+                count++;
+                pos--;
+                tow2+=h[pos];
+                count++;
+                pos--;
+            }
+            else
+            {
+                cont = 0;
+            }
+        }
+        cout<<count<<endl;
+    }
     return 0;
 }
 

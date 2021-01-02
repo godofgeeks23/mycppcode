@@ -75,7 +75,8 @@ built in function for gcd in c++ -
 STL Sort arrays:
     int a[50];
     // lets say the arrays has values...
-    sort(arr, arr+ <no_of_elements> );
+    sort(arr, arr+ <no_of_elements> );      // ascending order
+    sort(arr, arr+n, greater<int>());       // descending order
 
 difference of 2 values: z = abs(x-y);
 
@@ -158,3 +159,6 @@ example -   const int size = 1e10;          // NOTE - if array size is being dec
                 arr[size-1] = 2;
                 cout<<arr[size-1];          // will work
             }    
+
+
+

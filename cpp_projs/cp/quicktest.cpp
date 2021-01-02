@@ -12,33 +12,37 @@ int main()
         int h[n];
         for(int i=0;i<n;i++)
             scanf("%d", &h[i]);
-        sort(h, h+n);
+        sort(h, h+n, greater<int>());
         tow1 = tow2 = 0;
-        int pos = n-1;
+        int pos = 0;
         int count = 0;
-        int cont = 1;
-        while(cont)
+        while(1)
         {
-            if(pos<0)
-            {
-                count = -1;
-                break;
-            }
-            if(tow1<k || tow2<k)
+            if(tow1<k)
             {
                 tow1+=h[pos];
                 count++;
-                pos--;
+                if(pos<n-1)
+                    pos++;
+                else
+                    break;
+            }
+            if(tow2<k)
+            {
                 tow2+=h[pos];
                 count++;
-                pos--;
+                if(pos<n-1)
+                    pos++;
+                else
+                    break;
             }
             else
-            {
-                cont = 0;
-            }
+                break;
         }
-        cout<<count<<endl;
+        if((tow1>=k) && (tow2>=k))
+            cout<<count<<endl;
+        else
+            cout<<"-1"<<endl;
     }
     return 0;
 }

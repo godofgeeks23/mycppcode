@@ -1,7 +1,16 @@
+
+
 #include<bits/stdc++.h>
-
 using namespace std;
-
+int find_nearest(int* arr, int size, int h, int k)
+{
+    int pos = 0;
+    for(int i=0;i<size;i++)
+    {
+        pos = abs(arr[i]-k-h)<abs(arr[pos]-k-h)?i:pos;
+    }
+    return pos;
+}
 int main()
 {
     int t, n, k, tow1, tow2;
@@ -14,38 +23,60 @@ int main()
             scanf("%d", &h[i]);
         sort(h, h+n, greater<int>());
         tow1 = tow2 = 0;
-        int pos = 0;
         int count = 0;
-        while(1)
+        while((tow1<k) && (count<n))
         {
-            if(tow1<k)
-            {
-                tow1+=h[pos];
-                count++;
-                if(pos<n-1)
-                    pos++;
-                else
-                    break;
-            }
-            if(tow2<k)
-            {
-                tow2+=h[pos];
-                count++;
-                if(pos<n-1)
-                    pos++;
-                else
-                    break;
-            }
-            else
-                break;
+            tow1+=h[find_nearest(h, n, tow1, k)];
+            cout<<"now tow1 is "<<tow1<<endl;
+            h[find_nearest(h, n, tow1, k)] = 0;
+            count++;
         }
-        if((tow1>=k) && (tow2>=k))
-            cout<<count<<endl;
+        while((tow2<k) && (count<n))
+        {
+            tow2+=h[find_nearest(h, n, tow2, k)];
+            h[find_nearest(h, n, tow2, k)] = 0;
+            count++;
+        }
+        if(count==n)
+            cout<<(-1)<<endl;
         else
-            cout<<"-1"<<endl;
+            cout<<count<<endl;
     }
     return 0;
 }
+
+// #include<bits/stdc++.h>                      // approach 1 - WA
+// using namespace std;
+// int main()
+// {
+//     int t, n, k, tow1, tow2;
+//     cin>>t;
+//     while(t--)
+//     {
+//         scanf("%d%d", &n, &k);
+//         int h[n];
+//         for(int i=0;i<n;i++)
+//             scanf("%d", &h[i]);
+//         sort(h, h+n, greater<int>());
+//         tow1 = tow2 = 0;
+//         int count = 0;
+//         while((tow1<k) && (count<n))
+//         {
+//             tow1+=h[count];
+//             count++;
+//         }
+//         while((tow2<k) && (count<n))
+//         {
+//             tow2+=h[count];
+//             count++;
+//         }
+//         if(count==n)
+//             cout<<(-1)<<endl;
+//         else
+//             cout<<count<<endl;
+//     }
+//     return 0;
+// }
 
 // #include<bits/stdc++.h>                 // CODECHEF - BYTR20B/RICY
 

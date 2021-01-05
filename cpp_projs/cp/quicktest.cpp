@@ -1,14 +1,18 @@
-
-
 #include<bits/stdc++.h>
 using namespace std;
 int find_nearest(int* arr, int size, int h, int k)
 {
     int pos = 0;
-    for(int i=0;i<size;i++)
+    int i = 0;
+    for(i=0;i<size;i++)
     {
-        pos = abs(arr[i]-k-h)<abs(arr[pos]-k-h)?i:pos;
+        if((arr[i]<k))
+            pos = abs(arr[i]-k-h)<abs(arr[pos]-k-h)?i:pos;
+        else
+            break;
     }
+    if(i!=size)
+        pos = i;
     return pos;
 }
 int main()
@@ -21,26 +25,29 @@ int main()
         int h[n];
         for(int i=0;i<n;i++)
             scanf("%d", &h[i]);
-        sort(h, h+n, greater<int>());
-        tow1 = tow2 = 0;
+        sort(h, h+n);
+        tow1 = 0;
+        tow2 = 0;
         int count = 0;
         while((tow1<k) && (count<n))
         {
             tow1+=h[find_nearest(h, n, tow1, k)];
-            cout<<"now tow1 is "<<tow1<<endl;
+            cout<<"added "<<h[find_nearest(h, n, tow1, k)]<<" to tow1, and now it is of height "<<tow1<<endl;
             h[find_nearest(h, n, tow1, k)] = 0;
             count++;
         }
         while((tow2<k) && (count<n))
         {
             tow2+=h[find_nearest(h, n, tow2, k)];
+            cout<<"added "<<h[find_nearest(h, n, tow2, k)]<<" to tow2, and now it is of height "<<tow2<<endl;
             h[find_nearest(h, n, tow2, k)] = 0;
             count++;
         }
-        if(count==n)
-            cout<<(-1)<<endl;
-        else
+        // cout<<"number of elments used = "<<count<<", and tow1 = "<<tow1<<", tow2 = "<<tow2<<endl;
+        if((tow1>=k) && (tow2>=k))
             cout<<count<<endl;
+        else
+            cout<<(-1)<<endl;
     }
     return 0;
 }

@@ -160,5 +160,47 @@ example -   const int size = 1e10;          // NOTE - if array size is being dec
                 cout<<arr[size-1];          // will work
             }    
 
+max(a, b), min(a, b), swap(a, b) already exists in c++
+
+in declaring/passing multi-dimensional arrays, only first dimension can be omitted...
+    example: void display(int m[][30])
+    {
+        /////
+    }
+
+in cp, try to declare arrays as global, instead of passing them in functions...
+
+macros / templates for reusing useful code multiple times and to save time - 
+-----------------------------------------------------------------------------
+
+    #define deb(x) cout<<#x<<" "<<x<<endl;
+    // the above line of code is very useful in debugging the program... use as: deb(c);
+    // and this will print the output as: "c <value of c>"
+
+    template<typename... T>
+    void read(T&... args)
+    {
+        ((cin>>args), ...);
+    }
+    // the code above can take any number of inputs... example - 
+    int a,b,c; 
+    char d;
+    read(a, b, c, d);
+
+    template<typename... T>
+    void write(T... args)
+    {
+        ((cout<<args<<" "), ...);
+    }
+    // similar to the above read(), this function can print any number of any type of parameters
+    write(a, b, c, d, "this is very time saving!");
+
+
+
+
+
+
+
+
 
 

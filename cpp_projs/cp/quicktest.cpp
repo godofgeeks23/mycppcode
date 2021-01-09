@@ -19,15 +19,11 @@ using namespace std;
 
 int main()
 {
-     int t, n;
-     cin>>t;
-     while(t--)
-     {
-        cin>>n;
-        cout<<n*4<<endl;
-     }
-     
-     return 0;
+    int a = 10, b = 90;
+    cout<<(a==b)<<endl;
+    for(int i=0;i<10;cout<<++i<<endl);
+
+    return 0;
 }
 
 

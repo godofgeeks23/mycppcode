@@ -197,7 +197,7 @@ macros / templates for reusing useful code multiple times and to save time -
 
 toupper(), tolower() work as they should do, but sometimes, typecasting to (char) may be required.
 
-
+for(int i=0;i<10;cout<<++i<<endl);      // this is a valid cpp code, and prints 1 to 10
 
 
 

@@ -195,6 +195,8 @@ macros / templates for reusing useful code multiple times and to save time -
     // similar to the above read(), this function can print any number of any type of parameters
     write(a, b, c, d, "this is very time saving!");
 
+toupper(), tolower() work as they should do, but sometimes, typecasting to (char) may be required.
+
 
 
 

@@ -3,22 +3,7 @@
 #include<stdlib.h>
 void main()
 {
-	int a, b, index;
-	scanf("%d", &a);
-	b = index = 0;
-	while(a)
-	{
-		int tmp = a%2;
-		if(tmp==0)
-		{
-			b = b + pow(2, index);
-			index++;
-		}
-		else		// tmp is 1
-			index++;
-		a = a/2;
-	}
-	printf("%d\n", b);
+	
 }
 
 //hackerrank test 1 - problem 1
@@ -200,6 +185,31 @@ void main()
 //         }
 //     } 
 //     return 0;
+// }
+
+// hackerrank test 3 - problem 1
+//------------------------------------------------------------
+// #include<stdio.h>
+// #include<math.h>
+// #include<stdlib.h>
+// void main()
+// {
+// 	int a, b, index;
+// 	scanf("%d", &a);
+// 	b = index = 0;
+// 	while(a)
+// 	{
+// 		int tmp = a%2;
+// 		if(tmp==0)
+// 		{
+// 			b = b + pow(2, index);
+// 			index++;
+// 		}
+// 		else		// tmp is 1
+// 			index++;
+// 		a = a/2;
+// 	}
+// 	printf("%d\n", b);
 // }
 
 // hackerrank test 3 - problem 2

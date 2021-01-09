@@ -20,44 +20,22 @@ int main()
      {
         cin>>n;
         cout<<n*4<<endl;
-     }      
+     }
+     
      return 0;
 }
 
+
+// number of common divisors of a, b - hackerearth
 // #include<bits/stdc++.h>
-
 // using namespace std;
-
-// int main()
-// {
-//      int t, dec, pos, siz;
-//      string s;
-//      cin>>t;
-//      while(t--)
-//      {
-//         cin>>siz>>s;
-//         dec = 0;
-//         for(int i=(s.size()-1);i>=0;i--)
-//         {
-//             if(s[i]=='1')
-//                 dec = dec + pow(2, (s.size()-1)-i);
-//         }
-//         cout<<dec<<endl;
-//      }
-//      return 0;
-// }
-
-// #include<bits/stdc++.h>
-
-// using namespace std;
-
 // int main()
 // {
 //     long int a,b;
 //     scanf("%ld%ld", &a, &b);
 //     long int count = 0;
 //     long int m = min(a, b);
-//     for(long int i=1;i<=(m/2);i++)
+//     for(long int i=1;i<=m;i++)
 //     {
 //         if(a%i==0)
 //             if(b%i==0)
@@ -130,38 +108,6 @@ int main()
 //     return 0;
 // }
 
-// #include<bits/stdc++.h>                      // approach 1 - WA
-// using namespace std;
-// int main()
-// {
-//     int t, n, k, tow1, tow2;
-//     cin>>t;
-//     while(t--)
-//     {
-//         scanf("%d%d", &n, &k);
-//         int h[n];
-//         for(int i=0;i<n;i++)
-//             scanf("%d", &h[i]);
-//         sort(h, h+n, greater<int>());
-//         tow1 = tow2 = 0;
-//         int count = 0;
-//         while((tow1<k) && (count<n))
-//         {
-//             tow1+=h[count];
-//             count++;
-//         }
-//         while((tow2<k) && (count<n))
-//         {
-//             tow2+=h[count];
-//             count++;
-//         }
-//         if(count==n)
-//             cout<<(-1)<<endl;
-//         else
-//             cout<<count<<endl;
-//     }
-//     return 0;
-// }
 
 // #include<bits/stdc++.h>                 // CODECHEF - BYTR20B/RICY
 

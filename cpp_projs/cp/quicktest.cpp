@@ -1,7 +1,5 @@
 // #include<bits/stdc++.h>
-
 // using namespace std;
-
 // int main()
 // {
 //            
@@ -14,17 +12,68 @@
 // #endif
 
 #include<bits/stdc++.h>
-
 using namespace std;
-
 int main()
 {
-    int a = 10, b = 90;
-    cout<<(a==b)<<endl;
-    for(int i=0;i<10;cout<<++i<<endl);
-
+    long int t, n, count;
+    cin>>t;
+    while(t--)
+    {	
+    	cin>>n;
+    	int arr[n];
+    	for(int i=0;i<n;i++)
+    		scanf("%d", &arr[i]);
+    	count = 0;
+    	int pos = 0;
+    	for(int i=0;i<n;i++)
+    }
     return 0;
 }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     long int t, a, b;
+//     cin>>t;
+//     while(t--)
+//     {	
+//     	cin>>a>>b;
+//     	float x = ((2*a)-b)/3.0;
+//     	float y = x-a+b;
+//     	if((y>=0) && (x>=0))
+//     		if((ceilf(x) == x) && (ceilf(y) == y))	
+//     			cout<<"YES"<<endl;
+//     		else
+//     			cout<<"NO"<<endl;
+//     	else
+//     		cout<<"NO"<<endl;
+//     }
+//     return 0;
+// }
+
+// #include<bits/stdc++.h>
+
+// using namespace std;
+
+// int main()
+// {
+//     int t, n, x, count;
+//     cin>>t;
+//     while(t--)
+//     {
+//     	cin>>n>>x;
+//     	count = 0;
+//     	if(x==n)
+//     		count = 0;
+//     	else if((n>x)||(x%n==0))
+//     		count = 1;
+//     	else
+//     		count = 2;
+//     	cout<<count<<endl;
+//     }
+//     return 0;
+// }
 
 
 // number of common divisors of a, b - hackerearth

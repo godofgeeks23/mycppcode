@@ -1,4 +1,4 @@
-cp problems solutions (hackerrank and codechef)
+cp problems solutions (hackerearth, hackerrank and codechef)
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 (codechef) FCTRL2 - 
 /\/\/\/\/\/\/\/\/\/\

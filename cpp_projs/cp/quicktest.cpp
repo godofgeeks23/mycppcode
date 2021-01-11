@@ -11,46 +11,29 @@
 // freopen("output.txt", "w", stdout);
 // #endif
 
+
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
 {
-    long int t, n, count;
+    long int t, a, b;
     cin>>t;
     while(t--)
     {	
-    	cin>>n;
-    	int arr[n];
-    	for(int i=0;i<n;i++)
-    		scanf("%d", &arr[i]);
-    	count = 0;
-    	int pos = 0;
-    	for(int i=0;i<n;i++)
+    	cin>>a>>b;
+    	float x = ((2*a)-b)/3.0;
+    	float y = x-a+b;
+    	if((y>=0) && (x>=0))
+    		if((ceilf(x) == x) && (ceilf(y) == y))	
+    			cout<<"YES"<<endl;
+    		else
+    			cout<<"NO"<<endl;
+    	else
+    		cout<<"NO"<<endl;
     }
     return 0;
 }
-
-// #include<bits/stdc++.h>
-// using namespace std;
-// int main()
-// {
-//     long int t, a, b;
-//     cin>>t;
-//     while(t--)
-//     {	
-//     	cin>>a>>b;
-//     	float x = ((2*a)-b)/3.0;
-//     	float y = x-a+b;
-//     	if((y>=0) && (x>=0))
-//     		if((ceilf(x) == x) && (ceilf(y) == y))	
-//     			cout<<"YES"<<endl;
-//     		else
-//     			cout<<"NO"<<endl;
-//     	else
-//     		cout<<"NO"<<endl;
-//     }
-//     return 0;
-// }
 
 // #include<bits/stdc++.h>
 

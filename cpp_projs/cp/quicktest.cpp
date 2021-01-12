@@ -6,39 +6,38 @@
 //      return 0;
 // }
 
-// #ifndef ONLINE_JUDGE
-// freopen("input.txt", "r", stdin);
-// freopen("output.txt", "w", stdout);
-// #endif
-
-
-
 #include<bits/stdc++.h>
 using namespace std;
 int main()
 {
-    long int t, a, b;
-    cin>>t;
-    while(t--)
-    {	
-    	cin>>a>>b;
-    	float x = ((2*a)-b)/3.0;
-    	float y = x-a+b;
-    	if((y>=0) && (x>=0))
-    		if((ceilf(x) == x) && (ceilf(y) == y))	
-    			cout<<"YES"<<endl;
-    		else
-    			cout<<"NO"<<endl;
-    	else
-    		cout<<"NO"<<endl;
-    }
+    
     return 0;
 }
 
 // #include<bits/stdc++.h>
-
 // using namespace std;
+// int main()
+// {
+//     long int t, a, b;
+//     cin>>t;
+//     while(t--)
+//     {	
+//     	cin>>a>>b;
+//     	float x = ((2*a)-b)/3.0;
+//     	float y = x-a+b;
+//     	if((y>=0) && (x>=0))
+//     		if((ceilf(x) == x) && (ceilf(y) == y))	
+//     			cout<<"YES"<<endl;
+//     		else
+//     			cout<<"NO"<<endl;
+//     	else
+//     		cout<<"NO"<<endl;
+//     }
+//     return 0;
+// }
 
+// #include<bits/stdc++.h>
+// using namespace std;
 // int main()
 // {
 //     int t, n, x, count;
@@ -143,7 +142,6 @@ int main()
 
 
 // #include<bits/stdc++.h>                 // CODECHEF - BYTR20B/RICY
-
 // using namespace std;
 // int rangemin(int* arr, int a, int b)
 // {
@@ -207,9 +205,7 @@ int main()
 // }
 
 // #include<bits/stdc++.h>
-
 // using namespace std;
-
 // int main()
 // {
 //     int t,n,k;
@@ -224,9 +220,7 @@ int main()
 // }
 
 // #include<bits/stdc++.h>
-
 // using namespace std;
-
 // int main()
 // {
 //     int t, a, b, turn, n;

@@ -10,9 +10,34 @@
 using namespace std;
 int main()
 {
-    
-    return 0;
+     int t, d0, d1, sum;
+     long long int k;
+     cin>>t;
+     while(t--)
+     {
+        cin>>k>>d0>>d1;
+        int n[k];
+        n[0] = d0;
+        n[1] = d1;
+        sum = n[0]+n[1];
+        for(long long int i=2;i<k;i++)
+        {
+            int temp = 0;
+            for(long long int j=0;j<i;j++)
+            {
+                temp+=n[j];
+            }
+            n[i] = temp%10;
+            sum+=n[i];
+        }
+        if(sum%3==0)
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+     }     
+     return 0;
 }
+
 
 // #include<bits/stdc++.h>
 // using namespace std;

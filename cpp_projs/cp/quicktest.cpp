@@ -10,30 +10,28 @@
 using namespace std;
 int main()
 {
-     int t, d0, d1, sum;
-     long long int k;
+     int t, d0, d1;
+     long int k, sum;
      cin>>t;
      while(t--)
      {
         cin>>k>>d0>>d1;
-        int n[k];
-        n[0] = d0;
-        n[1] = d1;
-        sum = n[0]+n[1];
-        for(long long int i=2;i<k;i++)
+        int d2 = d0+d1;
+        int current = d2, prev = d2;
+        sum = d0+d1+d2;
+        for(long int i=3;i<=(k-1);i++)
         {
-            int temp = 0;
-            for(long long int j=0;j<i;j++)
-            {
-                temp+=n[j];
-            }
-            n[i] = temp%10;
-            sum+=n[i];
+            current = (2*prev)%10;
+            sum+=current;
+            prev = current;
+            // if((sum%3)==0)
+            //     sum = 0;
         }
-        if(sum%3==0)
-            cout<<"YES"<<endl;
-        else
+        // cout<<"sum = "<<sum<<endl;
+        if(sum%3)
             cout<<"NO"<<endl;
+        else
+            cout<<"YES"<<endl;
      }     
      return 0;
 }

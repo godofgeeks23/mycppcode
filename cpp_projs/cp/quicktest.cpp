@@ -10,31 +10,57 @@
 using namespace std;
 int main()
 {
-     int t, d0, d1;
-     long int k, sum;
-     cin>>t;
-     while(t--)
-     {
-        cin>>k>>d0>>d1;
-        int d2 = d0+d1;
-        int current = d2, prev = d2;
-        sum = d0+d1+d2;
-        for(long int i=3;i<=(k-1);i++)
-        {
-            current = (2*prev)%10;
-            sum+=current;
-            prev = current;
-            // if((sum%3)==0)
-            //     sum = 0;
-        }
-        // cout<<"sum = "<<sum<<endl;
-        if(sum%3)
-            cout<<"NO"<<endl;
-        else
-            cout<<"YES"<<endl;
-     }     
+    int n, k, h, count;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+        cin>>arr[n];
+    cin>>k;
+    while(k--)
+    {
+        cin>>h;
+        count = 0;
+        for(int i=0;i<n;i++)
+            if(arr[i]>h)
+                count++;
+        cout<<count<<endl;
+    }
      return 0;
-}
+} 
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//      int t, d0, d1, d2, d3, d5, d6;
+//      long int k, sum;
+//      cin>>t;
+//      while(t--)
+//      {
+//         cin>>k>>d0>>d1;
+//         d2 = (d0+d1)%10;
+//         d3 = (2*d2)%10;
+//         d4 = (2*d3)%10;
+//         d5 = (2*d4)%10;
+//         d6 = (2*d5)%10;
+//         int current = d6, prev = d2;
+//         sum = d0+d1+d2;
+//         for(long int i=3;i<=(k-1);i++)
+//         {
+//             current = (2*prev)%10;
+//             sum+=current;
+//             prev = current;
+//             // if((sum%3)==0)
+//             //     sum = 0;
+//         }
+//         // cout<<"sum = "<<sum<<endl;
+//         if(sum%3)
+//             cout<<"NO"<<endl;
+//         else
+//             cout<<"YES"<<endl;
+//      }     
+//      return 0;
+// }
 
 
 // #include<bits/stdc++.h>

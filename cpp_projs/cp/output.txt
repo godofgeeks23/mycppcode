@@ -1,4 +1,1 @@
-sum = 26
-NO
-sum = 72
-YES
+1

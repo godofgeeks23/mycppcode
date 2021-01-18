@@ -25,9 +25,6 @@ int main()
                 count++;
         cout<<count<<endl;
     }
-
-    cout<<pow(-1, 2/3);
-
     return 0;
 } 
 

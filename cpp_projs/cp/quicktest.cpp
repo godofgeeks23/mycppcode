@@ -10,21 +10,7 @@
 using namespace std;
 int main()
 {
-    int n, k, h, count;
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++)
-        cin>>arr[n];
-    cin>>k;
-    while(k--)
-    {
-        cin>>h;
-        count = 0;
-        for(int i=0;i<n;i++)
-            if(arr[i]>h)
-                count++;
-        cout<<count<<endl;
-    }
+               
     return 0;
 } 
 

@@ -4,7 +4,7 @@
 // {
 //            
 //      return 0;
-// }
+// } 
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -25,7 +25,10 @@ int main()
                 count++;
         cout<<count<<endl;
     }
-     return 0;
+
+    cout<<pow(-1, 2/3);
+
+    return 0;
 } 
 
 // #include<bits/stdc++.h>

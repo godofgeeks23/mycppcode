@@ -1,4 +1,4 @@
-Competitive Programmming Basics
+Competitive Programmming Basics - 
 -----------------------------------
 
 Input and Output using 'scanf' and 'printf' - 

@@ -10,7 +10,25 @@
 using namespace std;
 int main()
 {
-               
+    int n, q, l, r, ans, odds;
+    cin>>n>>q;
+    int arr[n];
+    for(int i=0;i<n;i++)
+        cin>>arr[i];
+    while(q--)
+    {
+        cin>>l>>r;
+        odds = 0;
+        for(int i=(l-1);i<r;i++)
+            if(!(arr[i]%2))
+                odds++;
+        cout<<"odds"<<odds<<endl;
+        if(odds>=2)
+            ans = ((((r-l)+1)*(r-l))/2)-((odds*(odds-1))/2);
+        else
+            ans = ((((r-l)+1)*(r-l))/2);
+        cout<<ans<<endl;
+    }
     return 0;
 } 
 

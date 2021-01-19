@@ -1,4 +1,4 @@
-Competitive Programmming Basics - 
+Competitive Programmming Basics 
 -----------------------------------
 
 Input and Output using 'scanf' and 'printf' - 
@@ -208,7 +208,11 @@ In any editor, to do live input(take input from a file and output to a file), in
 
 and write your code as usual below these lines.
 
-
+MLE - Memory Limit Exceeded
+Runtime Error - access illegal memory, segmentation fault, division by zero
+TLE - Time Limit Exceded... (generally provided is Execution Time) 
+    <bits/stdc++> increases compilation time, not execution time
+*** If TLE reached before full memory stack, then TLE is displayed. If stack gets full before TLE, then runtime error(SEGSV) is displayed. THIS HAPPENS GENERALLY IN RECURSIVE FUNCTIONS.
 
 
 

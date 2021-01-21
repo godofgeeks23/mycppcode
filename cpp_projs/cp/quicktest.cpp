@@ -10,27 +10,87 @@
 using namespace std;
 int main()
 {
-    int n, q, l, r, ans, odds;
-    cin>>n>>q;
+    int n;
+    cin>>n;
     int arr[n];
+    long long int sum_all = 0;
     for(int i=0;i<n;i++)
+    {    
         cin>>arr[i];
-    while(q--)
-    {
-        cin>>l>>r;
-        odds = 0;
-        for(int i=(l-1);i<r;i++)
-            if(!(arr[i]%2))
-                odds++;
-        cout<<"odds"<<odds<<endl;
-        if(odds>=2)
-            ans = ((((r-l)+1)*(r-l))/2)-((odds*(odds-1))/2);
-        else
-            ans = ((((r-l)+1)*(r-l))/2);
-        cout<<ans<<endl;
+        sum_all+=arr[i];
     }
+    long long int avg = sum_all/n;
+    long long int ans = 0;
+    for(int i=0;i<n;i++)
+    {    
+        ans = ans+abs(avg-arr[i]);
+    }
+    cout<<ans<<endl;
     return 0;
 } 
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     int t, x;
+//     cin>>t;
+//     while(t--)
+//     {
+//         cin>>x;
+//         if(x<=6)
+//             cout<<(x+6)<<endl;
+//         else
+//             cout<<(x-6)<<endl;
+//     }      
+//     return 0;
+// } 
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int dist_subs(string str) 
+// { 
+//     set<string> result ; 
+//     for (int i = 0; i <= str.length(); i++) 
+//         for (int j = 1; j <= str.length()-i; j++) 
+//             result.insert(str.substr(i, j)); 
+//     return result.size(); 
+// } 
+// int main()
+// {
+//     string s1, s2;
+//     cin>>s1>>s2;
+//     if(dist_subs(s1)==dist_subs(s2))
+//         cout<<"Companion"<<endl;
+//     else
+//         cout<<"Non Companion"<<endl;
+//     return 0;
+// } 
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     int n, q, l, r, ans, odds;
+//     cin>>n>>q;
+//     int arr[n];
+//     for(int i=0;i<n;i++)
+//         cin>>arr[i];
+//     while(q--)
+//     {
+//         cin>>l>>r;
+//         odds = 0;
+//         for(int i=(l-1);i<r;i++)
+//                 if(arr[i]%2==1)
+//                     odds++;
+//         if(odds>=2)
+//             ans = ((((r-l)+1)*(r-l))/2)-((odds*(odds-1))/2);
+//         else
+//             ans = ((((r-l)+1)*(r-l))/2);
+//         cout<<ans<<endl;
+//     }
+//     return 0;
+// } 
 
 // #include<bits/stdc++.h>
 // using namespace std;

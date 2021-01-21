@@ -3,19 +3,19 @@
 #include<stdlib.h>
 void main() 
 {
-    int arr[9], i, j, freq;
-    for(i=0;i<9;i++)
+    int arr[10];
+    int n, sum, a, b;
+    scanf("%d", &n);
+    for(int i=0;i<n;i++)
         scanf("%d", &arr[i]);
-    for(i=0;i<9;i++)
-    {
-        freq = 1;
-        for(j=i+1;j<9;j++)
-            if(arr[j]!=-1 && arr[i]==arr[j])
+    sum = abs(arr[0]+arr[1]);
+    for(int i=0;i<n;i++)
+        for(int j=i+1;j<n;j++)
+            if(abs(arr[i]+arr[j])<sum)
             {
-                freq++;
-                arr[j] = -1;
+                sum = abs(arr[i]+arr[j]);
+                a = arr[i];
+                b = arr[j];
             }
-        if(arr[i]!=-1)
-            printf("%d %d\n", arr[i], freq);
-    }
+    printf("%d %d", a, b);
 }

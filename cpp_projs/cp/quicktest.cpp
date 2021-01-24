@@ -10,22 +10,7 @@
 using namespace std;
 int main()
 {
-    int n;
-    cin>>n;
-    int arr[n];
-    long long int sum_all = 0;
-    for(int i=0;i<n;i++)
-    {    
-        cin>>arr[i];
-        sum_all+=arr[i];
-    }
-    long long int avg = sum_all/n;
-    long long int ans = 0;
-    for(int i=0;i<n;i++)
-    {    
-        ans = ans+abs(avg-arr[i]);
-    }
-    cout<<ans<<endl;
+           
     return 0;
 } 
 

@@ -214,6 +214,8 @@ TLE - Time Limit Exceded... (generally provided is Execution Time)
     <bits/stdc++> increases compilation time, not execution time
 *** If TLE reached before full memory stack, then TLE is displayed. If stack gets full before TLE, then runtime error(SEGSV) is displayed. THIS HAPPENS GENERALLY IN RECURSIVE FUNCTIONS.
 
+Online compiler iterations speed: 10^7 - 10^8 iterations per second
+
 
 
 

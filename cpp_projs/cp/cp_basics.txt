@@ -216,6 +216,19 @@ TLE - Time Limit Exceded... (generally provided is Execution Time)
 
 Online compiler iterations speed: 10^7 - 10^8 iterations per second
 
+*, /, % operators have time complexity of o(n^2)
+
+Global arrays are always 0 initialized.
+
+Pre-Computation Techniques and Hashing, Prefix Sum - 
+------------------------------------------------------
+    Dont iterate for each test case. Store result beforehand in array / vector.
+    Then for each query, display the respective element of the result array.
+
+    
+
+
+
 CPP Template
 -------------
 #define gc getchar_unlocked

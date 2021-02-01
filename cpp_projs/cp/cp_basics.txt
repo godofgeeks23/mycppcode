@@ -222,20 +222,54 @@ Global arrays are always 0 initialized.
 
 Pre-Computation Techniques and Hashing, Prefix Sum - 
 ------------------------------------------------------
-    Dont iterate for each test case. Store result beforehand in array / vector.
+    Hashing - Dont iterate for each test case. Store result beforehand in array / vector.
     Then for each query, display the respective element of the result array.
+    Example - 
+        #include<bits/stdc++.h>
+        using namespace std;
+        int main()
+        {
+            // this program is to demonstrate how to use hashing in code to reduce time complexity of the program
+            // Question - given a number between 1 and 20, and variable number of queries, print the factorial of the 
+            // number input in each query.
+            long long int hash[21];       // hash array (of the same size as the original array), whose correspoding elemen
+            int t;
 
+            // now we will precompute the factorials and store the results in the hash array.
+            // now our hash array has fact(0) at [0], fact(1) at [1], fact(2) at [2], and so on for all possible inputs.
+            hash[0] = 1;
+            for(int i=1;i<=20;i++)
+                hash[i] = hash[i-1]*i*1ll;
+
+            // as we did the computations before even taking input, so now we can display the results in the time
+            // complexity of O(n), instead of O(n^2), that we would have used in a normal code.
+            cin>>t;
+            while(t--)
+            {
+                int n;
+                cin>>n;
+                cout<<hash[n]<<endl;
+            }
+            return 0;
+        } 
+
+    Prefix sum - pre compuation technique, like hash array, whose ith element is the sum of first i elements of the orginal array.
+    Then sum of elements from [l] to [r] = prefix[r] - prefix[l-1]
+    ** NOTE - in these problems, using 1 based array makes them easy.
+    It can be implemented in 2D as well as 1D array.
+
+    
     
 
 
 
 CPP Template
 -------------
-#define gc getchar_unlocked
 #define fo(i,n) for(i=0;i<n;i++)
 #define foo(i,k,n) for(i=k;k<n?i<n:i>n;k<n?i+=1:i-=1)
 #define deb(x) cout << #x << "=" << x << endl
 #define deb2(x, y) cout << #x << "=" << x << "," << #y << "=" << y << endl
+#define gc getchar_unlocked
 #define pb push_back
 #define mp make_pair
 #define nl "\n"

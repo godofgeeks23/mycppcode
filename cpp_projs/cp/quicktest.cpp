@@ -10,6 +10,9 @@
 using namespace std;
 int main()
 {
+    // this program is to demonstrate how to use hashing in code to reduce time complexity of the program
+    // Question - given a number between 1 and 20, and variable number of queries, print the factorial of the number input in each query
+    cin>>q;
     
     return 0;
 } 

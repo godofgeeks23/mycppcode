@@ -70,7 +70,7 @@ to convert integer to string, do: string s = to_string(<int>)
 in above function, there is a local function named same, so we specified by std:: ....
 
 built in function for gcd in c++ - 
-     int result = __gcd(6, 20);
+     int result = __gcd(6, 20);     // computes gcd in log(n) time complexity 
 
 STL Sort arrays:
     int a[50];
@@ -258,7 +258,20 @@ Pre-Computation Techniques and Hashing, Prefix Sum -
     ** NOTE - in these problems, using 1 based array makes them easy.
     It can be implemented in 2D as well as 1D array.
 
-    
+C++ Measure exact time taken by a program - 
+        #include<bits/stdc++.h>
+        using namespace std;
+        int main()
+        {
+            clock_t start, end;
+            start = clock();
+            
+            // code goes here!
+
+            end = clock();  
+            cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<" s"<<endl; 
+            return 0;
+        }     
     
 
 

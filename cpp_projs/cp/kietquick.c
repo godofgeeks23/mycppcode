@@ -1,29 +1,78 @@
+// #include<stdio.h>
+// #include<math.h>
+// #include<stdlib.h>
+// #include<string.h>
+// void main() 
+// {
+//     
+// }
+
+
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
 #include<string.h>
+int mygcd(int a, int b)
+{
+    if (b == 0)
+        return a;
+    return mygcd(b, a % b); 
+}
+int pow_n_mod(int b, int n, int m)
+{
+    int base = b%m;
+    for(int i=2;i<=n;i++)
+        base = (base*b)%m;
+    return base;
+}
 void main() 
 {
-    long int x, y, fibs[55];
-    int t, count;
-    fibs[0] = 1;
-    fibs[1] = 2;
+    int t, n, chk;
     scanf("%d", &t);
-    for(int i=2;i<55;i++)
-    {    
-        fibs[i] = fibs[i-1]+fibs[i-2];
-        printf("%lld\n", fibs[i]);
-    }
     while(t--)
     {
-        scanf("%lld %lld", &x, &y);
-        count = 0;
-        for(int i=0;i<55;i++)
-            if(fibs[i]>x && fibs[i]<y)
-                count++;
-        printf("%d\n", count);
+        scanf("%d", &n);
+        chk = 1;
+        for(int b=1;b<=n;b++)
+            if(mygcd(b, n)==1)
+                if(pow_n_mod(b, n-1, n)!=1)
+                {
+                    chk = 0;
+                    break;
+                }
+        if(chk==1)
+            printf("true\n");
+        else
+            printf("false\n");
     }
 }
+
+// #include<stdio.h>
+// #include<math.h>
+// #include<stdlib.h>
+// #include<string.h>
+// void main() 
+// {
+//     long int x, y, fibs[55];
+//     int t, count;
+//     fibs[0] = 1;
+//     fibs[1] = 2;
+//     scanf("%d", &t);
+//     for(int i=2;i<55;i++)
+//     {    
+//         fibs[i] = fibs[i-1]+fibs[i-2];
+//         printf("%lld\n", fibs[i]);
+//     }
+//     while(t--)
+//     {
+//         scanf("%lld %lld", &x, &y);
+//         count = 0;
+//         for(int i=0;i<55;i++)
+//             if(fibs[i]>x && fibs[i]<y)
+//                 count++;
+//         printf("%d\n", count);
+//     }
+// }
 
 // #include<stdio.h>
 // #include<math.h>

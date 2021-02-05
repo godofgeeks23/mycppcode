@@ -1,0 +1,28 @@
+Below are some ready made snippets that are very helpful to get work done in a short time period in CP
+
+// to find the gcd of two numbers
+int mygcd(int a, int b) 
+{ 
+    if (a < b) 
+        return mygcd(b, a); 
+    if (a % b == 0) 
+        return b; 
+    return mygcd(b, a % b); 
+} 
+
+// to find ((x^y) modulo p)
+int pow_mod(int x, int y, int p) 
+{ 
+    int res = 1;
+    x = x % p;
+    if (x == 0) return 0;
+    while (y > 0) 
+    { 
+        if (y & 1) 
+            res = (res*x) % p; 
+        y = y>>1; // y = y/2 
+        x = (x*x) % p; 
+    } 
+    return res; 
+} 
+

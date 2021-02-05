@@ -8,26 +8,90 @@
 //     // code goes here!
 
 //     end = clock();  
-//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<" s"<<endl; 
+//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
 //     return 0;
 // }
 
 #include<bits/stdc++.h>
 using namespace std;
+int mygcd(int a, int b) 
+{ 
+    if (a < b) 
+        return mygcd(b, a); 
+    if (a % b == 0) 
+        return b; 
+    return mygcd(b, a % b); 
+} 
+int pow_n_mod(int b, int n, int m)
+{
+    int base = b%m;
+    for(int i=2;i<=n;i++)
+        base = (base*b)%m;
+    return base;
+}
+/* Iterative Function to calculate (x^y)%p in O(log y) */
+int power(int x, int y, int p) 
+{ 
+    int res = 1;     // Initialize result 
+    x = x % p; // Update x if it is more than or 
+                // equal to p
+    if (x == 0) return 0; // In case x is divisible by p;
+    while (y > 0) 
+    { 
+        // If y is odd, multiply x with result 
+        if (y & 1) 
+            res = (res*x) % p; 
+        // y must be even now 
+        y = y>>1; // y = y/2 
+        x = (x*x) % p; 
+    } 
+    return res; 
+} 
 int main()
 {
     clock_t start, end;
     start = clock();
-    // this program is to demonstrate how to use hashing in code to reduce time complexity of the program
-    // Question - given a number between 1 and 20, and variable number of queries, print the factorial of the number input in each query
-    // cin>>q;
-        // Calculates the time taken 
-    // by the algorithm to execute 
+            
+    int t, n, chk;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d", &n);
+        chk = 1;
+        for(int b=1;b<=n;b++)
+            if(mygcd(b, n)==1)
+                if(power(b, n-1, n)!=1)
+                {
+                    chk = 0;
+                    break;
+                }
+        if(chk==1)
+            printf("true\n");
+        else
+            printf("false\n");
+    }
 
     end = clock();  
-    cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<" s"<<endl; 
+    cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
     return 0;
-} 
+}
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     clock_t start, end;
+//     start = clock();
+//     // this program is to demonstrate how to use hashing in code to reduce time complexity of the program
+//     // Question - given a number between 1 and 20, and variable number of queries, print the factorial of the number input in each query
+//     // cin>>q;
+//         // Calculates the time taken 
+//     // by the algorithm to execute 
+
+//     end = clock();  
+//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<" s"<<endl; 
+//     return 0;
+// } 
 
 // #include<bits/stdc++.h>
 // using namespace std;

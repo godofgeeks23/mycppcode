@@ -2552,31 +2552,188 @@ void main()
     }
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 6 - Sum of first and last digitis of a number
 /\/\/\/\/\/\/\/\/\/\
-
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main() 
+{
+    int t, sum;
+    char num[20];
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%s", num);
+        sum = 0;
+        int size = strlen(num);
+        sum = (num[0]-'0');
+        sum+=(num[size-1]-'0');
+        printf("%d\n", sum);
+    }
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 6 - Carmichael Numbers
 /\/\/\/\/\/\/\/\/\/\
-
+// carmichael numbers solution
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+int mygcd(int a, int b) 
+{ 
+    if (a < b) 
+        return mygcd(b, a); 
+    if (a % b == 0) 
+        return b; 
+    return mygcd(b, a % b); 
+} 
+int power(int x, int y, int p) 
+{ 
+    int res = 1;
+    x = x % p;
+    if (x == 0) return 0;
+    while (y > 0) 
+    { 
+        if (y & 1) 
+            res = (res*x) % p; 
+        y = y>>1; // y = y/2 
+        x = (x*x) % p; 
+    } 
+    return res; 
+} 
+void main() 
+{
+    int t, n, chk;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d", &n);
+        chk = 1;
+        for(int b=1;b<=n;b++)
+            if(mygcd(b, n)==1)
+                if(power(b, n-1, n)!=1)
+                {
+                    chk = 0;
+                    break;
+                }
+        if(chk==1)
+            printf("true\n");
+        else
+            printf("false\n");
+    }
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 6 - Sum of odd digits
 /\/\/\/\/\/\/\/\/\/\
-
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main() 
+{
+    int t, sum;
+    char num[20];
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%s", num);
+        sum = 0;
+        int size = strlen(num);
+        // printf("%d\n", (num[0]-'0'));
+        for(int i=0;i<size;i=i+2)
+            sum+=(num[i]-'0');
+        printf("%d\n", sum);
+    }
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 6 - Sum of modulo K of first N natural nos
 /\/\/\/\/\/\/\/\/\/\
-
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main() 
+{
+    int k, n, t, sum;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d%d", &k, &n);
+        sum = 0;
+        for(int i=1;i<=n;i++)
+        {
+             sum+=i%k;   
+        }
+        printf("%d\n", sum);
+    }
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 6 - Calculate ncr
 /\/\/\/\/\/\/\/\/\/\
-
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int fact(int);
+int fact(int n)
+{
+    int i,f=1;
+    for(i=1;i<=n;i++)
+        f=f*i;
+    return f;
+}
+int main() 
+{    
+    int t, n,r;
+    long long int ncr;
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%d %d",&n, &r);
+        ncr=fact(n)*1ll/(fact(r)*fact(n-r));
+        printf("%lld\n", ncr);   
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 6 - Number of Divisors
 /\/\/\/\/\/\/\/\/\/\
-
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main() 
+{
+    int t, n, count;
+    scanf("%d", &t);
+    if(!t)
+        printf("Enter atleast one attempt\n");
+    else if(t>=100000)
+        printf("Too many attempts\n");
+    else
+    {
+        while(t--)
+        {
+            scanf("%d", &n);
+            if(n<100000)
+            {
+                count = 1;
+                for(int i=2;i<=(n/2);i++)
+                    if(!(n%i))
+                        count++;
+                if(n!=1)
+                    count++;
+                printf("%d\n", count);
+            }
+            else
+                printf("number is too large\n");
+        }
+    }
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 6 - Count the fibs
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

@@ -2737,29 +2737,176 @@ HackerRank Week 6 - Count the fibs
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 7 - Count The Sandwiches
 /\/\/\/\/\/\/\/\/\/\
-
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main() 
+{
+    int t, n, k, sum, crusts;
+    scanf("%d", &t);
+    while(t--)
+    {
+        sum = 0;
+        scanf("%d %d", &n, &k);
+        sum = crusts = n;
+        while(crusts>=k)
+        {
+            crusts = crusts-k;
+            sum++;
+            crusts++;
+        }
+        printf("%d\n", sum);
+    }
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 7 - Sqaure Root of a number by Repeated Substractions
 /\/\/\/\/\/\/\/\/\/\
-
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main() 
+{
+    int t, n, count, odd;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d", &n);
+        count = 0;
+        odd = 1;
+        while(n>0)
+        {
+            count++;
+            odd+=2;
+            n = n-odd;
+        }
+        printf("%d\n", count);
+    }
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 7 - Multiplication of a number with its compliment
 /\/\/\/\/\/\/\/\/\/\
-
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main() 
+{
+    int t, n, prod;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d", &n);
+        int comp = ~n;
+        prod = n*comp;
+        printf("%d\n", prod);
+    }
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 7 - Multiplication of a number with its r shift number
 /\/\/\/\/\/\/\/\/\/\
-
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main() 
+{
+    int t, n, r, prod;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d %d", &n, &r);
+        int shift = n>>r;
+        prod = n*shift;
+        printf("%d\n", prod);
+    }
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 7 - GCD in array
 /\/\/\/\/\/\/\/\/\/\
-
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+// to find the gcd of two numbers
+int mygcd(int, int);
+int mygcd(int a, int b) 
+{ 
+    if (a < b) 
+        return mygcd(b, a); 
+    if (a % b == 0) 
+        return b; 
+    return mygcd(b, a % b); 
+}
+void main() 
+{
+    int max, sec_max, n, ans;
+    int arr[100000];
+    scanf("%d", &n);
+    for(int i=0;i<n;i++)
+        scanf("%d", &arr[i]);
+    max = sec_max = arr[0];
+    for(int i=0;i<n;i++)
+        if(arr[i]>max)
+        {
+            sec_max = max;
+            max = arr[i];
+        }
+    ans = mygcd(max, sec_max);
+    printf("%d\n", ans);
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 7 - Multiplication of a First max and Second Max
 /\/\/\/\/\/\/\/\/\/\
-
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+int bin_to_dec(int bin)
+{
+    int n, pos, dig;
+    n = pos = 0;
+    while(bin)
+    {
+        dig = bin%10;
+        n+=dig*pow(2, pos);
+        pos++;
+        bin/=10; 
+    }
+    return n;
+}
+int dec_to_bin(int n) {
+    int bin = 0;
+    int rem, i = 1, step = 1;
+    while (n != 0) {
+        rem = n % 2;
+        n /= 2;
+        bin += rem * i;
+        i *= 10;
+    }
+    return bin;
+}
+void main() 
+{
+    int t, n, max, sec_max;
+    scanf("%d", &t);
+    max = sec_max = 0;
+    while(t--)
+    {
+        scanf("%d", &n);
+        n = bin_to_dec(n);
+        if(n>max)
+        {
+            sec_max = max;
+            max = n;
+        }
+    }
+    int prod = max*sec_max;
+    printf("%d\n", dec_to_bin(prod));
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

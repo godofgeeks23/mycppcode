@@ -1,4 +1,4 @@
-true
-false
-false
-false
+19
+149
+1333
+12499

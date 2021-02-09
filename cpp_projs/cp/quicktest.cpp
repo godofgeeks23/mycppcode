@@ -14,67 +14,125 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-int mygcd(int a, int b) 
-{ 
-    if (a < b) 
-        return mygcd(b, a); 
-    if (a % b == 0) 
-        return b; 
-    return mygcd(b, a % b); 
-} 
-int pow_n_mod(int b, int n, int m)
-{
-    int base = b%m;
-    for(int i=2;i<=n;i++)
-        base = (base*b)%m;
-    return base;
-}
-/* Iterative Function to calculate (x^y)%p in O(log y) */
-int power(int x, int y, int p) 
-{ 
-    int res = 1;     // Initialize result 
-    x = x % p; // Update x if it is more than or 
-                // equal to p
-    if (x == 0) return 0; // In case x is divisible by p;
-    while (y > 0) 
-    { 
-        // If y is odd, multiply x with result 
-        if (y & 1) 
-            res = (res*x) % p; 
-        // y must be even now 
-        y = y>>1; // y = y/2 
-        x = (x*x) % p; 
-    } 
-    return res; 
-} 
+#define deb(x) cout << #x << "=" << x << endl
 int main()
 {
     clock_t start, end;
     start = clock();
             
-    int t, n, chk;
-    scanf("%d", &t);
+    int t, d0, d1, d2, d3, d4, d5, d6, sum;
+    long int k;
+    cin>>t;
     while(t--)
     {
-        scanf("%d", &n);
-        chk = 1;
-        for(int b=1;b<=n;b++)
-            if(mygcd(b, n)==1)
-                if(power(b, n-1, n)!=1)
-                {
-                    chk = 0;
-                    break;
-                }
-        if(chk==1)
-            printf("true\n");
+        sum = 0;
+        cin>>k>>d0>>d1;
+        sum = (d0+d1)%3;
+        d2 = (d0+d1)%10;
+            d3 = (2*d2)%10;
+            d4 = (2*d3)%10;
+            d5 = (2*d4)%10;
+            d6 = (2*d5)%10;
+        if(d2%2==0)
+        {
+            int rem = (k-2)%4;
+            int temp1 = (d2+d3+d4+d5)%3;
+            long int temp2 = ((k-rem)/4)%3;
+            sum = sum + (temp1 * temp2)%3;
+            if(rem==1)
+                sum = (sum + d2)%3;
+            if(rem==2)
+                sum = (sum + d2 + d3)%3;
+            if(rem==3)
+                sum = (sum + d2 + d3 + d4)%3;
+        }
         else
-            printf("false\n");
+        {
+            int rem = (k-3)%4;
+            int temp1 = (d3+d4+d5+d6)%3;
+            int temp2 = ((k-rem)/4)%3;
+            sum = sum + d2 + (temp1 * temp2)%3;
+            if(rem==1)
+                sum = (sum + d3)%3;
+            if(rem==2)
+                sum = (sum + d3 + d4)%3;
+            if(rem==3)
+                sum = (sum + d3 + d4 + d5)%3;
+        }
+        if(!sum)
+            cout<<"YES\n";
+        else
+            cout<<"NO\n";
     }
 
     end = clock();  
     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
     return 0;
 }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int mygcd(int a, int b) 
+// { 
+//     if (a < b) 
+//         return mygcd(b, a); 
+//     if (a % b == 0) 
+//         return b; 
+//     return mygcd(b, a % b); 
+// } 
+// int pow_n_mod(int b, int n, int m)
+// {
+//     int base = b%m;
+//     for(int i=2;i<=n;i++)
+//         base = (base*b)%m;
+//     return base;
+// }
+// /* Iterative Function to calculate (x^y)%p in O(log y) */
+// int power(int x, int y, int p) 
+// { 
+//     int res = 1;     // Initialize result 
+//     x = x % p; // Update x if it is more than or 
+//                 // equal to p
+//     if (x == 0) return 0; // In case x is divisible by p;
+//     while (y > 0) 
+//     { 
+//         // If y is odd, multiply x with result 
+//         if (y & 1) 
+//             res = (res*x) % p; 
+//         // y must be even now 
+//         y = y>>1; // y = y/2 
+//         x = (x*x) % p; 
+//     } 
+//     return res; 
+// } 
+// int main()
+// {
+//     clock_t start, end;
+//     start = clock();
+            
+//     int t, n, chk;
+//     scanf("%d", &t);
+//     while(t--)
+//     {
+//         scanf("%d", &n);
+//         chk = 1;
+//         for(int b=1;b<=n;b++)
+//             if(mygcd(b, n)==1)
+//                 if(power(b, n-1, n)!=1)
+//                 {
+//                     chk = 0;
+//                     break;
+//                 }
+//         if(chk==1)
+//             printf("true\n");
+//         else
+//             printf("false\n");
+//     }
+
+//     end = clock();  
+//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
+//     return 0;
+// }
 
 // #include<bits/stdc++.h>
 // using namespace std;

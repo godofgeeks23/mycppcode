@@ -19,7 +19,7 @@ int main()
 {
     clock_t start, end;
     start = clock();
-            
+    
     int t, d0, d1, d2, d3, d4, d5, d6, sum;
     long int k;
     cin>>t;

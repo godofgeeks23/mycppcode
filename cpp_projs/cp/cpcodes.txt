@@ -2735,28 +2735,33 @@ void main()
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 HackerRank Week 6 - Count the fibs
 /\/\/\/\/\/\/\/\/\/\
-#include<stdio.h>
-#include<math.h>
-#include<stdlib.h>
-#include<string.h>
-void main() 
-{
-    long long int x, y, fibs[55];
-    int t, count;
-    fibs[0] = 1;
-    fibs[1] = 2;
-    scanf("%d", &t);
-    for(int i=2;i<55;i++) 
-        fibs[i] = fibs[i-1]+fibs[i-2];
-    while(t--)
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main() {
+    int t,count;
+    long int a,b,f1,f2,f3;
+    scanf("%d",&t);
+    while(t)
     {
-        scanf("%lld %lld", &x, &y);
-        count = 0;
-        for(int i=0;i<55;i++)
-            if(fibs[i]>x && fibs[i]<y)
+        scanf("%ld %ld",&a,&b);
+        f1=1;
+        f2=1;
+        f3=f1+f2;
+        count=0;
+        while(f3<=b)
+        {
+            if((a<=f3) && (f3<=b))
                 count++;
-        printf("%d\n", count);
+            f3=f1+f2;
+            f1=f2;
+            f2=f3;
+        }
+        printf("%d\n",count);
+        t--;
     }
+    return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 HackerRank Week 7 - Count The Sandwiches
@@ -3004,13 +3009,69 @@ void main()
     }
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Contest 2 - Swap the maximum and minimum value in one dimensional array
 /\/\/\/\/\/\/\/\/\/\
-
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main() {
+    int n;
+    int arr[100000];
+    scanf("%d", &n);
+    int min, max;
+    min = max = 0;
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d", &arr[i]);
+        if(arr[i]>arr[max])
+            max = i;
+        if(arr[i]<arr[min])
+            min = i;
+    } 
+    int temp = arr[min];
+    arr[min] = arr[max];
+    arr[max] = temp;
+    for(int i=0;i<n;i++)
+        printf("%d ", arr[i]);
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Contest 2 - The curious case of Happu Singh 
 /\/\/\/\/\/\/\/\/\/\
-
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main() {
+    int t, n;
+    scanf("%d", &t);
+    int arr[100000];
+    while(t--)
+    {
+        scanf("%d", &n);
+        for(int i=1;i<=n;i++)
+            arr[i] = 0;
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=n;j++)
+            {
+                if(j%i==0)
+                {
+                    if(arr[j]==0)
+                        arr[j]=1;
+                    else
+                        arr[j]=0;
+                }
+            }
+        }
+        if(arr[n]==0)
+            printf("off\n");
+        else
+            printf("on\n");
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

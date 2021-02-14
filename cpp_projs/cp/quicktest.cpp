@@ -413,7 +413,8 @@ int main()
 //     return 0;
 // }
 
-// #include<iostream>                                   //  CODECHEF - AGCY
+// CodeChef - AGCY
+// #include<iostream>
 // using namespace std;
 // int main()
 // {
@@ -435,51 +436,6 @@ int main()
 //             cities[i] = 0;
 //         }
 //         printf("\n");
-//     }
-//     return 0;
-// }
-
-// #include<bits/stdc++.h>
-// using namespace std;
-// int main()
-// {
-//     int t,n,k;
-//     cin>>t;
-//     while(t--)
-//     {
-//         cin>>n>>k;
-//         int temp = k/n;
-//         cout<<temp<<endl;
-//     }
-//     return 0;
-// }
-
-// #include<bits/stdc++.h>
-// using namespace std;
-// int main()
-// {
-//     int t, a, b, turn, n;
-//     cin>>t;
-//     while(t--)
-//     {
-//         cin>>a>>b>>n;
-//         turn = 1;
-//         while(n--)
-//         {
-//             if(turn==1)
-//             {
-//                 a = a*2;
-//                 turn = 2;
-//             }
-//             else if(turn==2)
-//             {
-//                 b = b*2;
-//                 turn = 1;
-//             }
-//         }
-//         int min = a>b?b:a;
-//         int max = a>b?a:b;
-//         cout<<(max/min)<<endl;
 //     }
 //     return 0;
 // }

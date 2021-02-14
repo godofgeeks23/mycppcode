@@ -1,6 +1,6 @@
 cp problems solutions (hackerearth, hackerrank and codechef)  
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-(codechef) FCTRL2 - 
+(codechef) FCTRL2 - // to multiply really big numbers in array form
 /\/\/\/\/\/\/\/\/\/\
 #include<iostream>
 using namespace std;

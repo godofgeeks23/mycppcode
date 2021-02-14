@@ -64,7 +64,7 @@ int main()
         else
             cout<<"NO\n";
     }
-
+    
     end = clock();  
     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
     return 0;

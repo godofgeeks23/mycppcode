@@ -27,6 +27,9 @@ void main()
 	}		
 	gcd = a;
 	printf("%d\n", gcd);
+
+	char num[20];
+	scanf("%s", num);		// take a string as input
 }
 
 //hackerrank test 1 - problem 1

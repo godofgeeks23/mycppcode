@@ -1,6 +1,6 @@
 Below are some ready made snippets that are very helpful to get work done in a short time period in CP
 
-// to find the gcd of two numbers
+// to find the gcd (hcf) of two numbers
 int mygcd(int a, int b) 
 { 
     if (a < b) 
@@ -36,3 +36,35 @@ int isPrime(int n)
             return 0;
     return 1;
 }
+
+// to convert decimal to binary
+int decToBin(int dec)
+{
+    int bin = 0;
+    int rems[20];
+    int pos = -1;
+    while(dec)
+    {
+        pos++;
+        rems[pos] = dec%2;
+        dec = dec/2;
+    }
+    for(int i=pos;i>=0;i--)
+        bin = bin*10 + rems[i];
+    return bin;
+}
+
+// to convert binary to decimal
+int binToDec(int bin)
+{
+    int dec = 0;
+    int pos = 0;
+    while(bin)
+    {
+        dec += (bin%10)*pow(2, pos);
+        pos++;
+        bin = bin/10;
+    }
+    return dec;
+}
+

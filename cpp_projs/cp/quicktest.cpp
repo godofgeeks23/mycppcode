@@ -70,6 +70,74 @@ int main()
     return 0;
 }
 
+// // WIPL (CodeChef) Solution
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main(){
+//     short int T;
+//     int N,K,total,i,j;
+//     long long int sum1,sum2,input,end,temp;
+//     vector<long long int> A,B,H;
+//     cin>>T;
+//     while(T--){
+//         cin>>N>>K;
+//         sum1=0,sum2=0;
+//         for(i=0;i<N;i++){
+//             cin>>input;
+//             H.push_back(input);
+//         }
+//         sort(H.begin(),H.end(),greater<long long int>());
+//         for(i=0;i<N;i++){
+//             if(i%2==0){
+//                 A.push_back(H[i]);
+//                 sum1+=H[i];
+//             }
+//             else{
+//                 B.push_back(H[i]);
+//             }
+//             if(sum1>=K){
+//                 total=i+1;
+//                 break;
+//             }
+//         }
+//         if(sum2<K && sum1>=K){
+//         for(j=i+1;j<N;j++){
+//             B.push_back(H[j]);
+//         }
+//         for(i=0;i<B.size();i++){
+//                 sum2=sum2+B[i];
+//             for(j=0;j<A.size();j++){
+//                 if(A[j]>B[i] && (sum1-A[j]+B[i])>=K){
+//                     sum1=sum1-A[j]+B[i];
+//                     sum2=sum2+A[j]-B[i];
+//                     temp=A[j];
+//                     A[j]=B[i];
+//                     B[i]=temp;
+//                 }
+//                 if(sum2>=K){
+//                     break;
+//                 }
+//             }
+//                 if(sum2>=K){
+//                     break;
+//                 }
+//         }
+//         total=A.size()+i+1;     
+//         }
+    
+//         if(sum1>=K && sum2>=K){
+//             cout<<total;
+//         }
+//         else{
+//             cout<<"-1";
+//         }
+//         H.clear();
+//         A.clear();
+//         B.clear();
+//         cout<<"\n";
+//     }
+// }
+
 // #include<bits/stdc++.h>
 // using namespace std;
 // int mygcd(int a, int b) 

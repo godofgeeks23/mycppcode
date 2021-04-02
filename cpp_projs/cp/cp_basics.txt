@@ -276,7 +276,7 @@ C++ Measure exact time taken by a program -
 
 
 
-CPP Template
+CPP Template for Competitive coding
 -------------
 #define fo(i,n) for(i=0;i<n;i++)
 #define foo(i,k,n) for(i=k;k<n?i<n:i>n;k<n?i+=1:i-=1)

@@ -1,11 +1,12 @@
 // kiet c course
 
-#include<stdio.h>
+#include<stdio.h>		// header files
 
 // c is a structured programming language
 
-void main()
+void main()		// main function
 {
+	// declaration of variables
 	int a = 10,b = 20;
 	float avg;
 	scanf("%d%d",&a, &b);

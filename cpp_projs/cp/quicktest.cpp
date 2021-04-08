@@ -13,64 +13,103 @@
 //     return 0;
 // }
 
-// code-chef problem solution
+
+// boilerplate code - basic code acting as a base for all the other programs
 #include<bits/stdc++.h>
 using namespace std;
-#define deb(x) cout << #x << "=" << x << endl
 int main()
 {
     clock_t start, end;
     start = clock();
-    
-    int t, d0, d1, d2, d3, d4, d5, d6, sum;
-    long int k;
+            
+    // code goes here!
+    int t;
+    long long int n;
     cin>>t;
     while(t--)
     {
-        sum = 0;
-        cin>>k>>d0>>d1;
-        sum = (d0+d1)%3;
-        d2 = (d0+d1)%10;
-            d3 = (2*d2)%10;
-            d4 = (2*d3)%10;
-            d5 = (2*d4)%10;
-            d6 = (2*d5)%10;
-        if(d2%2==0)
-        {
-            int rem = (k-2)%4;
-            int temp1 = (d2+d3+d4+d5)%3;
-            long int temp2 = ((k-rem)/4)%3;
-            sum = sum + (temp1 * temp2)%3;
-            if(rem==1)
-                sum = (sum + d2)%3;
-            if(rem==2)
-                sum = (sum + d2 + d3)%3;
-            if(rem==3)
-                sum = (sum + d2 + d3 + d4)%3;
-        }
-        else
-        {
-            int rem = (k-3)%4;
-            int temp1 = (d3+d4+d5+d6)%3;
-            int temp2 = ((k-rem)/4)%3;
-            sum = sum + d2 + (temp1 * temp2)%3;
-            if(rem==1)
-                sum = (sum + d3)%3;
-            if(rem==2)
-                sum = (sum + d3 + d4)%3;
-            if(rem==3)
-                sum = (sum + d3 + d4 + d5)%3;
-        }
-        if(!sum)
-            cout<<"YES\n";
-        else
-            cout<<"NO\n";
+    	long long int score = 0;
+    	cin>>n;
+    	if(n<=4)
+    		score = 20*n;
+    	else
+    	{
+			long long int temp1 = n/4;
+			score = 80*temp1;
+			int temp2 = n%4;
+			while(temp2)
+			{
+				score = score+13;
+				temp2--;
+			}
+    	}
+    	cout<<score<<endl;
     }
-    
+
     end = clock();  
     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
     return 0;
 }
+
+
+// // code-chef problem solution
+// #include<bits/stdc++.h>
+// using namespace std; 
+// #define deb(x) cout << #x << "=" << x << endl
+// int main()
+// {
+//     clock_t start, end;
+//     start = clock();
+    
+//     int t, d0, d1, d2, d3, d4, d5, d6, sum;
+//     long int k;
+//     cin>>t;
+//     while(t--)
+//     {
+//         sum = 0;
+//         cin>>k>>d0>>d1;
+//         sum = (d0+d1)%3;
+//         d2 = (d0+d1)%10;
+//             d3 = (2*d2)%10;
+//             d4 = (2*d3)%10;
+//             d5 = (2*d4)%10;
+//             d6 = (2*d5)%10;
+//         if(d2%2==0)
+//         {
+//             int rem = (k-2)%4;
+//             int temp1 = (d2+d3+d4+d5)%3;
+//             long int temp2 = ((k-rem)/4)%3;
+//             sum = sum + (temp1 * temp2)%3;
+//             if(rem==1)
+//                 sum = (sum + d2)%3;
+//             if(rem==2)
+//                 sum = (sum + d2 + d3)%3;
+//             if(rem==3)
+//                 sum = (sum + d2 + d3 + d4)%3;
+//         }
+//         else
+//         {
+//             int rem = (k-3)%4;
+//             int temp1 = (d3+d4+d5+d6)%3;
+//             int temp2 = ((k-rem)/4)%3;
+//             sum = sum + d2 + (temp1 * temp2)%3;
+//             if(rem==1)
+//                 sum = (sum + d3)%3;
+//             if(rem==2)
+//                 sum = (sum + d3 + d4)%3;
+//             if(rem==3)
+//                 sum = (sum + d3 + d4 + d5)%3;
+//         }
+//         if(!sum)
+//             cout<<"YES\n";
+//         else
+//             cout<<"NO\n";
+//     }
+    
+//     end = clock();  
+//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
+//     return 0;
+// }
 
 // // WIPL (CodeChef) Solution
 // #include<bits/stdc++.h>

@@ -3073,13 +3073,74 @@ int main() {
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Codechef - BOLT
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
+float myround(float var)
+{
+    float value = (int)(var * 100 + .5);
+    return (float)value / 100;
+}
+int main()
+{
+    clock_t start, end;
+    start = clock();
 
+    // code goes here!
+    int t;
+    cin>>t;
+    float k1, k2, k3, v;
+    while(t--)
+    {
+        cin>>k1>>k2>>k3>>v;
+        float test = myround(100/(k1*k2*k3*v));
+        if(9.58f>test)
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+    }
+
+    end = clock();  
+    cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Codechef - SSCRIPT
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    clock_t start, end;
+    start = clock();
 
+    // code goes here!
+    int t, n, k;
+    string str;
+    cin>>t;
+    while(t--)
+    {
+        cin>>n>>k>>str;
+        int pointer = 0, count = 0;
+        while(pointer<n && count<k)
+        {
+            if(str[pointer]=='*')
+                count++;
+            else
+                count = 0;
+            pointer++;
+        }
+        if(count>=k)
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;
+    }
+
+    end = clock();  
+    cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

@@ -3142,33 +3142,395 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Hackerrank Week 1 - program to count the number of characters in a given string
 /\/\/\/\/\/\/\/\/\/\
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+/*
+ * Complete the 'str_c' function below.
+ *
+ * The function is expected to return an INTEGER.
+ */
+
+void str_c() {
+    // write your code here
+    char str[500];
+    fgets(str, 500, stdin);
+    int i;
+    for(i=0;str[i]!='\0';i++);
+    printf("%d", i);
+    // return i;
+}
+
+int main()
+{
+    //FILE* fptr = fopen(getenv("OUTPUT_PATH"), "w");
+
+    str_c();
+    
+    //fclose(fptr);
+
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Hackerrank Week 1 - program to reverse a given string
 /\/\/\/\/\/\/\/\/\/\
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+// Complete the 'str_r' function below.
+
+void str_r() {
+    // write your code here
+    char str[500], rev[500];
+    int i, j=0;
+    fgets(str, 500, stdin);
+    while(str[j]!='\0')
+        j++;
+    for(i=0;i<=j;i++)
+        rev[i] = str[j-1-i];
+    puts(rev);
+}
+
+int main()
+{
+    str_r();
+
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Hackerrank Week 1 - program to limit the count of characters entered by user
 /\/\/\/\/\/\/\/\/\/\
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+char* readline();
+char* ltrim(char*);
+char* rtrim(char*);
+
+int parse_int(char*);
+
+/*
+ * Complete the 'str_c' function below.
+ *
+ * The function accepts INTEGER m as parameter.
+ */
+
+void str_c(int m) {
+    // write your code here
+    char str[500];
+    fgets(str, 500, stdin);
+    for(int i=0;i<m;i++)
+        printf("%c", str[i]);
+}
+
+int main()
+{
+    int m = parse_int(ltrim(rtrim(readline())));
+
+    str_c(m);
+
+    return 0;
+}
+
+char* readline() {
+    size_t alloc_length = 1024;
+    size_t data_length = 0;
+
+    char* data = malloc(alloc_length);
+
+    while (true) {
+        char* cursor = data + data_length;
+        char* line = fgets(cursor, alloc_length - data_length, stdin);
+
+        if (!line) {
+            break;
+        }
+
+        data_length += strlen(cursor);
+
+        if (data_length < alloc_length - 1 || data[data_length - 1] == '\n') {
+            break;
+        }
+
+        alloc_length <<= 1;
+
+        data = realloc(data, alloc_length);
+
+        if (!data) {
+            data = '\0';
+
+            break;
+        }
+    }
+
+    if (data[data_length - 1] == '\n') {
+        data[data_length - 1] = '\0';
+
+        data = realloc(data, data_length);
+
+        if (!data) {
+            data = '\0';
+        }
+    } else {
+        data = realloc(data, data_length + 1);
+
+        if (!data) {
+            data = '\0';
+        } else {
+            data[data_length] = '\0';
+        }
+    }
+
+    return data;
+}
+
+char* ltrim(char* str) {
+    if (!str) {
+        return '\0';
+    }
+
+    if (!*str) {
+        return str;
+    }
+
+    while (*str != '\0' && isspace(*str)) {
+        str++;
+    }
+
+    return str;
+}
+
+char* rtrim(char* str) {
+    if (!str) {
+        return '\0';
+    }
+
+    if (!*str) {
+        return str;
+    }
+
+    char* end = str + strlen(str) - 1;
+
+    while (end >= str && isspace(*end)) {
+        end--;
+    }
+
+    *(end + 1) = '\0';
+
+    return str;
+}
+
+int parse_int(char* str) {
+    char* endptr;
+    int value = strtol(str, &endptr, 10);
+
+    if (endptr == str || *endptr != '\0') {
+        exit(EXIT_FAILURE);
+    }
+
+    return value;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Hackerrank Week 1 - program to print the ASCII values of all the character in a given string
 /\/\/\/\/\/\/\/\/\/\
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+// Complete the 'str_c' function below.
+
+void str_c() {
+    // write your code here
+    char str[500];
+    fgets(str, 500, stdin);
+    int i;
+    for(i=0;str[i]!='\0';i++)
+        printf("%d ", str[i]);
+}
+
+int main()
+{
+    str_c();
+
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Hackerrank Week 1 - program to covert a string to lowercase to uppercase and vice-versa
 /\/\/\/\/\/\/\/\/\/\
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+// Complete the 'conv_s' function below.
+void conv_s() {
+    // write your code here
+    char str[500];
+    fgets(str, 500, stdin);
+    int i;
+    for(i=0;str[i]!='\0';i++)
+    {
+        int ascii = str[i];
+        if(str[i]!=' ')
+        {
+            if(ascii>=65 && ascii<=96)
+                str[i]+=32;
+            printf("%c", str[i]);
+        }
+        else
+            printf(" ");
+    }
+    printf("\n");
+    for(i=0;str[i]!='\0';i++)
+    {
+        int ascii = str[i];
+        if(str[i]!=' ')
+        {
+            if(ascii>=97 && ascii<=122)
+                str[i]-=32;
+            printf("%c", str[i]);
+        }
+        else
+            printf(" ");
+    }
+}
+int main()
+{
+    conv_s();
 
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Hackerrank Week 1 - program to find whether the given string is a palindrome or not
 /\/\/\/\/\/\/\/\/\/\
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+/*
+ * Complete the 'str_p' function below.
+ *
+ * The function is expected to return an INTEGER.
+ */
+
+void str_p() {
+    // write your code here
+    
+    char str[500];
+    fgets(str, 500, stdin);
+    int i;
+    for(i=0;str[i]!='\0';i++);
+    int flag = 0;
+    for(int j=0;j<=(i-2)/2;j++)
+    {
+        if(str[j]!=str[i-1-j])
+        {
+            flag=-1;
+            break;
+        }
+    }
+    if(flag==-1)
+        printf("String is not a palindrome");
+    else
+        printf("String is a palindrome");
+}
+
+int main()
+{
+    //FILE* fptr = fopen(getenv("OUTPUT_PATH"), "w");
+
+    str_p();
+
+    //fclose(fptr);
+
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Hackerrank Week 1 - program to check whether all the characters of first string matches to all the characters of second string
 /\/\/\/\/\/\/\/\/\/\
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+// Complete the 'str_c' function below.
+void str_c() {
+    // write your code here
+char str1[500], str2[500];
+    fgets(str1, 500, stdin);
+    fgets(str2, 500, stdin);
+    int len1, len2;
+    for(len1=0;str1[len1]!='\0';len1++);
+    for(len2=0;str2[len2]!='\0';len2++);
+    int len = len1>len2?len2:len1;
+    int flag = 0;
+    for(int j=0;j<len;j++)
+        if(str1[j]!=str2[j])
+        {
+            flag = -1;
+            break;
+        }
+    if(flag==-1)
+        printf("Strings doesn't Match");
+    else
+        printf("Strings Match");
+}
+int main()
+{
+    str_c();
 
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

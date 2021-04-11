@@ -3198,7 +3198,6 @@ Hackerrank Week 1 - program to reverse a given string
 // Complete the 'str_r' function below.
 
 void str_r() {
-    // write your code here
     char str[500], rev[500];
     int i, j=0;
     fgets(str, 500, stdin);

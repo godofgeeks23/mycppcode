@@ -69,9 +69,9 @@ int binToDec(int bin)
 }
 
 // round off a float to any number of decimal places
-float myround(float var)
+float myround(float var, int places)
 {
-    float value = (int)(var * 100 + .5);		// (use 100 for 2 decimal places, 10^3 for 3 decimal places... )
+    float value = (int)(var * pow(10, places) + .5);
     return (float)value / 100;
 }
 

@@ -3531,35 +3531,126 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+Hackerrank Week 2 - find first small letter in string 
+/\/\/\/\/\/\/\/\/\/\
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
 
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+    int t;
+    char str[500];
+    scanf("%d\n", &t);
+    fgets(str, 500, stdin);
+    int i;
+    for(i=0;i<t;i++)
+        if(str[i]>='a' && str[i]<='z')
+        {
+            printf("The first small letter is %c", str[i]);
+            break;
+        } 
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+Hackerrank Week 2 - count number of words
+/\/\/\/\/\/\/\/\/\/\
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int t;
+    scanf("%d\n", &t);
+    char str[500];
+    fgets(str, 500, stdin);
+    int count = 0;
+    for(int i=0;str[i]!='\0';i++)
+    {
+        if(str[i]==' ')
+        count++;
+    }
+    count++;
+    printf("The number of words = %d", count);
+
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+Hackerrank Week 2 - program to check whether the given character is vowel or not
+/\/\/\/\/\/\/\/\/\/\
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+char* readline();
+int vow(char voww) {
+    // write your code here
+    if(voww=='a' || voww=='e' || voww=='i' || voww=='o' || voww=='u' || voww=='A' || voww=='E' || voww=='I' || voww=='O' || voww=='U')
+    return 1;
+    else
+    return 0;
+}
+int main()
+{
+    char ch;
+    scanf("%c", &ch);
+    int find = vow(ch);
+    if(find==1)
+        printf("Character is a vowel.");
+    else
+        printf("Character is not a vowel.");
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+Hackerrank Week 2 - find the sum of digit in a string
+/\/\/\/\/\/\/\/\/\/\
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main() {
+         int t, sum;
+    scanf("%d\n", &t);
+    char str[500];
+    fgets(str, 500, stdin);
+    sum = 0;
+    printf("The digits present in the string is ");
+    for(int i=0;str[i]!='\0';i++)
+    {
+        if(str[i]>='0' && str[i]<='9')
+        {
+            sum+=str[i]-48;
+            printf("%c", str[i]);
+        }
+    }
+    printf("\nThe sum of digits is %d", sum);
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+Hackerrank Week 2 - 
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Hackerrank Week 2 - 
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Hackerrank Week 2 - 
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Hackerrank Week 2 - 
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

@@ -20,12 +20,10 @@
 #include<string.h>
 void main() 
 {
-    int __t;
-    scanf("%d", &__t);
-    while(__t--)
+    int t;
+    scanf("%d", &t);
+    while(t--)
     {
         
     }
 }
-
-// 48 to 57

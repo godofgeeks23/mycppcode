@@ -3638,19 +3638,135 @@ int main() {
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-Hackerrank Week 2 - 
+Hackerrank Week 2 - program to print the ASCII value of a given character and character next to it
 /\/\/\/\/\/\/\/\/\/\
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+char* readline();
+
+/*
+ * Complete the 'str_c' function below.
+ *
+ * The function accepts CHARACTER find as parameter.
+ */
+
+void str_c(char find) {
+    // write your code here
+    printf("%d\n%c", find, (find+1));
+}
+
+int main()
+{
+    char find;
+    scanf("%c", &find);
+    str_c(find);
+
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-Hackerrank Week 2 - 
+Hackerrank Week 2 - program to reverse a number and then print in words in separate digits format
 /\/\/\/\/\/\/\/\/\/\
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void fun_rev(int num) {
+    while(num)
+    {
+        int rem = num%10;
+        if(rem==0)
+            printf("Zero");
+        if(rem==1)
+            printf("One");
+        if(rem==2)
+            printf("Two");
+        if(rem==3)
+            printf("Three");
+        if(rem==4)
+            printf("Four");
+        if(rem==5)
+            printf("Five");
+        if(rem==6)
+            printf("Six");
+        if(rem==7)
+            printf("Seven");
+        if(rem==8)
+            printf("Eight");
+        if(rem==9)
+            printf("Nine");
+        printf("  ");
+        num = num/10;
+    }
+}
+int main()
+{
+    int num;
+    scanf("%d", &num);
+    fun_rev(num);
 
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-Hackerrank Week 2 - 
+Hackerrank Week 2 - program to remove all the common characters from second string
 /\/\/\/\/\/\/\/\/\/\
+#include <assert.h>
+#include <ctype.h>
+#include <limits.h>
+#include <math.h>
+#include <stdbool.h>
+#include <stddef.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
+// Complete the 'str_c' function below.
+
+void str_c() {
+    // write your code here
+    char str1[500], str2[500];
+    fgets(str1, 500, stdin);
+    fgets(str2, 500, stdin);
+    int l1, l2;
+    for(l1=0;str1[l1]!='\0';l1++);
+    for(l2=0;str2[l2]!='\0';l2++);
+    for(int i=0;i<l2;i++)
+    {
+        int flag = 0;
+        for(int j=0;j<l1;j++)
+        {
+            if(str1[j]==str2[i])
+            {
+                flag = -1;
+                break;
+            }
+        }
+        if(flag==0)
+            printf("%c", str2[i]);
+    }
+}
+int main()
+{
+    str_c();
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-Hackerrank Week 2 - 
+
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

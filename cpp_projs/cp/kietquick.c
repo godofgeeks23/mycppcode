@@ -28,6 +28,7 @@ void str_c() {
     char str1[500];
     char str2[500];
     fgets(str1, 500, stdin);
+    scanf("\n ");
     fgets(str2, 500, stdin);
     int l1 = strlen(str1);
     int l2 = strlen(str2);

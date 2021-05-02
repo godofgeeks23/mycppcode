@@ -1,2 +1,2 @@
-78 crores, 23 lakhs, 14 thousand, 7823146 hundred, 71
-Time: 0.000192s
+seventy eight crores, twenty  lakhs, fourteen  thousand, six  hundred, seventy six
+Time: 0.000180s

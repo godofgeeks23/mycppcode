@@ -15,63 +15,20 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-
-string two_to_words(int n)
-{
-	string ones_digits[10] = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-	string tens_digits[8] = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
-	string specials[10] = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
-	string output = "";
-	if(n==0)
-		output = "zero";
-	else
-	{
-		int tmp1 = n/10;
-		if(tmp1 == 0)
-			output = output + ones_digits[n];
-		else if(tmp1 == 1)
-			output = output + specials[n-10];
-		else
-		{
-			int tmp2 = n%10;
-			output = output + tens_digits[tmp1-2] + ones_digits[tmp2];
-		}
-	}
-	return output;
-}
-
-void divider_words(long int n)
-{
-	int crores = n/10000000;
-	
-	int lakhs = n/100000;
-	lakhs = lakhs%100;
-
-	int thousand = n%100000;
-	thousand = thousand/1000;
-
-	int hundred = n%100;
-	hundred = n/100;
-
-	int rem = n%100;
-
-	cout<<crores<<" crores, "<<lakhs<<" lakhs, "<<thousand<<" thousand, "<<hundred<<" hundred, "<<rem;
-}
-
 int main()
 {
     clock_t start, end;
     start = clock();
             
-    long int n;
-    cin>>n;
-    // two_to_words(n);
-    divider_words(n);
+    // code goes here!
+    
 
     end = clock();  
-    cout << "\nTime: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"; 
+    cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
     return 0;
 }
+
+
 
 // #include<bits/stdc++.h>
 // using namespace std;

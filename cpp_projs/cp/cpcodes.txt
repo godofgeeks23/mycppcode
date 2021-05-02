@@ -3938,9 +3938,63 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Numbers to words indian method
 /\/\/\/\/\/\/\/\/\/\
+#include<bits/stdc++.h>
+using namespace std;
 
+string two_to_words(int n)
+{
+    string ones_digits[10] = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
+    string tens_digits[8] = {"twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+    string specials[10] = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    string output = "";
+    if(n==0)
+        output = "zero";
+    else 
+    {
+        int tmp1 = n/10;
+        if(tmp1 == 0)
+            output += ones_digits[n] + " ";
+        else if(tmp1 == 1)
+            output += specials[n-10] + " ";
+        else
+        {
+            int tmp2 = n%10;
+            output += tens_digits[tmp1-2] + " " + ones_digits[tmp2];
+        }
+    }
+    return output;
+}
+
+void divider_words(long int n)
+{
+    int tens = n%100;
+    n = n/100;
+    int hundred = n%10;
+    n = n/10;
+    int thousand = n%100;
+    n = n/100;
+    int lakhs = n%100;
+    n = n/100;
+    int crores = n%100;
+    cout<<two_to_words(crores)<<" crores, "<<two_to_words(lakhs)<<" lakhs, "<<two_to_words(thousand)<<" thousand, "<<two_to_words(hundred)<<" hundred, "<<two_to_words(tens);
+}
+
+int main()
+{
+    clock_t start, end;
+    start = clock();
+            
+    long int n;
+    cin>>n;
+    // two_to_words(n);
+    divider_words(n);
+
+    end = clock();  
+    cout << "\nTime: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"; 
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

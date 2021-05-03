@@ -1,2 +1,2 @@
-seventy eight crores, twenty  lakhs, fourteen  thousand, six  hundred, seventy six
-Time: 0.000180s
+
+Time: 0.000002s

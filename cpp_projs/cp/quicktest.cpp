@@ -9,7 +9,7 @@
 //     // code goes here!
 
 //     end = clock();  
-//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
+//     cout << "\nTime: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"; 
 //     return 0;
 // }
 
@@ -24,7 +24,7 @@ int main()
     
 
     end = clock();  
-    cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
+    cout << "\nTime: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"; 
     return 0;
 }
 

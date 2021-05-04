@@ -272,7 +272,8 @@ C++ Measure exact time taken by a program -
             cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<" s"<<endl; 
             return 0;
         }     
-    
+(use this as a default boilerplate code)    
+
 sometimes, use 'f' in front of float constants in 'if' conditions - 
 example - if(9.58>test)             // wont work for test = 9.58
             cout<<"YES"<<endl;

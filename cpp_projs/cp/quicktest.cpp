@@ -13,18 +13,38 @@
 //     return 0;
 // }
 
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+    
+//     return 0;
+// }
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()
 {
-    clock_t start, end;
-    start = clock();
-            
-    // code goes here!
-    
-
-    end = clock();  
-    cout << "\nTime: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"; 
+    int t, n, k, x, res;
+    scanf("%d", &t);
+    while(t--)
+    {
+    	res = 0;
+    	scanf("%d%d%d", &n, &x, &k);
+    	if(x%k==0)
+    		res = 1;
+    	else
+    	{
+    		float alpha = (n+1-x)/(k*1.0);
+    		bool temp1 = (n+1-(alpha*k))>=0.0;
+    		if((ceilf(alpha) == alpha) && temp1)
+    			res = 1;
+    	}
+    	if(res)
+    		printf("YES\n");
+    	else
+    		printf("NO\n");
+    }
     return 0;
 }
 

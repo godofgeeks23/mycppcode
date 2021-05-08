@@ -3980,7 +3980,6 @@ void divider_words(long int n)
     int crores = n%100;
     cout<<two_to_words(crores)<<" crores, "<<two_to_words(lakhs)<<" lakhs, "<<two_to_words(thousand)<<" thousand, "<<two_to_words(hundred)<<" hundred, "<<two_to_words(tens);
 }
-
 int main()
 {
     clock_t start, end;
@@ -4013,11 +4012,26 @@ int main()
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Codechef - LKDNGOLF
 /\/\/\/\/\/\/\/\/\/\
-
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t, n, k, x, res;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d%d%d", &n, &x, &k);
+        if(x%k==0 || (n+1-x)%k==0)
+            printf("YES\n");
+        else
+            printf("NO\n");
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Codechef - 
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

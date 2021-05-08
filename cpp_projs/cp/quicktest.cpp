@@ -23,27 +23,29 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+int pow_mod(int x, int y, int p) 
+{ 
+    int res = 1;
+    x = x % p;
+    if (x == 0) return 0;
+    while (y > 0) 
+    { 
+        if (y & 1) 
+            res = (res*x) % p; 
+        y = y>>1; // y = y/2 
+        x = (x*x) % p; 
+    } 
+    return res; 
+} 
 int main()
 {
-    int t, n, k, x, res;
+    int t, n, res;
     scanf("%d", &t);
     while(t--)
     {
-    	res = 0;
-    	scanf("%d%d%d", &n, &x, &k);
-    	if(x%k==0)
-    		res = 1;
-    	else
-    	{
-    		float alpha = (n+1-x)/(k*1.0);
-    		bool temp1 = (n+1-(alpha*k))>=0.0;
-    		if((ceilf(alpha) == alpha) && temp1)
-    			res = 1;
-    	}
-    	if(res)
-    		printf("YES\n");
-    	else
-    		printf("NO\n");
+    	scanf("%d", &n);
+    	res = pow_mod(2, n-1, pow(10,9)+7);
+    	printf("%d\n", res);
     }
     return 0;
 }

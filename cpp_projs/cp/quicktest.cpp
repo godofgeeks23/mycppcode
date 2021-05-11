@@ -23,20 +23,6 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-int pow_mod(int x, int y, int p) 
-{ 
-    int res = 1;
-    x = x % p;
-    if (x == 0) return 0;
-    while (y > 0) 
-    { 
-        if (y & 1) 
-            res = (res*x) % p; 
-        y = y>>1;
-        x = (x*x) % p; 
-    } 
-    return res; 
-} 
 int main()
 {
     int t, n, res;
@@ -44,8 +30,7 @@ int main()
     while(t--)
     {
     	scanf("%d", &n);
-    	res = pow_mod(2, n-1, pow(10,9)+7);
-    	printf("%d\n", res);
+    	
     }
     return 0;
 }

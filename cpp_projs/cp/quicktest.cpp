@@ -23,15 +23,31 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+class area
+{
+	int x, y;
+	public:
+		area(int a=0)
+		{
+			x = y = a;
+			cout<<x*y<<endl;
+		}
+		area(int a, int b)
+		{
+			x = a;
+			y = b;
+			cout<<x*y<<endl;
+		}
+		~area()
+		{
+
+		}
+};
 int main()
 {
-    int t, n, res;
-    scanf("%d", &t);
-    while(t--)
-    {
-    	scanf("%d", &n);
-    	
-    }
+    area rect1;
+    area rect2(10, 20);
+
     return 0;
 }
 

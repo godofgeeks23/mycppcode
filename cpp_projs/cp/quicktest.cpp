@@ -23,31 +23,23 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-class area
-{
-	int x, y;
-	public:
-		area(int a=0)
-		{
-			x = y = a;
-			cout<<x*y<<endl;
-		}
-		area(int a, int b)
-		{
-			x = a;
-			y = b;
-			cout<<x*y<<endl;
-		}
-		~area()
-		{
-
-		}
-};
 int main()
 {
-    area rect1;
-    area rect2(10, 20);
+    clock_t start, end;
+    start = clock();
+            
+    // code goes here!
 
+    end = clock();  
+    cout << "\nTime: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"; 
+    return 0;
+}
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    
     return 0;
 }
 

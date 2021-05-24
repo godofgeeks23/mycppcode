@@ -9,14 +9,22 @@
     
 // }
 
-#include<stdio.h>
-#include<math.h>
-#include<stdlib.h>
-#include<string.h>
-void main() 
-{
-    
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main() {   
+    int arr[10];
+    for(int i=0;i<10;i++)
+    {
+        scanf("%d", &arr[i]);
+        if(arr[i]==5)
+            printf("Student %d may attain wisdom in future. Congratulations...!", i+1);
+    }
+
+    return 0;
 }
+
 
 // #include <assert.h>
 // #include <ctype.h>

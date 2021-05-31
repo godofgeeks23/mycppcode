@@ -13,27 +13,52 @@
 #include <string.h>
 #include <math.h>
 #include <stdlib.h>
-void bubbleSort(int arr[], int n)
-{
-    int i, j;
-    for (i = 0; i < n-1; i++)    
-    for (j = 0; j < n-i-1; j++)
-        if (arr[j] > arr[j+1])
-        {
-            int temp = arr[j];
-            arr[j] = arr[j+1];
-            arr[j+1] = temp;
-        }
-}
-int main() {   
-    int arr[5];
-    for(int i=0;i<5;i++)
+
+int main() {
+    int arr[15];
+    int max = -1, max_index = -1, turn = 2, max_turn = 0;
+    for(int i=0;i<15;i++)
+    {
+        if(i%5==0)
+            turn = 1;
         scanf("%d", &arr[i]);
-    bubbleSort(arr, 5);
-    for(int i=0;i<5;i++)
-        printf("%d,", arr[i]);
+        if(arr[i]>max)
+        {
+            max = arr[i];
+            max_index = i+1;
+            max_turn = turn;
+        }
+        turn++;
+    }
+    printf("Maximum Apples (%d) are collected from Tree %d with rank as %d", max, max_turn, max_index);
     return 0;
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// #include <math.h>
+// #include <stdlib.h>
+// void bubbleSort(int arr[], int n)
+// {
+//     int i, j;
+//     for (i = 0; i < n-1; i++)    
+//     for (j = 0; j < n-i-1; j++)
+//         if (arr[j] > arr[j+1])
+//         {
+//             int temp = arr[j];
+//             arr[j] = arr[j+1];
+//             arr[j+1] = temp;
+//         }
+// }
+// int main() {   
+//     int arr[5];
+//     for(int i=0;i<5;i++)
+//         scanf("%d", &arr[i]);
+//     bubbleSort(arr, 5);
+//     for(int i=0;i<5;i++)
+//         printf("%d,", arr[i]);
+//     return 0;
+// }
 
 
 // #include <assert.h>

@@ -9,30 +9,48 @@
     
 // }
 
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
-
-int main() {
-    int arr[15];
-    int max = -1, max_index = -1, turn = 2, max_turn = 0;
-    for(int i=0;i<15;i++)
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main() 
+{
+    int count = 1;
+    for(int i=4;i>=0;i--)
     {
-        if(i%5==0)
-            turn = 1;
-        scanf("%d", &arr[i]);
-        if(arr[i]>max)
-        {
-            max = arr[i];
-            max_index = i+1;
-            max_turn = turn;
-        }
-        turn++;
+        for(int j=1;j<=i;j++)
+            printf(" ");
+        for(int j=1;j<=count;j++)
+            printf("*");
+        count+=2;
+        printf("\n");
     }
-    printf("Maximum Apples (%d) are collected from Tree %d with rank as %d", max, max_turn, max_index);
-    return 0;
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// #include <math.h>
+// #include <stdlib.h>
+
+// int main() {
+//     int arr[15];
+//     int max = -1, max_index = -1, turn = 2, max_turn = 0;
+//     for(int i=0;i<15;i++)
+//     {
+//         if(i%5==0)
+//             turn = 1;
+//         scanf("%d", &arr[i]);
+//         if(arr[i]>max)
+//         {
+//             max = arr[i];
+//             max_index = i+1;
+//             max_turn = turn;
+//         }
+//         turn++;
+//     }
+//     printf("Maximum Apples (%d) are collected from Tree %d with rank as %d", max, max_turn, max_index);
+//     return 0;
+// }
 
 // #include <stdio.h>
 // #include <string.h>

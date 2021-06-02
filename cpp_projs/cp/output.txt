@@ -1,1 +1,5 @@
-Maximum Apples (700) are collected from Tree 3 with rank as 8
+    *
+   ***
+  *****
+ *******
+*********

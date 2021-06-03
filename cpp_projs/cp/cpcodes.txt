@@ -4232,23 +4232,93 @@ Hackerrank Week 4 - The Apple Garden
 #include <math.h>
 #include <stdlib.h>
 
+/*
+5,3,2,6,1,5,4,7,10,5,20,4,7,10,13
+
+ROUND 1
+apples: 5,              3,              2,              6,              1,
+index:  [0]             [1]             [2]             [3]             [4]
+turn:   1               2               3               4               5
+
+ROUND 2
+apples: 5,              4,              7,              10,             5,
+index:  [5]             [6]             [7]             [8]             [9]
+turn:   1               2               3               4               5
+
+ROUND 3
+apples: 20,             4,              7,              10,             13
+index:  [10]            [11]            [12]            [13]            [14]
+turn:   1               2               3               4               5
+
+(index = rank)
+(turn = tree number)
+*/
+
 int main() {
     int arr[15];
     int max = -1, max_index = -1, turn = 2, max_turn = 0;
     for(int i=0;i<15;i++)
     {
+        scanf("%d", &arr[i]);
         if(i%5==0)
             turn = 1;
-        scanf("%d", &arr[i]);
         if(arr[i]>max)
         {
             max = arr[i];
-            max_index = i+1;
+            max_index = i;
             max_turn = turn;
         }
         turn++;
     }
-    printf("Maximum Apples (%d) are collected from Tree %d with rank as %d", max, max_turn, max_index);
+    printf("Maximum Apples (%d) are collected from Tree %d with rank as %d", max, max_turn, max_index+1);
+    return 0;
+}
+
+// solution 2
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+/*
+5,3,2,6,1,5,4,7,10,5,20,4,7,10,13
+
+ROUND 1
+apples: 5,              3,              2,              6,              1,
+tree:   1               2               3               4               5
+rank:   1               2               3               4               5
+
+ROUND 2
+apples: 5,              4,              7,              10,             5,
+tree:   1               2               3               4               5
+rank:   6               7               8               9               10
+
+ROUND 3
+apples: 20,             4,              7,              10,             13
+tree:   1               2               3               4               5
+rank:   11              12              13              14              15
+
+*/
+
+int main() {
+    int trees[5];
+    int rank = 1, max_apples = 0, max_rank, max_tree = -1;
+    for(int round=1;round<=3;round++)
+    {
+        for(int j=0;j<5;j++)
+        {
+            scanf("%d", &trees[j]);
+            if(trees[j]>max_apples)
+            {
+                max_apples = trees[j];
+                max_rank = rank;
+                max_tree = j;
+            }
+            rank++;
+        }
+    }
+    printf("Maximum Apples (%d) are collected from Tree %d with rank as %d", max_apples, max_tree+1, max_rank);
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

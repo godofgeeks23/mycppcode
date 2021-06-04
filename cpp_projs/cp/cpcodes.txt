@@ -4227,6 +4227,9 @@ int main() {
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 Hackerrank Week 4 - The Apple Garden
 /\/\/\/\/\/\/\/\/\/\
+
+// solution 1 - 
+
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
@@ -4274,7 +4277,7 @@ int main() {
     return 0;
 }
 
-// solution 2
+// solution 2 - 
 
 #include <stdio.h>
 #include <string.h>

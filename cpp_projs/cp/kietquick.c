@@ -18,6 +18,45 @@ void main()
     
 }
 
+// #include<stdio.h>
+// #include<math.h>
+// #include<stdlib.h>
+// #include<string.h>
+// void bubbleSort(char arr[], int n)
+// {
+//     int i, j;
+//     for (i = 0; i < n-1; i++)    
+//     for (j = 0; j < n-i-1; j++)
+//         if (arr[j] > arr[j+1])
+//         {
+//             char temp = arr[j];
+//             arr[j] = arr[j+1];
+//             arr[j+1] = temp;
+//         }
+// }
+// void main() 
+// {
+//     char str[1000], sorted[1000];
+//     fgets(str, 1000, stdin);   
+//     strcpy(sorted, str);
+//     bubbleSort(sorted, strlen(sorted));
+//     int rem_len = strlen(str)-1;
+//     int rank = 1;
+//     for(int i=0;i<strlen(str)-1;i++)
+//     {
+//         int count_left = 0;
+//         for(int j=0;j<strlen(str);j++)
+//         {
+//             if(str[j]!=str[i] && str[])
+//                 count_left++;
+//             else
+//                 break;
+//         }
+//         rank += count_left*rem
+
+//     }
+// }
+
 
 // #include<stdio.h>
 // #include<math.h>

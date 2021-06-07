@@ -4528,17 +4528,71 @@ int main()
         printf("%.4f\n", bmi[i]);
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 6 - Factorial(Using Recursion)
 /\/\/\/\/\/\/\/\/\/\
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int fact(int n)
+{
+    return (n <= 1) ? 1 : n * fact(n - 1);
+}
+int main() {
 
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int t, n;
+    scanf("%d", &t);
+    while(t--)
+    {
+        scanf("%d", &n);
+        printf("Factorial of %d is %d\n", n, fact(n));
+    }
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 6 - Print First N natural numbers using recursion
 /\/\/\/\/\/\/\/\/\/\
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int getsum(int n)
+{
+    if(n<=0)
+        return 0;
+    else
+        return n+getsum(n-1);
+}
+int main() {
 
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    int n;
+    scanf("%d", &n);
+    printf("%d", getsum(n));
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+Print 1 to n using recursion
 /\/\/\/\/\/\/\/\/\/\
-
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void display(int n)
+{
+    if(n > 0)
+    {
+        display(n - 1);
+        printf("%d\n", n);
+    }
+    else
+        return;
+}
+void main() 
+{
+    display(10);
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\

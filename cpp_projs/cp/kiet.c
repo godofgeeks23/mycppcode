@@ -32,3 +32,26 @@ void main()		// main function
 	char num[20];
 	scanf("%s", num);		// take a string as input
 }
+
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main() 
+{
+    int i=5,*j,**k;
+    j = &i;
+    k = &j;
+    printf("%d\n",&i);      -659717668
+    printf("%d\n",j);       -659717668
+    printf("%d\n",*k);      -659717668
+    printf("%d\n",&j);      -659717680
+    printf("%d\n",k);       -659717680
+    printf("%d\n",&k);      -659717688
+    printf("%d\n",j);       -659717668
+    printf("%d\n",k);       -659717680
+    printf("%d\n",i);       5
+    printf("%d\n",*(&i));   5
+    printf("%d\n",*j);      5
+    printf("%d\n",**k);     5
+}

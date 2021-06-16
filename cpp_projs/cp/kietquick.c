@@ -9,36 +9,19 @@
 
 // }
 
-#include<stdio.h>
-#include<math.h>
-#include<stdlib.h>
-#include<string.h>
-void main()
-{
-    int a, b, c, sum;
-    scanf("%d%d%d", &a, &b, &c);
-    sum = calsum(a, b, c);
-    printf("%d", sum);
-}
-calsum(int x, int y, int z)
-{
-    int d;
-    d = y;
-    d = 56;
-    printf("%d\n", d);
-    // return d;
-}
-
-// #include<stdio.h>
-// #include<math.h>
-// #include<stdlib.h>
-// #include<string.h>
+// #include <stdio.h>
+// #include <math.h>
+// #include <stdlib.h>
+// #include <string.h>
 // void main()
 // {
-//     int x = 5;
-//     // int y = (--x)+(--x)+(x=10);
-//     // printf("%d %d\n", x, y);
-//     int y = 
+//   // int x = 5;
+//   // int y = (--x) + (--x) + (x = 10);
+//   // printf("%d %d\n", x, y);
+//   // int y =
+//   int a, b = -13, c = 5;
+//   if (a = b % c)
+//     printf("%d", a);
 // }
 
 // 6 = a

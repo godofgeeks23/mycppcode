@@ -25,11 +25,8 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
 const int MAX = 1000001;
-
 int factor[MAX] = { 0 };
-
 void generatePrimeFactors()
 {
     factor[1] = 1;
@@ -50,56 +47,32 @@ int calculateNoOFactors(int n)
 {
     if (n == 1)
         return 1;
-
     int ans = 1;
-
     int dup = factor[n];
-
     int c = 1;
-
     int j = n / factor[n];
-
-    // false when prime factorization is done
     while (j != 1) {
-        // if the same prime number is dividing n,
-        // then we increase the count
         if (factor[j] == dup)
             c += 1;
-
-        /* if its a new prime factor that is factorizing n,
-        then we again set c=1 and change dup to the new
-        prime factor, and apply the formula explained
-        above. */
         else {
             dup = factor[j];
             ans = ans * (c + 1);
             c = 1;
         }
-
-        // prime factorizes a number
         j = j / factor[j];
     }
-
-    // for the last prime factor
     ans = ans * (c + 1);
-
     return ans;
 }
-
-// Driver program to test above function
 int main()
 {
-    // generate prime factors of number
-    // upto 10^6
     generatePrimeFactors();
-
     int a;
     cin>>a;
     if(calculateNoOFactors(a)==3)
         cout <<"YES";
     else
         cout<<"NO";
-
     return 0;
 }
 

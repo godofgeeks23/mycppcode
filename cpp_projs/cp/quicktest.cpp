@@ -21,8 +21,7 @@
     
 //     return 0;
 // }
- 
-boilerplate code 2 - basic code acting as a base for all the other programs
+
 #include<bits/stdc++.h>
 using namespace std;
 int main()

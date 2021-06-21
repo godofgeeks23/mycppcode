@@ -9,39 +9,13 @@
 
 // }
 
-// #include<stdio.h>
-// #include<math.h>
-// #include<stdlib.h>
-// #include<string.h>
-// void main()
-// {
-//     int l, k, sum;
-//     scanf("%d %d", &l, &k);
-//     sum = k;
-//     l--;
-//     while(l--)
-//     {
-//         k *= k;
-//         sum+=k;
-//     }
-//     printf("%d\n", sum);
-// }
-
 #include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
-int mult(int x, int y)
+#include<string.h>
+void main()
 {
-    if (y != 0)
-        return (x + mult(x, y - 1));
-    else
-        return 0;
-}
-int main()
-{
-    int x = 5, y = 60;
-    printf("%d",mult(x, y));
-    return 0;
+    
 }
 
 // #include <stdio.h>

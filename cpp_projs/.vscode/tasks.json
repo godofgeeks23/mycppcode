@@ -1,0 +1,33 @@
+//Author : 5hfT
+//data:11th Feb,2020
+//Task:shortcut to run a cpp file which will take input and show output of the programme automatically with programme runtime status such as memory comsume and execution time
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "CPP-14 CP Build",
+        "type": "shell",
+        "command": "",
+        "args": [
+          // "g++","-g","${relativeFile}","-o","${fileBasenameNoExtension}.out","&&","timeout","10","/usr/bin/time","-v","--output","${relativeFileDirname}/sys.txt","./${fileBasenameNoExtension}.out","<","${relativeFileDirname}/input.txt",">","${relativeFileDirname}/output.txt","&&","rm","*out"
+          "g++.exe","-std=c++14", "${file}", "-o", "${fileBasenameNoExtension}.exe", "&&" , "${fileDirname}/${fileBasenameNoExtension}.exe<${fileDirname}/input.txt>${fileDirname}/output.txt"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": {
+          "owner": "cpp",
+          "fileLocation": ["relative", "${workspaceRoot}"],
+          "pattern": {
+            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          }
+        }
+      }
+    ]
+  }

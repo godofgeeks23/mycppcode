@@ -4551,7 +4551,7 @@ int main() {
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-HackerRank Week 6 - Print First N natural numbers using recursion
+HackerRank Week 6 - Print sum of First N natural numbers using recursion
 /\/\/\/\/\/\/\/\/\/\
 #include <stdio.h>
 #include <string.h>
@@ -4594,27 +4594,65 @@ void main()
     display(10);
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+HackerRank Week 6 - Tower of Hanoi-Basic (Using Recursion) 
+/\/\/\/\/\/\/\/\/\/\
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+void shiftrings(int n, char from, char to, char extra)
+{
+    if (n == 1)
+    {
+        printf("Moving ring 1 from %c to %c\n\n", from, to);
+        return;
+    }
+    shiftrings(n - 1, from, extra, to);
+    printf("Moving ring %d from %c to %c\n\n", n, from, to);
+    shiftrings(n - 1, extra, to, from);
+}
+int main() {
 
+    int n;
+    scanf("%d", &n);
+    shiftrings(n, 'A', 'C', 'B');    
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+HackerRank Week 6 - Inception
+/\/\/\/\/\/\/\/\/\/\
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int main() {
+
+        int l, k, sum;
+    scanf("%d %d", &l, &k);
+    sum = k;
+    l--;
+    while(l--)
+    {
+        k *= k;
+        sum+=k;
+    }
+    printf("%d\n", sum);
+    return 0;
+}
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+HackerRank Week 2 M6 - Reverse a word using Recursion 
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 2 M6 - Multiply two numbers using Recursion
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 2 M6 - Sum of Digits until Single Digit(Recursion)
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\
-
-/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-
+HackerRank Week 2 M6 - GCD of Two Number(Using Recursion)
 /\/\/\/\/\/\/\/\/\/\
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

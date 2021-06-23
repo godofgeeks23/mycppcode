@@ -1,4 +1,5 @@
-// boilerplate code 1 -  base for all the other programs
+// boilerplate code 1
+// --------------------
 // #include<bits/stdc++.h>
 // using namespace std;
 // int main()
@@ -13,7 +14,8 @@
 //     return 0;
 // }
 
-// boilerplate code 2 - basic code acting as a base for all the other programs
+// boilerplate code 2
+// -------------------
 // #include<bits/stdc++.h>
 // using namespace std;
 // int main()

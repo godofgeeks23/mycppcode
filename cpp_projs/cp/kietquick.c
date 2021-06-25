@@ -15,23 +15,7 @@
 #include<string.h>
 void main()
 {
-    int x, y, z;
-    x = y  = z = 1;
-    // now x = 1, y = 1, z = 1
-    z = ++x || ++y && ++z;
-    // now x = 2, y = 2
-    // so z is evaluated as - 
-    z = 2 || 2 && 2
-    z = (2 || 2) && 2 
-    // (a || b) gives 0 or 1 depending whether any one of a and b are 
-    // non zero or not. Here (2 || 2) are both non zero, so it evaluates
-    // to be true i.e. 1
-    z = 1 && 2
-    // again (1 && 2) is evaluated as boolean expression as 
-    // a && b means whether both of a, b are non zero or not.
-    // here (1 && 2) are both non zero, so it evaluates to true i.e. 1
-    z = 1
-    printf("%d %d %d", x, y, z);
+    
 }
 
 // #include <stdio.h>

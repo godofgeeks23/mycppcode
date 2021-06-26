@@ -4705,7 +4705,6 @@ int digisum(int n)
     return digisum((n % 10) + digisum(n / 10));
 }
 int main() {
-
     int num;
     scanf("%d", &num);
     printf("%d", digisum(num));
@@ -4727,7 +4726,6 @@ int mygcd(int a, int b)
     return mygcd(b, a % b); 
 } 
 int main() {
-
     int t, a, b;
     scanf("%d", &t);
     while(t--)

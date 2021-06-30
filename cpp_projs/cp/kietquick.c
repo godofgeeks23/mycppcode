@@ -15,7 +15,7 @@
 #include<string.h>
 void main()
 {
-    
+    // write code here
 }
 
 // #include <stdio.h>

@@ -13,9 +13,12 @@
 #include<math.h>
 #include<stdlib.h>
 #include<string.h>
+#define square(n) n*n
 void main()
 {
-    // write code here
+    int i;
+    i = 64/(square(4));
+    printf("%d", i);
 }
 
 // #include <stdio.h>

@@ -13,7 +13,6 @@
 #include<math.h>
 #include<stdlib.h>
 #include<string.h>
-#define square(n) n*n
 void main()
 {
     

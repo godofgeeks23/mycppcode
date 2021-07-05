@@ -13,9 +13,12 @@
 #include<math.h>
 #include<stdlib.h>
 #include<string.h>
-void main()
+#define condition(x) printf("letsfindcourse");
+int main()
 {
-    
+    // printf("%d", p);
+    condition(0);;;
+    return 0;
 }
 
 // #include <stdio.h>

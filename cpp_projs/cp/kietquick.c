@@ -9,19 +9,18 @@
 
 // }
 
-#include<stdio.h>
-#include<math.h>
-#include<stdlib.h>
-#include<string.h>
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
 void main()
 {
     int a = 10, b = 5, c = 3, d;
-    b!=!a;
-    c = b!=!a;
+    b != !a;
+    c = b != !a;
     d = !!a;
     printf("%d\t%d\t%d\t%d", a, b, c, d);
 }
-
 
 // #include<stdio.h>
 // #include<math.h>
@@ -54,10 +53,10 @@ void main()
 
 //     int n;
 //     scanf("%d", &n);
-//     shiftrings(n, 'A', 'C', 'B');    
+//     shiftrings(n, 'A', 'C', 'B');
 //     return 0;
 // }
- 
+
 // This is code is contributed by rathbhupendra
 
 // #include <stdio.h>

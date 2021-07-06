@@ -13,13 +13,27 @@
 #include<math.h>
 #include<stdlib.h>
 #include<string.h>
-#define condition(x) printf("letsfindcourse");
-int main()
+void main()
 {
-    // printf("%d", p);
-    condition(0);;;
-    return 0;
+    int a = 10, b = 5, c = 3, d;
+    b!=!a;
+    c = b!=!a;
+    d = !!a;
+    printf("%d\t%d\t%d\t%d", a, b, c, d);
 }
+
+
+// #include<stdio.h>
+// #include<math.h>
+// #include<stdlib.h>
+// #include<string.h>
+// #define condition(x) printf("letsfindcourse");
+// int main()
+// {
+//     // printf("%d", p);
+//     condition(0);;;
+//     return 0;
+// }
 
 // #include <stdio.h>
 // #include <string.h>

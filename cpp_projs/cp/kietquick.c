@@ -15,18 +15,25 @@
 #include <string.h>
 void main()
 {
-    // int a = 10, b = 5, c = 3, d;
-    // b != !a;
-    // c = b != !a;
-    // d = !!a;
-    // printf("%d\t%d\t%d\t%d", a, b, c, d);
+    int a = 10, b = 5, c = 3, d;
+    b != !a;
+    c = b != !a;
+    d = !!a;
+    printf("%d\t%d\t%d\t%d", a, b, c, d); 
 
-    int i = 0, j = 1, k = 2, m;
-    m = i++ || j++ || k++;
-    m = 0 or 1 = 1
-    i = 1
-    j = 2
-    printf("%d %d %d %d", m, i, j, k);
+    // int i = 0, j = 1, k = 2, m;
+    // m = i++ || j++ || k++;
+    // m = 0 or 1 = 1
+    // i = 1
+    // j = 2
+    // printf("%d %d %d %d", m, i, j, k);
+
+    // int x = 10;
+    // x = !x;
+    // printf("%d", x);
+
+
+    
 }
 
 // #include<stdio.h>

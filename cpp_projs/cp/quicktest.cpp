@@ -24,13 +24,40 @@
 //     return 0;
 // }
 
-#include<bits/stdc++.h>
-using namespace std;
-int main()
-{
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+    int main() {
+        int n;
+        cin >> n;
+        for (int i = 0; i < n; i++) {
+            int d, x, y, z;
+            cin >> d >> x >> y >> z;
+            vector<int> v(7);
+            v[0] = x * d;
+            v[1] = y * d;
+            v[2] = z * d;
+            for (int j = 3; j < 7; j++) {
+                v[j] = v[j - 1] + z * (j - 1);
+            }
+            int max = 0;
+            for (int j = 0; j < 7; j++) {
+                if (v[j] > max) {
+                    max = v[j];
+                }
+            }
+            cout << max-1 << endl;
+        }
+        return 0;
+    }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
     
-    return 0;
-}
+//     return 0;
+// }
 
 // #include<bits/stdc++.h>
 // using namespace std;

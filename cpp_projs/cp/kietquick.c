@@ -9,9 +9,10 @@
 
 // }
 
-#include<stdio.h>
-int main (){ 
-     
+#include <stdio.h>
+int main()
+{
+    
     return 0;
 }
 
@@ -21,64 +22,52 @@ int main (){
 // #include <string.h>
 // int main()
 // {
+//     int a[4][5] = {{1 ,2 ,3 ,4 ,5},{6 ,7 ,8 ,9 ,10},{11 ,12 ,13 ,14 ,15},{16 ,17 ,18 ,19 ,20};
+//     printf("%d\n", *a);
+//     printf("%d\n", **(a+3));
+//     printf("%d\n", *(*(a+3)+3));
+//     printf("%d\n", **a);
+//     printf("%d\n", *(*(a+**a+2)+3));
 
-//     int *p;
-//     p =   
+//     int i = 0;
+//     for (i = 0;i < 5; i++)
+//         if (i < 4)
+//         {
+//             printf("Hello");
+//             break;
+//         }
+//     int x=10;
 
-        // int a[4][5] = {{1 ,2 ,3 ,4 ,5},{6 ,7 ,8 ,9 ,10},{11 ,12 ,13 ,14 ,15},{16 ,17 ,18 ,19 ,20}};
-        // printf("%d\n", *a);
-        // printf("%d\n", **(a+3));
-        // printf("%d\n", *(*(a+3)+3));
-        // printf("%d\n", **a);
-    // printf("%d\n", *(*(a+**a+2)+3));
+//     if x>=2
 
-        // int i = 0;
+//     printf("%d",x);
 
-        // for (i = 0;i < 5; i++)
+//     int a = 10, b = 5, c = 3, d;
+//     b != !a;
+//     c = b != !a;
+//     d = !!a;
+//     printf("%d\t%d\t%d\t%d", a, b, c, d);
 
-        //     if (i < 4)
+//     int i = 0, j = 1, k = 2, m;
+//     m = i++ || j++ || k++;
+//     m = 0 or 1 = 1
+//     i = 1
+//     j = 2
+//     printf("%d %d %d %d", m, i, j, k);
 
-        //     {
+//     int x = 10;
+//     x = !x;
+//     printf("%d", x);
+//     char res = 130;
+//     printf("%d", res);
 
-        //         printf("Hello");
-
-        //         break;
-
-        //     }
-// int x=10;
-
-// if x>=2
-
-// printf("%d",x);
-
- // return 0; 
-
-    // int a = 10, b = 5, c = 3, d;
-    // b != !a;
-    // c = b != !a;
-    // d = !!a;
-    // printf("%d\t%d\t%d\t%d", a, b, c, d); 
-
-    // int i = 0, j = 1, k = 2, m;
-    // m = i++ || j++ || k++;
-    // m = 0 or 1 = 1
-    // i = 1
-    // j = 2
-    // printf("%d %d %d %d", m, i, j, k);
-
-    // int x = 10;
-    // x = !x;
-    // printf("%d", x);
-    // char res = 130;
-    // printf("%d", res);
-
-    // int x = 5, y = 0, z;
-    // if(x==0||x&&y)
-    //     if(!y)
-    //         z = 0;
-    //     else
-    //         y = 1;
-    //     printf("%d %d %d", x, y, z);
+//     int x = 5, y = 0, z;
+//     if(x==0||x&&y)
+//         if(!y)
+//             z = 0;
+//         else
+//             y = 1;
+//         printf("%d %d %d", x, y, z);
 // }
 
 // #include<stdio.h>

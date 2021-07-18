@@ -12,7 +12,6 @@
 #include <stdio.h>
 int main()
 {
-    int a,b;
     
     return 0;
 }
@@ -106,7 +105,6 @@ int main()
 //     return 0;
 // }
 
-// This is code is contributed by rathbhupendra
 
 // #include <stdio.h>
 // #include <math.h>

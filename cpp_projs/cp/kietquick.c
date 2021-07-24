@@ -8,12 +8,41 @@
 // }
 
 #include <stdio.h>
-int main()
-{
-    
-    return 0;
-}
+#include<string.h>
+// strcut student
+// static int k;
+// int main()
+// {
 
+
+// printf("%d", k);
+// return 90;
+// // return -1;
+// }
+
+#include <stdio.h>
+
+struct student
+{
+
+char *name;
+
+};
+
+struct student s[2];
+
+void main()
+{
+s[0].name = "alan";
+
+s[1] = s[0];
+
+printf("%s %s", s[0].name, s[1].name);
+
+s[1].name = "turing";
+
+printf("\n%s %s", s[0].name, s[1].name);
+}
 // #include <stdio.h>
 // #include <math.h>
 // #include <stdlib.h>

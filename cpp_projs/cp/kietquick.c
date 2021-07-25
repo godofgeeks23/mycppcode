@@ -11,7 +11,7 @@
 #include<string.h>
 int main()
 {
-    printf("%d", k);
+    
     return 90;
 }
 

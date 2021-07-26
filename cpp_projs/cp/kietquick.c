@@ -12,7 +12,7 @@
 int main()
 {
     
-    return 90;
+    return 0;
 }
 
 // #include <stdio.h>

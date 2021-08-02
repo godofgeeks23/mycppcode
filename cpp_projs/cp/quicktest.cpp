@@ -1,4 +1,4 @@
-// boilerplate code 1
+// (boilerplate) code 1
 // --------------------
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -14,7 +14,7 @@
 //     return 0;
 // }
 
-// boilerplate code 2
+// (boilerplate) code 2
 // -------------------
 // #include<bits/stdc++.h>
 // using namespace std;

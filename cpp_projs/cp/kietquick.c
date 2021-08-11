@@ -11,7 +11,15 @@
 #include<string.h>
 int main()
 {
-    
+    // int a = 12, b = 15;
+    // printf("%d, %d, %d, %d", a=b, a==b, a, b);
+
+    // int i = 1;
+    // for(;i;)
+    //     i++;
+    // printf("%d", i);
+
+
     return 0;
 }
 

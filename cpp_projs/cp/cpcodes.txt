@@ -4736,7 +4736,7 @@ int main() {
     return 0;
 }
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
-CodeChef CCSTART - HDIVISR
+CodeChef (CCSTART) - HDIVISR
 /\/\/\/\/\/\/\/\/\/\
 #include<bits/stdc++.h>
 using namespace std;

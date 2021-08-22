@@ -24,27 +24,48 @@
 //     return 0;
 // }
 
-
-
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
-int main()
-{
-    int a,b,c, max, min;
-    cin>>a>>b>>c;
-    max = min = a;
-    if(b>max)
-        max = b;
-    if(c>max)
-        max = c;
-    if(b<min)
-        min = b;
-    if(c<min)
-        min = c;
-    int temp = (a+b+c)-min-max;
-    cout<<temp<<endl;
+
+int main() {
+    // your code goes here
+    int t,r;
+    cin>>t;
+    while(t--)
+    {
+        cin>>r;
+        if(r>=2000)
+        cout<<"1";
+        else if(r>=1600 && r<2000)
+        cout<<"2";
+        else
+        cout<<"3";
+        cout<<endl;
+        
+    }
     return 0;
 }
+
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     int a,b,c, max, min;
+//     cin>>a>>b>>c;
+//     max = min = a;
+//     if(b>max)
+//         max = b;
+//     if(c>max)
+//         max = c;
+//     if(b<min)
+//         min = b;
+//     if(c<min)
+//         min = c;
+//     int temp = (a+b+c)-min-max;
+//     cout<<temp<<endl;
+//     return 0;
+// }
 
 // #include<bits/stdc++.h>
 // using namespace std;

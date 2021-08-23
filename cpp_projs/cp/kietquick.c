@@ -9,26 +9,18 @@
 
 #include <stdio.h>
 #include<string.h>
+void test(int *a, int *b)
+{
+    a = b;
+    printf("%d %d", a, b);
+    *a = 15;
+}
+int x = 10, y = 20;
 int main()
 {
-    // int a = 12, b = 15;
-    // printf("%d, %d, %d, %d", a=b, a==b, a, b);
 
-    // int i = 1;
-    // for(;i;)
-    //     i++;
-    // printf("%d", i);
-
-    // int a= 20;
-    // // a = ~a;
-    // printf("%d %d %d", a, a++, ++a);
-
-    // int ary[4];
-    // ary[1] = {1,2,3,4};
-    // printf("%d", ary[2]);
-
-    
-
+    test(&x, &y);
+    // printf("%d %d\n", x, y);
     return 0;
 }
 

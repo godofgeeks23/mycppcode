@@ -8,19 +8,10 @@
 // }
 
 #include <stdio.h>
-#include<string.h>
-void test(int *a, int *b)
-{
-    a = b;
-    printf("%d %d", a, b);
-    *a = 15;
-}
-int x = 10, y = 20;
+#include <string.h>
 int main()
 {
 
-    test(&x, &y);
-    // printf("%d %d\n", x, y);
     return 0;
 }
 
@@ -112,7 +103,6 @@ int main()
 //     shiftrings(n, 'A', 'C', 'B');
 //     return 0;
 // }
-
 
 // #include <stdio.h>
 // #include <math.h>

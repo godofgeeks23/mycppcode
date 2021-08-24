@@ -6,11 +6,11 @@
 // {
 //     clock_t start, end;
 //     start = clock();
-            
+
 //     // code goes here!
 
-//     end = clock();  
-//     cout << "\nTime: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"; 
+//     end = clock();
+//     cout << "\nTime: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s";
 //     return 0;
 // }
 
@@ -20,32 +20,19 @@
 // using namespace std;
 // int main()
 // {
-    
+
 //     return 0;
 // }
 
 #include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
     // your code goes here
-    int t,r;
-    cin>>t;
-    while(t--)
-    {
-        cin>>r;
-        if(r>=2000)
-        cout<<"1";
-        else if(r>=1600 && r<2000)
-        cout<<"2";
-        else
-        cout<<"3";
-        cout<<endl;
-        
-    }
+
     return 0;
 }
-
 
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -102,14 +89,13 @@ int main() {
 //     return 0;
 // }
 
-
 // #include<bits/stdc++.h>
 // using namespace std;
 // int main()
 // {
 //     clock_t start, end;
 //     start = clock();
-            
+
 //     // code goes here!
 //     int t;
 //     long long int n;
@@ -134,21 +120,20 @@ int main() {
 //     	cout<<score<<endl;
 //     }
 
-//     end = clock();  
-//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
+//     end = clock();
+//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl;
 //     return 0;
 // }
 
-
 // // code-chef problem solution
 // #include<bits/stdc++.h>
-// using namespace std; 
+// using namespace std;
 // #define deb(x) cout << #x << "=" << x << endl
 // int main()
 // {
 //     clock_t start, end;
 //     start = clock();
-    
+
 //     int t, d0, d1, d2, d3, d4, d5, d6, sum;
 //     long int k;
 //     cin>>t;
@@ -193,9 +178,9 @@ int main() {
 //         else
 //             cout<<"NO\n";
 //     }
-    
-//     end = clock();  
-//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
+
+//     end = clock();
+//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl;
 //     return 0;
 // }
 
@@ -251,9 +236,9 @@ int main() {
 //                     break;
 //                 }
 //         }
-//         total=A.size()+i+1;     
+//         total=A.size()+i+1;
 //         }
-    
+
 //         if(sum1>=K && sum2>=K){
 //             cout<<total;
 //         }
@@ -269,14 +254,14 @@ int main() {
 
 // #include<bits/stdc++.h>
 // using namespace std;
-// int mygcd(int a, int b) 
-// { 
-//     if (a < b) 
-//         return mygcd(b, a); 
-//     if (a % b == 0) 
-//         return b; 
-//     return mygcd(b, a % b); 
-// } 
+// int mygcd(int a, int b)
+// {
+//     if (a < b)
+//         return mygcd(b, a);
+//     if (a % b == 0)
+//         return b;
+//     return mygcd(b, a % b);
+// }
 // int pow_n_mod(int b, int n, int m)
 // {
 //     int base = b%m;
@@ -285,28 +270,28 @@ int main() {
 //     return base;
 // }
 // /* Iterative Function to calculate (x^y)%p in O(log y) */
-// int power(int x, int y, int p) 
-// { 
-//     int res = 1;     // Initialize result 
-//     x = x % p; // Update x if it is more than or 
+// int power(int x, int y, int p)
+// {
+//     int res = 1;     // Initialize result
+//     x = x % p; // Update x if it is more than or
 //                 // equal to p
 //     if (x == 0) return 0; // In case x is divisible by p;
-//     while (y > 0) 
-//     { 
-//         // If y is odd, multiply x with result 
-//         if (y & 1) 
-//             res = (res*x) % p; 
-//         // y must be even now 
-//         y = y>>1; // y = y/2 
-//         x = (x*x) % p; 
-//     } 
-//     return res; 
-// } 
+//     while (y > 0)
+//     {
+//         // If y is odd, multiply x with result
+//         if (y & 1)
+//             res = (res*x) % p;
+//         // y must be even now
+//         y = y>>1; // y = y/2
+//         x = (x*x) % p;
+//     }
+//     return res;
+// }
 // int main()
 // {
 //     clock_t start, end;
 //     start = clock();
-            
+
 //     int t, n, chk;
 //     scanf("%d", &t);
 //     while(t--)
@@ -326,8 +311,8 @@ int main() {
 //             printf("false\n");
 //     }
 
-//     end = clock();  
-//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl; 
+//     end = clock();
+//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s"<<endl;
 //     return 0;
 // }
 
@@ -340,13 +325,13 @@ int main() {
 //     // this program is to demonstrate how to use hashing in code to reduce time complexity of the program
 //     // Question - given a number between 1 and 20, and variable number of queries, print the factorial of the number input in each query
 //     // cin>>q;
-//         // Calculates the time taken 
-//     // by the algorithm to execute 
+//         // Calculates the time taken
+//     // by the algorithm to execute
 
-//     end = clock();  
-//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<" s"<<endl; 
+//     end = clock();
+//     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<" s"<<endl;
 //     return 0;
-// } 
+// }
 
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -361,20 +346,20 @@ int main() {
 //             cout<<(x+6)<<endl;
 //         else
 //             cout<<(x-6)<<endl;
-//     }      
+//     }
 //     return 0;
-// } 
+// }
 
 // #include<bits/stdc++.h>
 // using namespace std;
-// int dist_subs(string str) 
-// { 
-//     set<string> result ; 
-//     for (int i = 0; i <= str.length(); i++) 
-//         for (int j = 1; j <= str.length()-i; j++) 
-//             result.insert(str.substr(i, j)); 
-//     return result.size(); 
-// } 
+// int dist_subs(string str)
+// {
+//     set<string> result ;
+//     for (int i = 0; i <= str.length(); i++)
+//         for (int j = 1; j <= str.length()-i; j++)
+//             result.insert(str.substr(i, j));
+//     return result.size();
+// }
 // int main()
 // {
 //     string s1, s2;
@@ -384,7 +369,7 @@ int main() {
 //     else
 //         cout<<"Non Companion"<<endl;
 //     return 0;
-// } 
+// }
 
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -409,7 +394,7 @@ int main() {
 //         cout<<ans<<endl;
 //     }
 //     return 0;
-// } 
+// }
 
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -441,10 +426,9 @@ int main() {
 //             cout<<"NO"<<endl;
 //         else
 //             cout<<"YES"<<endl;
-//      }     
+//      }
 //      return 0;
 // }
-
 
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -453,12 +437,12 @@ int main() {
 //     long int t, a, b;
 //     cin>>t;
 //     while(t--)
-//     {	
+//     {
 //     	cin>>a>>b;
 //     	float x = ((2*a)-b)/3.0;
 //     	float y = x-a+b;
 //     	if((y>=0) && (x>=0))
-//     		if((ceilf(x) == x) && (ceilf(y) == y))	
+//     		if((ceilf(x) == x) && (ceilf(y) == y))
 //     			cout<<"YES"<<endl;
 //     		else
 //     			cout<<"NO"<<endl;
@@ -488,7 +472,6 @@ int main() {
 //     }
 //     return 0;
 // }
-
 
 // number of common divisors of a, b - hackerearth
 // #include<bits/stdc++.h>
@@ -572,7 +555,6 @@ int main() {
 //     return 0;
 // }
 
-
 // #include<bits/stdc++.h>                 // CODECHEF - BYTR20B/RICY
 // using namespace std;
 // int rangemin(int* arr, int a, int b)
@@ -584,7 +566,7 @@ int main() {
 //             min = arr[i];
 //     }
 //     return min;
-// }   
+// }
 // int main()
 // {
 //     int t,m,n;

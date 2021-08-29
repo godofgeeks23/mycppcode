@@ -1,19 +1,19 @@
-// #include<stdio.h>
-// #include<math.h>
-// #include<stdlib.h>
-// #include<string.h>
-// void main()
-// {
-
-// }
-
-#include <stdio.h>
-#include <string.h>
-int main()
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main()
 {
-    
-    return 0;
+
 }
+
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+    
+//     return 0;
+// }
 
 // #include <stdio.h>
 // #include <math.h>

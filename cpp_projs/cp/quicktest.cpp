@@ -53,64 +53,7 @@ int main()
     return 0;
 }
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// int main()
-// {
-//     int t, n, k;
-//     cin>>t;
-//     while(t--)
-//     {
-//         cin>>n>>k;
-//         vector<int> arr;
-//         for(int i=0;i<n;i++)
-//         {
-//             int temp;
-//             cin>>temp;
-//             arr.push_back(temp);
-//         }
-//         sort(arr.begin(), arr.end());
-//         int sum = 0;
-//         while(k--)
-//         {
-//                 sum += arr.back();
-//                 arr.pop_back();
-//                 // for (auto i = arr.begin(); i != arr.end(); ++i)
-//                 //     *i *= -1;
-//                 transform(arr.begin(), arr.end(), arr.begin(), [k](int &c){ return c*(-1); });
-//                 // sort(arr.begin(), arr.end());
-//                 reverse(arr.begin(), arr.end());
-//         }
-//         cout<<sum<<endl;
-//     }
-//     return 0;
-// }
 
-
-
-
-
-
-
-// #include<bits/stdc++.h>
-// using namespace std;
-// int main()
-// {
-//     int a,b,c, max, min;
-//     cin>>a>>b>>c;
-//     max = min = a;
-//     if(b>max)
-//         max = b;
-//     if(c>max)
-//         max = c;
-//     if(b<min)
-//         min = b;
-//     if(c<min)
-//         min = c;
-//     int temp = (a+b+c)-min-max;
-//     cout<<temp<<endl;
-//     return 0;
-// }
 
 // #include<bits/stdc++.h>
 // using namespace std;

@@ -4757,7 +4757,27 @@ int main()
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 Hackerrank K3 RECRUITMENT 2020-2024 - Key to the Golden Egg
 /\/\/\/\/\/\/\/\/\/\
-
+#include <iostream>
+using namespace std;
+int digSum(int n)
+    {
+        int sum = 0;
+        while (n != 0) {
+            sum = sum + n % 10;
+            n = n / 10;
+        }
+        return sum;
+    }
+int main()
+{
+    int a, b;
+    cin>>a>>b;
+    int sum = 0;
+    for(int i=a;i<=b;i++)
+        sum += digSum(i);
+    cout<<sum;
+    return 0;
+}
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 Hackerrank K3 RECRUITMENT 2020-2024 - Number of Quidditch Teams!
 /\/\/\/\/\/\/\/\/\/\

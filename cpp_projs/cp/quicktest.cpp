@@ -120,63 +120,9 @@ int main()
 //     return 0;
 // }
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// int getMaxCount(int A[], int n)
-// {
-//     sort(A, A + n);       
-//     int max_count = 1, res = A[0], count = 1; 
-//     for (int i = 1; i < n; i++) { 
-//         if (A[i] ==A[i - 1]) 
-//             count++; 
-//         else { 
-//             if (count > max_count) { 
-//                 max_count = count; 
-//                 res = A[i - 1]; 
-//             } 
-//             count = 1; 
-//         } 
-//     }   
-//     if (count > max_count) 
-//     { 
-//         max_count = count; 
-//         res = A[n - 1]; 
-//     }   
-//     return max_count;
-// }
-// int main()
-// {
-//     int n;
-//     cin>>n;
-//     int arr[n];
-//     for(int i=0;i<n;i++)
-//         cin>>arr[i];
-//     cout<<getMaxCount(arr, n);
-//     return 0;
-// }
 
-// #include <iostream>
-// using namespace std;
-// int digSum(int n)
-//     {
-//         int sum = 0;
-//         while (n != 0) {
-//             sum = sum + n % 10;
-//             n = n / 10;
-//         }
-//         return sum;
-//     }
-// int main()
-// {
-//     // your code goes here
-//     int a, b;
-//     cin>>a>>b;
-//     int sum = 0;
-//     for(int i=a;i<=b;i++)
-//         sum += digSum(i);
-//     cout<<sum;
-//     return 0;
-// }
+
+
 
 // #include<bits/stdc++.h>
 // using namespace std;

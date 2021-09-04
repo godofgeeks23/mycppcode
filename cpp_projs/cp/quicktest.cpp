@@ -22,26 +22,161 @@
 // {
 
 //     return 0;
-// }
+//}
 
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
-
 int main()
 {
-    // your code goes here
-    int n;
-    cin>>n;
-    for(int i=0;i<n;i++)
+    int t, n, a, b, fina, finb;
+    cin>>t;
+    while(t--)
     {
-        for(int j=0;j<n-i;j++)
-            cout<<" ";
-        for(int j=0;j<i+1;j++)
-            cout<<"#";
-        cout<<endl;
+        cin>>n;
+        int diff, diff_min = b;
+        for(a=n/2;a>=0;a--)
+        {
+            b = n-a;
+            if((a|b==n) && (a&b==0))
+            {
+                diff = b-a;
+                if(diff<=diff_min)
+                {
+                    diff_min = diff;
+                    fina = a;
+                    finb = b;
+                }
+            }
+        }
+        cout<<fina<<" "<<finb<<endl;
     }
     return 0;
 }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     int t, n, k;
+//     cin>>t;
+//     while(t--)
+//     {
+//         cin>>n>>k;
+//         vector<int> arr;
+//         for(int i=0;i<n;i++)
+//         {
+//             int temp;
+//             cin>>temp;
+//             arr.push_back(temp);
+//         }
+//         sort(arr.begin(), arr.end());
+//         int sum = 0;
+//         while(k--)
+//         {
+//                 sum += arr.back();
+//                 arr.pop_back();
+//                 // for (auto i = arr.begin(); i != arr.end(); ++i)
+//                 //     *i *= -1;
+//                 transform(arr.begin(), arr.end(), arr.begin(), [k](int &c){ return c*(-1); });
+//                 // sort(arr.begin(), arr.end());
+//                 reverse(arr.begin(), arr.end());
+//         }
+//         cout<<sum<<endl;
+//     }
+//     return 0;
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int ismirror(char ch)
+// {
+//     if(ch=='A' || ch=='H' || ch=='I' || ch=='M' || ch=='O' || ch=='T' || ch=='U' || ch=='V' || ch=='W' || ch=='X' || ch=='Y')
+//         return 1;
+//     else
+//         return 0;
+// }
+// int main()
+// {
+//     int n, flag;
+//     cin>>n;
+//     string str[n];
+//     for(int i=0;i<n;i++)
+//     {
+//         flag = 1;
+//         cin>>str[i];
+//         for(int j=0;j<str[i].size();j++)
+//         {
+//             if(!ismirror(str[i][j]))
+//             {
+//                 flag = 0;
+//                 break;
+//             }
+//         }
+//         if(flag==1)
+//             cout<<"clone-yes\n";
+//         else
+//             cout<<"clone-no\n";
+//     }
+//     return 0;
+// }
+
+// #include<bits/stdc++.h>
+// using namespace std;
+// int getMaxCount(int A[], int n)
+// {
+//     sort(A, A + n);       
+//     int max_count = 1, res = A[0], count = 1; 
+//     for (int i = 1; i < n; i++) { 
+//         if (A[i] ==A[i - 1]) 
+//             count++; 
+//         else { 
+//             if (count > max_count) { 
+//                 max_count = count; 
+//                 res = A[i - 1]; 
+//             } 
+//             count = 1; 
+//         } 
+//     }   
+//     if (count > max_count) 
+//     { 
+//         max_count = count; 
+//         res = A[n - 1]; 
+//     }   
+//     return max_count;
+// }
+// int main()
+// {
+//     int n;
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++)
+//         cin>>arr[i];
+//     cout<<getMaxCount(arr, n);
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+// int digSum(int n)
+//     {
+//         int sum = 0;
+//         while (n != 0) {
+//             sum = sum + n % 10;
+//             n = n / 10;
+//         }
+//         return sum;
+//     }
+// int main()
+// {
+//     // your code goes here
+//     int a, b;
+//     cin>>a>>b;
+//     int sum = 0;
+//     for(int i=a;i<=b;i++)
+//         sum += digSum(i);
+//     cout<<sum;
+//     return 0;
+// }
 
 // #include<bits/stdc++.h>
 // using namespace std;

@@ -12,6 +12,6 @@
 #include <string.h>
 int main()
 {
-
+    float str = 3e2;
     return 0;
 }

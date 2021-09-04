@@ -86,39 +86,7 @@ int main()
 //     return 0;
 // }
 
-// #include<bits/stdc++.h>
-// using namespace std;
-// int ismirror(char ch)
-// {
-//     if(ch=='A' || ch=='H' || ch=='I' || ch=='M' || ch=='O' || ch=='T' || ch=='U' || ch=='V' || ch=='W' || ch=='X' || ch=='Y')
-//         return 1;
-//     else
-//         return 0;
-// }
-// int main()
-// {
-//     int n, flag;
-//     cin>>n;
-//     string str[n];
-//     for(int i=0;i<n;i++)
-//     {
-//         flag = 1;
-//         cin>>str[i];
-//         for(int j=0;j<str[i].size();j++)
-//         {
-//             if(!ismirror(str[i][j]))
-//             {
-//                 flag = 0;
-//                 break;
-//             }
-//         }
-//         if(flag==1)
-//             cout<<"clone-yes\n";
-//         else
-//             cout<<"clone-no\n";
-//     }
-//     return 0;
-// }
+
 
 
 

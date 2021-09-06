@@ -24,24 +24,24 @@
 //     return 0;
 //}
 
-// Hackerrank K3 RECRUITMENT 2020-2024 - 
-#include<bits/stdc++.h>
+// Hackerrank K3 RECRUITMENT 2020-2024 - Problem 5
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
     int t, n, a, b, fina, finb;
-    cin>>t;
-    while(t--)
+    cin >> t;
+    while (t--)
     {
-        cin>>n;
+        cin >> n;
         int diff, diff_min = b;
-        for(a=n/2;a>=0;a--)
+        for (a = n / 2; a >= 0; a--)
         {
-            b = n-a;
-            if((a|b==n) && (a&b==0))
+            b = n - a;
+            if ((a | b == n) && (a & b == 0))
             {
-                diff = b-a;
-                if(diff<=diff_min)
+                diff = b - a;
+                if (diff <= diff_min)
                 {
                     diff_min = diff;
                     fina = a;
@@ -49,7 +49,7 @@ int main()
                 }
             }
         }
-        cout<<fina<<" "<<finb<<endl;
+        cout << fina << " " << finb << endl;
     }
     return 0;
 }

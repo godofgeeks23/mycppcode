@@ -12,6 +12,8 @@
 #include <string.h>
 int main()
 {
-    float str = 3e2;
+    int p = 10;
+    int q = p++ + ++p;
+    printf("%d", q);
     return 0;
 }

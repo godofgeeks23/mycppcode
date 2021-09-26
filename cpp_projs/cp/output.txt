@@ -1,1 +1,1 @@
-22
+Enter the size of array : Enter the array elements : Enter the key elements : The key element is found at location 3 The elapsed time is 0.000000 seconds

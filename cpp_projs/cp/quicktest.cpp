@@ -24,35 +24,56 @@
 //     return 0;
 //}
 
-// Hackerrank K3 RECRUITMENT 2020-2024 - Problem 5
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 int main()
 {
-    int t, n, a, b, fina, finb;
-    cin >> t;
-    while (t--)
+    int n, k;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
     {
-        cin >> n;
-        int diff, diff_min = b;
-        for (a = n / 2; a >= 0; a--)
-        {
-            b = n - a;
-            if ((a | b == n) && (a & b == 0))
-            {
-                diff = b - a;
-                if (diff <= diff_min)
-                {
-                    diff_min = diff;
-                    fina = a;
-                    finb = b;
-                }
-            }
-        }
-        cout << fina << " " << finb << endl;
+        cin>>arr[i];
+    }
+    sort(arr, arr+n);
+    cin>>k;
+    while(k--)
+    {
+        cout<<arr[n-1]<<" ";
+        n--;
     }
     return 0;
 }
+
+// Hackerrank K3 RECRUITMENT 2020-2024 - Problem 5
+// #include <bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     int t, n, a, b, fina, finb;
+//     cin >> t;
+//     while (t--)
+//     {
+//         cin >> n;
+//         int diff, diff_min = b;
+//         for (a = n / 2; a >= 0; a--)
+//         {
+//             b = n - a;
+//             if ((a | b == n) && (a & b == 0))
+//             {
+//                 diff = b - a;
+//                 if (diff <= diff_min)
+//                 {
+//                     diff_min = diff;
+//                     fina = a;
+//                     finb = b;
+//                 }
+//             }
+//         }
+//         cout << fina << " " << finb << endl;
+//     }
+//     return 0;
+// }
 
 // #include<bits/stdc++.h>
 // using namespace std;

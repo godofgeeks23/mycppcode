@@ -24,25 +24,62 @@
 //     return 0;
 //}
 
+// Simple C++ program to count occurrences
+// of pat in txt.
 #include<bits/stdc++.h>
 using namespace std;
+  
+int countFreq(string &pat, string &txt)
+{
+    int M = pat.length();
+    int N = txt.length();
+    int res = 0;
+    for (int i = 0; i <= N - M; i++)
+    {
+        int j;
+        for (j = 0; j < M; j++)
+            if (txt[i+j] != pat[j])
+                break;
+        if (j == M) 
+        {
+           res++;
+           j = 0;
+        }
+    }
+    return res;
+}
+int isinarray(string str[], int size, string word)
+{
+    for(int i=0;i<size;i++)
+        if(str[i]==word)
+            return 1;
+    return 0;
+}
 int main()
 {
-    int n, k;
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++)
+    string str, word;
+    string words[10000];
+    int n = 0, flag = 0;
+    getline(cin, str);
+    stringstream iss(str);
+    while (iss >> word)
     {
-        cin>>arr[i];
+        if(isinarray(words, n, word)==0)
+        {
+            int temp = countFreq(word, str);
+            if(temp!=1)
+            {
+                cout << word << ": " << temp << endl;
+                flag = 1; 
+            }
+            words[n] = word;
+            n++;   
+        }
+        // cout<<word<<endl;
     }
-    sort(arr, arr+n);
-    cin>>k;
-    while(k--)
-    {
-        cout<<arr[n-1]<<" ";
-        n--;
-    }
-    return 0;
+    if(flag==0)
+        cout<<-1;
+   return 0;
 }
 
 // Hackerrank K3 RECRUITMENT 2020-2024 - Problem 5

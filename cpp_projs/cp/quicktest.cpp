@@ -24,8 +24,7 @@
 //     return 0;
 //}
 
-// Simple C++ program to count occurrences
-// of pat in txt.
+// hackerrank week 2 problem
 #include<bits/stdc++.h>
 using namespace std;
   

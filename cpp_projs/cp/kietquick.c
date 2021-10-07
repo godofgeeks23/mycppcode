@@ -57,13 +57,11 @@
 
 int main() {
 
-int a = 10 ;
+int y[4]  = {6, 7, 8, 9};
 
-void *p=&a;
 
-int *ptr = p;
 
-printf("%u", *ptr);
+int *ptr = y + 2; printf("%d\n", ptr[1]);
 
 return 0;
 

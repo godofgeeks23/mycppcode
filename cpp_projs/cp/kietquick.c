@@ -54,19 +54,22 @@
 // }
 
 #include<stdio.h>
-int fibo(int n)
+void TOH(int n, char a, char b, char c)
 {
-    if(n==0 || n==1)
-        return n;
-    return fibo(n-1)+fibo(n-2);
+    if (n == 1)
+    {
+        printf("\nMove disk 1 from %c to %c", a, c);
+        return;
+    }
+    TOH(n - 1, a, c, b);
+    printf("\nMove disk %d from %c to %c", n, a, c);
+    TOH(n - 1, b, a, c);
 }
 int main() 
 {
     int n;
-    printf("Enter the number of terms: ");
+    printf("Enter the number of disks: ");
     scanf("%d",&n);
-    printf("Fibonacci series: ");
-    for(int i=0;i<n;i++)
-        printf("%d ",fibo(i));
+    TOH(n, 'A', 'B', 'C');
     return 0;
 }

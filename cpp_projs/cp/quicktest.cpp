@@ -24,27 +24,60 @@
 //     return 0;
 // }
 
-#include <stdio.h>
-int search(int arr[], int n, int x)
+#include <iostream>
+using namespace std;
+int fibo(int n)
 {
-    int i;
-    for (i = 0; i < n; i++)
-        if (arr[i] == x)
-            return i;
-    return -1;
+    if(n==0 || n==1)
+        return n;
+    return fibo(n-1)+fibo(n-2);
 }
-int main(void)
-{
-    int arr[] = { 2, 3, 4, 10, 40 };
-    int x = 10;
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int result = search(arr, n, x);
-    if (result == -1)
-        printf("Element is not present in array");
-    else
-        printf("Element is present at index %d", result);
-    return 0;
+int main(int argc, char **argv){
+    int n;
+    cin >> n;
+
+    for(int i=1;i<=((n+1)/2);i++)
+    {
+        for(int j=1;j<=((n+3)/2)-i;j++)
+            cout<<"*\t";
+        for(int j=1;j<=(2*i)-1;j++)
+            cout<<"\t";
+        for(int j=1;j<=((n+3)/2)-i;j++)
+            cout<<"*\t";
+        cout<<endl;
+    }
+    for(int i=((n+1)/2)-1;i>=1;i--)
+    {
+        for(int j=1;j<=((n+3)/2)-i;j++)
+            cout<<"*\t";
+        for(int j=1;j<=(2*i)-1;j++)
+            cout<<"\t";
+        for(int j=1;j<=((n+3)/2)-i;j++)
+            cout<<"*\t";
+        cout<<endl;
+    }
 }
+
+// #include <iostream>
+// using namespace std;
+
+// int main(int argc, char **argv){
+//     int n, i, j;
+//     cin >> n;
+
+//     for(i=(n+1)/2;i>=1;i--)
+//     {
+
+//         for(j=1;j<=i;j++)
+//             cout<<"*\t";
+//         for(j=1;j<=(n+1)/2-i+1;j++)
+//             cout<<"\t";
+//         for(j=1;j<=i;j++)
+//             cout<<"*\t";
+//         cout<<endl;
+//     }
+    
+// }
 
 // #include<bits/stdc++.h>
 // using namespace std;

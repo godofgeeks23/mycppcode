@@ -1,5 +1,6 @@
 // (boilerplate) code 1
-// --------------------#include<stdio.h>
+// --------------------
+// #include<stdio.h>
 // #include<math.h>
 // #include<stdlib.h>
 // #include<string.h>
@@ -7,3 +8,12 @@
 // {
 
 // }
+
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+#include<string.h>
+void main()
+{
+    
+}

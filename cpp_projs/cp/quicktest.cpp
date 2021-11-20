@@ -24,40 +24,6 @@
 //     return 0;
 // }
 
-#include <iostream>
-using namespace std;
-int fibo(int n)
-{
-    if(n==0 || n==1)
-        return n;
-    return fibo(n-1)+fibo(n-2);
-}
-int main(int argc, char **argv){
-    int n;
-    cin >> n;
-
-    for(int i=1;i<=((n+1)/2);i++)
-    {
-        for(int j=1;j<=((n+3)/2)-i;j++)
-            cout<<"*\t";
-        for(int j=1;j<=(2*i)-1;j++)
-            cout<<"\t";
-        for(int j=1;j<=((n+3)/2)-i;j++)
-            cout<<"*\t";
-        cout<<endl;
-    }
-    for(int i=((n+1)/2)-1;i>=1;i--)
-    {
-        for(int j=1;j<=((n+3)/2)-i;j++)
-            cout<<"*\t";
-        for(int j=1;j<=(2*i)-1;j++)
-            cout<<"\t";
-        for(int j=1;j<=((n+3)/2)-i;j++)
-            cout<<"*\t";
-        cout<<endl;
-    }
-}
-
 // #include <iostream>
 // using namespace std;
 

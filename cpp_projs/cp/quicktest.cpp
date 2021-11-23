@@ -1,4 +1,4 @@
-// (boilerplate) code 1
+// (boilerplate) format 1
 // --------------------
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -14,7 +14,7 @@
 //     return 0;
 // }
 
-// (boilerplate) code 2
+// (boilerplate) format 2
 // -------------------
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -36,6 +36,7 @@ int main()
         // Calculates the time taken
     // by the algorithm to execute
     
+
 
     end = clock();
     cout << "Time: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<" s"<<endl;

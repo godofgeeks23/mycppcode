@@ -1,4 +1,4 @@
-// (boilerplate) format 1
+// (boilerplate 1)
 // --------------------
 // #include<bits/stdc++.h>
 // using namespace std;
@@ -14,7 +14,7 @@
 //     return 0;
 // }
 
-// (boilerplate) format 2
+// (boilerplate 2)
 // -------------------
 // #include<bits/stdc++.h>
 // using namespace std;

@@ -1,39 +1,65 @@
 #include <stdio.h>
-#include <ctype.h>
-// recursive binary search
-int rec_bin_search(int *a, int n, int x)
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+struct node
 {
-    int m;
-    if (n == 1)
-        return (a[0] == x);
-    m = n / 2;
-    if (a[m] == x)
-        return 1;
-    if (a[m] > x)
-        return rec_bin_search(a, m, x);
-    else
-        return rec_bin_search(a + m, n - m, x);
+    int data;
+    struct node *next;
+};
+struct node *top = NULL;
+void push(int x)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    temp->data = x;
+    temp->next = top;
+    top = temp;
+}
+int pop()
+{
+    if (top == NULL)
+    {
+        printf("Stack is empty\n");
+        return -1;
+    }
+    struct node *temp = top;
+    top = top->next;
+    int x = temp->data;
+    free(temp);
+    return x;
+}
+void display()
+{
+    struct node *temp = top;
+    while (temp != NULL)
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
 }
 int main()
 {
-    int a[10], n, x;
-    printf("Enter the number of elements in the array\n");
-    scanf("%d", &n);
-    printf("Enter the elements of the array\n");
-    for (int i = 0; i < n; i++)
+    int choice = 1, element;
+    while (choice)
     {
-        scanf("%d", &a[i]);
-    }
-    printf("Enter the element to be searched\n");
-    scanf("%d", &x);
-    int pos = rec_bin_search(a, n, x);
-    if (pos == -1)
-    {
-        printf("Element not found\n");
-    }
-    else
-    {
-        printf("Element found at position %d\n", pos);
+        printf("Enter 0: quit\t1: push\t2: pop\t3: display\n");
+        scanf("%d", &choice);
+        switch (choice)
+        {
+        case 1:
+            scanf("%d", &element);
+            push(element);
+            break;
+        case 2:
+            printf("Popped %d\n", pop());
+            break;
+        case 3:
+            display();
+            break;
+        default:
+            exit(0);
+        }
     }
     return 0;
 }

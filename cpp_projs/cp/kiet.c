@@ -1,64 +1,39 @@
-#include<stdio.h>
-#include<ctype.h>
-
-char stack[100];
-int top = -1;
-
-void push(char x)
+#include <stdio.h>
+#include <ctype.h>
+// recursive binary search
+int rec_bin_search(int *a, int n, int x)
 {
-    stack[++top] = x;
-}
-
-char pop()
-{
-    if(top == -1)
-        return -1;
-    else
-        return stack[top--];
-}
-
-int priority(char x)
-{
-    if(x == '(')
-        return 0;
-    if(x == '+' || x == '-')
+    int m;
+    if (n == 1)
+        return (a[0] == x);
+    m = n / 2;
+    if (a[m] == x)
         return 1;
-    if(x == '*' || x == '/')
-        return 2;
-    return 0;
+    if (a[m] > x)
+        return rec_bin_search(a, m, x);
+    else
+        return rec_bin_search(a + m, n - m, x);
 }
-
 int main()
 {
-    char exp[100];
-    char *e, x;
-    printf("Enter the expression : ");
-    scanf("%s",exp);
-    printf("\n");
-    e = exp;
-    
-    while(*e != '\0')
+    int a[10], n, x;
+    printf("Enter the number of elements in the array\n");
+    scanf("%d", &n);
+    printf("Enter the elements of the array\n");
+    for (int i = 0; i < n; i++)
     {
-        if(isalnum(*e))
-            printf("%c ",*e);
-        else if(*e == '(')
-            push(*e);
-        else if(*e == ')')
-        {
-            while((x = pop()) != '(')
-                printf("%c ", x);
-        }
-        else
-        {
-            while(priority(stack[top]) >= priority(*e))
-                printf("%c ",pop());
-            push(*e);
-        }
-        e++;
+        scanf("%d", &a[i]);
     }
-    
-    while(top != -1)
+    printf("Enter the element to be searched\n");
+    scanf("%d", &x);
+    int pos = rec_bin_search(a, n, x);
+    if (pos == -1)
     {
-        printf("%c ",pop());
-    }return 0;
+        printf("Element not found\n");
+    }
+    else
+    {
+        printf("Element found at position %d\n", pos);
+    }
+    return 0;
 }

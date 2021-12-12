@@ -72,6 +72,7 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp",
-        "*.txt": "cpp"
+        "*.txt": "cpp",
+        "ctype.h": "c"
     }
 }

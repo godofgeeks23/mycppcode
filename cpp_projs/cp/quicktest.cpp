@@ -45,15 +45,14 @@
 #include <bits/stdc++.h>
 #include <string.h>
 using namespace std;
-
 int main()
 {
     int n;
-    string s;
+    char s[100];
     cin>>n;
     cin.ignore();
-    getline(cin, s);
-    for (int i = 0; i < s.length(); i++)
+    cin.getline(s, n);
+    for (int i = 0; i < n; i++)
         if (!isupper(s[i]))
             cout << s[i];
     return 0;

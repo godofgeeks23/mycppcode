@@ -1,18 +1,18 @@
-(boilerplate 1)
---------------------
-#include<bits/stdc++.h>
-using namespace std;
-int main()
-{
-    clock_t start, end;
-    start = clock();
+// (boilerplate 1)
+// --------------------
+// #include<bits/stdc++.h>
+// using namespace std;
+// int main()
+// {
+//     clock_t start, end;
+//     start = clock();
 
-    // code goes here!
+//     // code goes here!
 
-    end = clock();
-    cout << "\nTime: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s";
-    return 0;
-}
+//     end = clock();
+//     cout << "\nTime: "<<fixed<<double(end-start)/double(CLOCKS_PER_SEC)<<setprecision(5)<<"s";
+//     return 0;
+// }
 
 // (boilerplate 2)
 // -------------------
@@ -47,13 +47,6 @@ int main()
 using namespace std;
 int main()
 {
-    int n;
-    char s[100];
-    cin>>n;
-    cin.ignore();
-    cin.getline(s, n);
-    for (int i = 0; i < n; i++)
-        if (!isupper(s[i]))
-            cout << s[i];
+    
     return 0;
 }

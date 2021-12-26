@@ -1,65 +1,43 @@
-#include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
-#include <string.h>
-struct node
+#include<stdio.h>
+void main()
 {
-    int data;
-    struct node *next;
-};
-struct node *top = NULL;
-void push(int x)
-{
-    struct node *temp = (struct node *)malloc(sizeof(struct node));
-    temp->data = x;
-    temp->next = top;
-    top = temp;
-}
-int pop()
-{
-    if (top == NULL)
+    int n,i,j,x,y,sumeven=0,sumodd=0,diff,temp;
+    printf("Size of Array\n");
+    scanf("%d",&n);
+    int a[n],b[n];
+    printf("Enter elements of array\n");
+    for(i=0 ; i<n ; i++)
     {
-        printf("Stack is empty\n");
-        return -1;
+       scanf("%d", &a[n]);
     }
-    struct node *temp = top;
-    top = top->next;
-    int x = temp->data;
-    free(temp);
-    return x;
-}
-void display()
-{
-    struct node *temp = top;
-    while (temp != NULL)
-    {
-        printf("%d ", temp->data);
-        temp = temp->next;
-    }
-    printf("\n");
-}
-int main()
-{
-    int choice = 1, element;
-    while (choice)
-    {
-        printf("Enter 0: quit\t1: push\t2: pop\t3: display\n");
-        scanf("%d", &choice);
-        switch (choice)
+     for (x = 0; i < n; ++i) 
         {
-        case 1:
-            scanf("%d", &element);
-            push(element);
-            break;
-        case 2:
-            printf("Popped %d\n", pop());
-            break;
-        case 3:
-            display();
-            break;
-        default:
-            exit(0);
+ 
+            for (y = x + 1; j < n; ++j)
+            {
+ 
+                if (a[x] > a[y]) 
+                {
+ 
+                    temp =  a[x];
+                    a[x] = a[y];
+                    a[y] = temp;
+ 
+                }
+ 
+            }
         }
-    }
-    return 0;
+        for(j=0 ; j<n ; j++)
+        {
+      if(a[j]==b[j])
+      {
+          sumeven = sumeven + a[j];
+      }
+      else
+      {
+          sumodd = sumodd + a[j];
+      }
+        }
+      diff = sumeven - sumodd;
+      printf("%d", diff);
 }

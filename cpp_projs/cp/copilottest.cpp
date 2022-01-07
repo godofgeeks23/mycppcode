@@ -58,28 +58,7 @@ int main()
     {
         int n, d;
         cin >> n >> d;
-        vector<int> v;
-        for (int i = 0; i < n; i++)
-        {
-            v.push_back(i);
-        }
-        int ans = 0;
-        for (int i = 0; i < d; i++)
-        {
-            if (i == 0)
-            {
-                ans = v.size();
-            }
-            else
-            {
-                ans = ans * 2;
-            }
-            if (i >= 10)
-            {
-                ans = ans * 3;
-            }
-            v.erase(remove_if(v.begin(), v.end(), [](int x) {return x % 2 == 0;}), v.end());
-        }
+        
         cout << ans << endl;
     }
     return 0;

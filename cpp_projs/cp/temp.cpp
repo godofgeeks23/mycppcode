@@ -1,24 +1,42 @@
-// You are given an integer, N. Write a program to determine if N is an element of the Fibonacci sequence. 
-#include<iostream>
+
+#include <bits/stdc++.h>
 using namespace std;
+bool check(int p, int n)
+{
+    int temp = p, count = 0, f = 5;
+    while (f <= temp)
+    {
+        count += temp / f;
+        f = f * 5;
+    }
+    return (count >= n);
+}
+int findNum(int n)
+{
+    if (n == 1)
+        return 5;
+    int low = 0;
+    int high = 5 * n;
+    while (low < high)
+    {
+        int mid = (low + high) >> 1;
+        if (check(mid, n))
+            high = mid;
+        else
+            low = mid + 1;
+    }
+
+    return low;
+}
 int main()
 {
-    int n,t;
-    cin>>t;
-    while(t--)
+    int t;
+    cin >> t;
+    while (t--)
     {
-        cin>>n;
-        int a=0,b=1,c=0;
-        while(c<n)
-        {
-            c=a+b;
-            a=b;
-            b=c;
-        }
-        if(c==n)
-            cout<<"IsFibo"<<endl;
-        else
-            cout<<"IsNotFibo"<<endl;
+        int n;
+        cin >> n;
+        cout << findNum(n) << endl;
     }
     return 0;
 }

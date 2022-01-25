@@ -43,12 +43,13 @@
 //     return 0;
 // }
 
-#include<stdio.h> 
-#include<stdlib.h> 
-#define MAXROW 4 
-# define MAXCOL 5 
-int main (){
-    int **p,  i, j;
-    p = (int **) malloc(MAXROW *sizeof(int*));
+#include <stdio.h>
+#include <stdlib.h>
+#define MAXROW 4
+#define MAXCOL 5
+int main()
+{
+    int **p, i, j;
+    p = (int **)malloc(MAXROW * sizeof(int *));
     return 0;
-    }
+}

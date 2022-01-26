@@ -82,7 +82,7 @@
 
 // #include <stdio.h>
 // #include <stdlib.h>
- 
+
 // void indexedSequentialSearch(int arr[], int n, int k)
 // {
 //     int elements[20], indices[20], temp, i, set = 0;
@@ -122,7 +122,7 @@
 // }
 // void main()
 // {
- 
+
 //     int arr[] = { 6, 7, 8, 9, 10 };
 //     int n = sizeof(arr) / sizeof(arr[0]);
 
@@ -134,7 +134,7 @@
 // using namespace std;
 // void solve()
 // {
-    
+
 // }
 // int main(){
 //     int t;
@@ -144,28 +144,65 @@
 //     return 0;
 // }
 
-# include<bits/stdc++.h>
-#define ll long long int
-#define fast ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+// # include<bits/stdc++.h>
+// #define ll long long int
+// #define fast ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+// using namespace std;
+// void solve()
+// {
+//     ll n;
+//     cin>>n;
+//     ll num[n];
+//     ll sum = 0;
+//     for (ll i = 0; i < n; i++)
+//     {
+//         cin>>num[i];
+//         sum += num[i];
+//     }
+//     cout<<sum<<endl;
+// }
+// int main(){
+//     fast
+//     int t;
+// 	cin>>t;
+// 	while(t--)
+// 		solve();
+//     return 0;
+// }
+
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
 using namespace std;
-void solve()
+int main()
 {
-    ll n;
-    cin>>n;
-    ll num[n];
-    ll sum = 0;
-    for (ll i = 0; i < n; i++)
+    int N, K, X, T;
+    cin >> T;
+    while (T--)
     {
-        cin>>num[i];
-        sum += num[i];
+        cin >> N >> K >> X;
+        if (N == X && K >= X)
+        {
+            int count = 0;
+            for (int i = 0; i < N; i++)
+            {
+                cout << count << " ";
+                count++;
+            }
+            cout << endl;
+        }
+        if (N > X && K >= X)
+        {
+            srand(time(0));
+            for (int i = 0; i < N; i++)
+            {
+                cout << (rand() % X) << " ";
+            }
+            cout << endl;
+        }
+        else
+            cout << "-1";
     }
-    cout<<sum<<endl;
-}
-int main(){
-    fast
-    int t;
-	cin>>t;
-	while(t--)
-		solve();
+
     return 0;
 }

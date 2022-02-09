@@ -170,39 +170,93 @@
 //     return 0;
 // }
 
+// #include <iostream>
+// #include <ctime>
+// #include <cstdlib>
+// using namespace std;
+// int main()
+// {
+//     int N, K, X, T;
+//     cin >> T;
+//     while (T--)
+//     {
+//         cin >> N >> K >> X;
+//         if (N == X && K >= X)
+//         {
+//             int count = 0;
+//             for (int i = 0; i < N; i++)
+//             {
+//                 cout << count << " ";
+//                 count++;
+//             }
+//             cout << endl;
+//         }
+//         if (N > X && K >= X)
+//         {
+//             srand(time(0));
+//             for (int i = 0; i < N; i++)
+//             {
+//                 cout << (rand() % X) << " ";
+//             }
+//             cout << endl;
+//         }
+//         else
+//             cout << "-1";
+//     }
+
+//     return 0;
+// }
+
 #include <iostream>
-#include <ctime>
-#include <cstdlib>
+#include <math.h>
 using namespace std;
+constexpr int int_pow(int b, int e)
+{
+    return (e == 0) ? 1 : b * int_pow(b, e - 1);
+}
+// get all the prime factors of a number in an array
+int *get_prime_factors(int n)
+{
+    int *prime_factors = new int[int_pow(2, n)];
+    int i = 0;
+    for (int j = 2; j <= n; j++)
+    {
+        while (n % j == 0)
+        {
+            prime_factors[i++] = j;
+            n /= j;
+        }
+    }
+    return prime_factors;
+}
+int get_pow(int n, int k)
+{
+    int tot = 0;
+    int res = 0;
+    int p = 1;
+
+    do
+    {
+        int dr = int_pow(k, p);
+        res = floor(n / dr);
+        tot += res;
+        // cout<<"dividing "<<n<<" by "<<dr<<" gives "<<res<<"now tot = "<<tot<<endl;
+        p++;
+    } while (res != 0);
+    cout << tot << endl;
+}
 int main()
 {
-    int N, K, X, T;
-    cin >> T;
-    while (T--)
+    int n, k, t;
+    cin >> t;
+    while (t--)
     {
-        cin >> N >> K >> X;
-        if (N == X && K >= X)
+        cin >> n >> k;
+        // print all prime factors of n
+        int *prime_factors = get_prime_factors(n);
+        for (int i = 0; i < int_pow(2, n); i++)
         {
-            int count = 0;
-            for (int i = 0; i < N; i++)
-            {
-                cout << count << " ";
-                count++;
-            }
-            cout << endl;
+            cout << prime_factors[i] << " ";
         }
-        if (N > X && K >= X)
-        {
-            srand(time(0));
-            for (int i = 0; i < N; i++)
-            {
-                cout << (rand() % X) << " ";
-            }
-            cout << endl;
-        }
-        else
-            cout << "-1";
     }
-
-    return 0;
 }

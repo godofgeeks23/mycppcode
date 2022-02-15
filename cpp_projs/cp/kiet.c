@@ -49,7 +49,6 @@
 #define MAXCOL 5
 int main()
 {
-    int **p, i, j;
-    p = (int **)malloc(MAXROW * sizeof(int *));
+    
     return 0;
 }

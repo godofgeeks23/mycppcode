@@ -8,57 +8,95 @@
 //     return 0;
 // }
 
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
-int main()
-{
+// circular queue implementation using linked list
 
-    char s[10000], c[5000];
-    int a[26], b[26], i = 0, len, pos, limit, j, index;
-    scanf("%s", s);
-    len = strlen(s);
-    pos = len - 1;
-    limit = len >> 1;
-    while (s[i])
-        a[s[i++] - 97]++;
-    for (i = 0; i < 26; i++)
-        b[i] = a[i] / 2;
-    for (i = 0; i < limit; i++)
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+void enqueue(struct node **front, struct node **rear, int data)
+{
+    struct node *temp = (struct node *)malloc(sizeof(struct node));
+    temp->data = data;
+    temp->next = NULL;
+    if(*front == NULL)
     {
-        char best;
-        int x = 0;
-        for (j = pos; j >= 0; j--)
-        {
-            if ((!x || s[j] < best) && b[s[j] - 97])
-            {
-                x = 1;
-                best = s[j];
-                index = j;
-            }
-            a[s[j] - 97]--;
-            if (a[s[j] - 97] < b[s[j] - 97])
-                break;
-        }
-        for (; j < index; ++j)
-        {
-            ++a[s[j] - 97];
-        }
-        c[i] = best;
-        b[best - 97]--;
-        pos = index - 1;
+        *front = temp;
+        *rear = temp;
     }
-    printf("%s", c);
-    return 0;
+    else
+    {
+        (*rear)->next = temp;
+        *rear = temp;
+    }
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-#define MAXROW 4
-#define MAXCOL 5
+int dequeue(struct node **front, struct node **rear)
+{
+    if(*front == NULL)
+    {
+        printf("Queue is empty\n");
+        return -1;
+    }
+    else
+    {
+        struct node *temp = *front;
+        *front = (*front)->next;
+        if(*front == NULL)
+            *rear = NULL;
+        int data = temp->data;
+        free(temp);
+        return data;
+    }
+}
+
+void print(struct node *front)
+{
+    struct node *temp = front;
+    while(temp != NULL)
+    {
+        printf("%d ", temp->data);
+        temp = temp->next;
+    }
+    printf("\n");
+}
+
 int main()
 {
-    
-    return 0;
+    // menu to choose the operation
+    int choice;
+    struct node *front = NULL, *rear = NULL;
+    // display the choices
+    printf("1. Enqueue\n2. Dequeue\n3. Print\n4. Exit\n");
+    while(1)
+    {
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        switch(choice)
+        {
+            case 1:
+                int data;
+                printf("Enter the data: ");
+                scanf("%d", &data);
+                enqueue(&front, &rear, data);
+                break;
+            case 2:
+                int data = dequeue(&front, &rear);
+                if(data != -1)
+                    printf("Dequeued data: %d\n", data);
+                break;
+            case 3:
+                print(front);
+                break;
+            case 4:
+                exit(0);
+            default:
+                printf("Invalid choice\n");
+        }
+    }
 }

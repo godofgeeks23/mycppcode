@@ -20,10 +20,7 @@ int main()
         cin >> forbidden_letter[i];
     }
     // find the number of possible strings of maximum length n and not contain forbidden letters at the forbidden indices
-    // the number of possible strings is the number of permutations of the alphabet of length n
-    // the number of permutations of the alphabet of length n is the number of permutations of the alphabet of length n-1
-    // the number of permutations of the alphabet of length n-1 is the number of permutations of the alphabet of length n-2
-    // and so on
+    // the number of possible strings is the number of permutations of the alphabet of length n the number of permutations of the alphabet of length n is the number of permutations of the alphabet of length n-1, the number of permutations of the alphabet of length n-1 is the number of permutations of the alphabet of length n-2, and so on
     int count = 1;
     for(int i = 0; i < n; i++)
     {

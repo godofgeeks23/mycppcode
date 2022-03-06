@@ -3,7 +3,9 @@
 // a forbidden state has an integer x and a letter x which means that the string should not contain a forbidden letter l at the index x.
 
 #include <bits/stdc++.h>
+
 using namespace std;
+
 int main()
 {
     int n, q;

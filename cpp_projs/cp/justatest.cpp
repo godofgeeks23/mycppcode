@@ -78,11 +78,6 @@ int main()
         vector<int> v(n);
         for (int i = 0; i < n; i++)
             cin >> v[i];
-        // memset(dp, -1, sizeof(dp));
         cout << completeTeam(n, k, v) << endl;
     }
-    // vector<int> arr = { 43, 1, 17, 26, 15 };
-    // int k = 16;
-    // memset(dp, -1, sizeof(dp));
-    // cout << find_max(0, 0, arr, k);
 }

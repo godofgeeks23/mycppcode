@@ -37,28 +37,53 @@
 //     cout << count << endl;
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int dp[1001][1001];
+// int find_max(int i, int sum, vector<int> &v, int k)
+// {
+
+//     if (i == v.size())
+//         return 0;
+
+//     if (dp[i][sum] != -1)
+//         return dp[i][sum];
+
+//     int ans = 0;
+//     if ((sum + find_max(i + 1, sum, v, k)) % k == 0)
+//         ans = find_max(i + 1, sum, v, k);
+//     if ((sum + v[i] + find_max(i + 1, (sum + v[i]) % k, v, k)) % k == 0)
+//         ans = max(ans, v[i] + find_max(i + 1,
+//                                        (sum + v[i]) % k, v, k));
+
+//     return dp[i][sum] = ans;
+// }
+
+// int completeTeam(int n, int k, vector<int> &arr)
+// {
+//     memset(dp, -1, sizeof(dp));
+//     return find_max(0, 0, arr, k);
+// }
+
+// // Driver code
+// int main()
+// {
+//     int t;
+//     cin >> t;
+//     while (t--)
+//     {
+//         int n, k;
+//         cin >> n >> k;
+//         vector<int> v(n);
+//         for (int i = 0; i < n; i++)
+//             cin >> v[i];
+//         cout << completeTeam(n, k, v) << endl;
+//     }
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
-
-int dp[1001][1001];
-int find_max(int i, int sum, vector<int> &v, int k)
-{
-
-    if (i == v.size())
-        return 0;
-
-    if (dp[i][sum] != -1)
-        return dp[i][sum];
-
-    int ans = 0;
-    if ((sum + find_max(i + 1, sum, v, k)) % k == 0)
-        ans = find_max(i + 1, sum, v, k);
-    if ((sum + v[i] + find_max(i + 1, (sum + v[i]) % k, v, k)) % k == 0)
-        ans = max(ans, v[i] + find_max(i + 1,
-                                       (sum + v[i]) % k, v, k));
-
-    return dp[i][sum] = ans;
-}
 
 int completeTeam(int n, int k, vector<int> &arr)
 {

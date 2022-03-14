@@ -84,25 +84,12 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-
-int completeTeam(int n, int k, vector<int> &arr)
-{
-    memset(dp, -1, sizeof(dp));
-    return find_max(0, 0, arr, k);
-}
-
-// Driver code
 int main()
 {
     int t;
     cin >> t;
     while (t--)
     {
-        int n, k;
-        cin >> n >> k;
-        vector<int> v(n);
-        for (int i = 0; i < n; i++)
-            cin >> v[i];
-        cout << completeTeam(n, k, v) << endl;
+        
     }
 }

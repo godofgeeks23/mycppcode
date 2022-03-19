@@ -33,8 +33,14 @@ int main()
         int ptr = 0;
         for (int i = 0; i < n - 1; i++)
         {
-            if (a[i] < a[i + 1] && b[i] < b[i + 1])
-                count++;
+            for (int j = i + 1; j < n; j++)
+            {
+                if (a[i] < a[j] && b[i] < b[j])
+                {
+                    count++;
+                    break;
+                }
+            }
         }
         int ans = n - count;
         cout << ans;

@@ -10,12 +10,11 @@
 #include <stdlib.h>
 int main()
 {
-    int i;
-    int j;
-    int k;
+    int t;
     scanf("%d",&i);
-    scanf("%d",&j);
-    scanf("%d",&k);
-    
+    while(t--)
+    {
+        
+    }
     return 0;
 }

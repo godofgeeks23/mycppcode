@@ -1,5 +1,22 @@
 this is just a sample file...
-this was created to show the demo of how file io works in cpp...
+
+this 
+was 
+created 
+to 
+show 
+the 
+demo 
+of 
+how 
+file 
+io 
+works 
+in 
+cpp...
+
 that is why, we made this file of multiline and many words...
+
 well, if you are reading this, never forget that you can do anything that you want
+
 but you should just be determined enough.

@@ -214,7 +214,7 @@ constexpr int int_pow(int b, int e)
 {
     return (e == 0) ? 1 : b * int_pow(b, e - 1);
 }
-// get all the prime factors of a number in an array
+
 int *get_prime_factors(int n)
 {
     int *prime_factors = new int[int_pow(2, n)];

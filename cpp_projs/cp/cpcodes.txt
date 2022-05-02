@@ -5103,6 +5103,7 @@ int getMaxCount(int A[], int n)
 }
 int main()
 {
+    
     int n;
     cin>>n;
     int arr[n];
@@ -5110,6 +5111,7 @@ int main()
         cin>>arr[i];
     cout<<getMaxCount(arr, n);
     return 0;
+
 }
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

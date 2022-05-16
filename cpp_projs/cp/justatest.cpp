@@ -33,59 +33,40 @@
 
 // Input string = "HACKEREARTH"
 
-#include<bits/stdc++.h>
+#include <iostream>
+#include <unordered_map>
 using namespace std;
-void hacker(string S)
+int maxprod()
 {
+    int arr[] = {-1, -2, -5, 0, 6, 8 ,10};
+    int n = 7;
+    int minval = arr[0];
+    int maxval = arr[0];
+    int ans;
+    for(int i=1;i<n-1;i++)
+    {
+        if(arr[i]<0)
+        {
+            int temp = maxval;
+            maxval = minval;
+            minval = temp;
+        }
 
-    int mlen = 1;
-    int beg = 0;
-    int len = S.length();
-    int low, high;
-    for (int i = 1; i < len; i++)
-    {
+        maxval = min(arr[i], maxval*arr[i]);
+        minval = max(arr[i], minval*arr[i]);
 
-        low = i - 1;
-        high = i;
-while (low>= 0&& high< len   && S[low] == S[high]
- {
-            --low;
-            ++high;
- }
-    
-    // end of while
-    ++low;
-    --high;
-    if (S[low] == S[high] && high - low + 1 > maxLength)
-    {
-            beg = low;
-            mlen = high - low + 1;
+
+
+        ans = max(ans, maxval);
     }
-    // End of if
-    low = i - 1;
-    high = i + 1;
-    while (low >= 0 && high < len && S[low] == S[high])
-    {
-            --low;
-            ++high;
-    }
-    ++low;
-    --high;
-    if (S[low] == S[high] && high - low + 1 > maxLength)
-    {
-        beg == low
-                   mlen = high - low + 1
-    }
-    }
-    // End of if
-    // End of for
-    ans = mlen;
-     while (ans--)
-        cout<<(S[beg++])
-    }
-    // End of function
-    int main()
-    {
-        hacker("HACKEREARTH");
-        return 0;
-    }
+    return ans;
+
+}
+int main()
+{
+    int arr[] = {-1, -2, -5, 0, 6, 8 ,10};
+    int n = 7;
+    cout<<maxprod();
+
+    return 0;
+}

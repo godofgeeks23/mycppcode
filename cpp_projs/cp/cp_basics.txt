@@ -118,6 +118,7 @@ INT_MAX is the max value that int can store. Similarly INT_MIN is the min value 
 cout<<INT_MIN<<INT_MAX;
 cout<<(INT_MAX+1);          // overflow, so it will cycle back into its range (going to negative range)
 
+
 Adding a char in a string is not a good idea because of 2 reasons - 
     due to time complexity
     two dissimilar data types are being added
@@ -165,7 +166,7 @@ max(a, b), min(a, b), swap(a, b) already exists in c++
 in declaring/passing multi-dimensional arrays, only first dimension can be omitted...
     example: void display(int m[][30])
     {
-        /////
+        ///////
     }
 
 in cp, try to declare arrays as global, instead of passing them in functions...

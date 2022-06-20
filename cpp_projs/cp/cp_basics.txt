@@ -320,6 +320,9 @@ const int mod = pow(10,9)+7;
 const int N = 3e5, M = N;
 const int inf =LLONG_MAX;
 const int infn =LLONG_MIN;
+const int infn =LLONG_MIN;
+const int infn =LLONG_MIN;
+const int infn =LLONG_MIN;
 
 
 

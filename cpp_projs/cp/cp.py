@@ -60,7 +60,6 @@
 # return count
 
 def performOperation(arr, operations):
-    res = []
     for operation in operations:
         m = operation[0]
         n = operation[1]

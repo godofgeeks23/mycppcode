@@ -1,8 +1,7 @@
-// C++ code to minimize number of rotations
+
 #include <bits/stdc++.h>
 using namespace std;
- 
-// Function to check if two arrays are equal
+
 bool check(int A[], int B[], int N)
 {
     bool flag = true;
@@ -14,8 +13,7 @@ bool check(int A[], int B[], int N)
     }
     return flag;
 }
- 
-// Function to left rotate an array
+
 void Leftrotate(int A[], int N)
 {
     int temp = A[0];
@@ -24,8 +22,7 @@ void Leftrotate(int A[], int N)
     }
     A[N - 1] = temp;
 }
- 
-// Function to right rotate an array
+
 void Rightrotate(int A[], int N)
 {
     int temp = A[N - 1];
@@ -34,24 +31,17 @@ void Rightrotate(int A[], int N)
     }
     A[0] = temp;
 }
- 
-// Function to minimize number of rotations
+
 int minRotations(int A[], int B[], int N)
 {
     int C[N];
     for (int i = 0; i < N; i++)
         C[i] = A[i];
     int a = 0, b = 0;
- 
-    // Right rotate the array
-    // till it is equal to B
     while (check(A, B, N) == false) {
         Rightrotate(A, N);
         a++;
     }
- 
-    // Left rotate the array
-    // till it is equal to B
     while (check(C, B, N) == false) {
         Leftrotate(C, N);
         b++;
@@ -60,8 +50,6 @@ int minRotations(int A[], int B[], int N)
     int ans = min(a, b);
     return ans;
 }
- 
-// Driver code
 int main()
 {
     int t;

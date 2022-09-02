@@ -41,6 +41,6 @@ def performOperation(arr, operations):
     return arr
 
 arr = [9,8,7,6,5,4,3,2,1,0]
-operations = [[0,9],[4,5],[3,6],[2,7],[1,8],[0,9]]
+operations = [[0,9]]
 print(performOperation(arr, operations))
 

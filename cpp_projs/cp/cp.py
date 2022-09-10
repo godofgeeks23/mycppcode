@@ -33,14 +33,8 @@
 
 # return count
 
-def performOperation(arr, operations):
-    for operation in operations:
-        m = operation[0]
-        n = operation[1]
-        arr[m:n+1] = arr[m:n+1][::-1]
-    return arr
 
-arr = [9,8,7,6,5,4,3,2,1,0]
-operations = [[0,9]]
-print(performOperation(arr, operations))
-
+t = int(input())
+while(t):
+    print(t)
+    t -= 1

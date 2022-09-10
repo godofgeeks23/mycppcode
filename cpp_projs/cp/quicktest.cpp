@@ -27,6 +27,23 @@
 
 #include<bits/stdc++.h>
 using namespace std;
+
+bool checkRecord(string s) {
+    int count = 0;
+    for(int i=0;i<s.size();i++)
+    {
+        if(s[i]=='A')
+        {
+            count++;
+            if(count>=2)
+                return false;
+        }
+        else if(s[i]=='L' && s[i+1]=='L' && s[i+2]=='L')
+            return false;
+    }
+    return true;
+}
+
 int main()
 {
     clock_t start, end;
@@ -38,9 +55,9 @@ int main()
     cin>>t;
     while(t--)
     {
-        int n;
-        cin>>n;
-        
+        string cmd;
+        cin>>cmd;
+        cout<<checkRecord(cmd)<<endl;
     }
 
     // end code here

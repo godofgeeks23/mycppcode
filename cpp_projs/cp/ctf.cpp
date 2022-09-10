@@ -11,7 +11,7 @@ bool check(int A[], int B[], int N)
         {
             flag = false;
             break;
-        }
+        } 
     }
     return flag;
 }

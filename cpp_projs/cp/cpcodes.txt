@@ -5447,23 +5447,58 @@ public:
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
-LeetCode - 
+LeetCode - Contains Duplicate.
 /\/\/\/\/\/\/\/\/\/\
-
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_map<int, int> a;
+        for(int i=0;i<nums.size();i++)
+        {
+            a[nums[i]]++;
+            if(a[nums[i]] >=2)
+                return true;
+        }
+        return false;
+    }
+};
 
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
-LeetCode - 
+LeetCode - Single Number
 /\/\/\/\/\/\/\/\/\/\
-
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        set<int> a;
+        for(int i=0;i<nums.size();i++)
+        {
+            if(a.count(nums[i])==0)
+                a.insert(nums[i]);
+            else if(a.count(nums[i])==1)
+                a.erase(nums[i]);
+        }
+        auto it = a.begin();
+        return *it;
+    }
+};
 
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
 
-LeetCode - 
+LeetCode - Valid Anagram
 /\/\/\/\/\/\/\/\/\/\
-
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        sort(s.begin(), s.end());
+        sort(t.begin(), t.end());
+        if(s==t)
+            return true;
+        return false;
+    }
+};
 
 
 /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

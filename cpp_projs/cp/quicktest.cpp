@@ -78,7 +78,7 @@ public:
     long maximumSumSubarray(int K, vector<int> &Arr , int N){
         // code here 
         sort(Arr.begin(), Arr.end(), greater <>());
-        int sum = 0;
+        long sum = 0;
         for(int i=0;i<K;i++)
             sum+=Arr[i];
         return sum;

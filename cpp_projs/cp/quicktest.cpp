@@ -77,11 +77,23 @@ class Solution{
 public:
     long maximumSumSubarray(int K, vector<int> &Arr , int N){
         // code here 
-        sort(Arr.begin(), Arr.end(), greater <>());
+        int start = 0;
+        int end = K-1;
+        long sum_max = 0;
         long sum = 0;
-        for(int i=0;i<K;i++)
-            sum+=Arr[i];
-        return sum;
+        for(int i=start;i<=end;i++)
+            sum_max+=Arr[i];
+        while(end<N)
+        {
+            sum = 0;
+            start++;
+            end++;
+            for(int i=start;i<=end;i++)
+                sum+=Arr[i];
+            if(sum>sum_max)
+                sum_max = sum;
+        }
+        return sum_max;
     }
 };
 

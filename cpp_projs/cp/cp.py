@@ -37,4 +37,4 @@
 t = int(input())
 while(t):
     print(t)
-    t -= 1
+    t -= 2

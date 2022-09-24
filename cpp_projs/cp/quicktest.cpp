@@ -105,7 +105,7 @@ int main()
     while(t--)
     {
         int N,K;
-        cin >> N >> K;;
+        cin >> N >> K;; 
         vector<int>Arr;
         for(int i=0;i<N;++i){
             int x;

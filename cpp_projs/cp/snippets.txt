@@ -29,6 +29,7 @@ int pow_mod(long long x, unsigned int y, int p)
 }
 
 // to find if a number is prime or not
+
 int isPrime(int n)
 {
     if (n == 1)
